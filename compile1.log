@@ -1,0 +1,516 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(main.tex
+LaTeX2e <2025-06-01>
+L3 programming layer <2025-05-26>
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/memoir\memoir.cls
+Document Class: memoir 2025/03/10 v3.8.3b configurable book, report, article do
+cument class
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/xpatch\xpatch.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/memoir\mem12.clo)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/tools\dcolumn.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/tools\delarray.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+lestring.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+))))
+patch 2 for \immediateaddtocontents failed
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/base\shortvrb.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/textcase\textcase.sty))
+ (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.l
+df
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/es\babel
+-spanish.tex)))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cfg))
+ (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\mathpazo.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+))) (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty))
+ (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/siunitx\siunitx.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/translations\translatio
+ns.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty)))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/numprint\numprint.sty
+No configuration file `numprint.cfg' found.)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
+sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.st
+y
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-common.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-latex.def)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
+code.tex
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.
+sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.
+sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s.code.tex
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+libraryfiltered.code.tex))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
+fg)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-pdftex.def
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-common-pdf.def)))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+ssoftpath.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+sprotocol.code.tex))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+e.code.tex
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.
+code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
+r.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.basic.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.trigonometric.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.random.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.comparison.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.base.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.round.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.misc.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.integerarithmetics.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.
+code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
+.code.tex))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
+tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epoints.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathconstruct.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathusage.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+escopes.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+egraphicstate.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransformations.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+equick.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eobjects.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathprocessing.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+earrows.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eshade.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eimage.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eexternal.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+elayers.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransparency.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epatterns.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+erdf.code.tex)))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+shapes.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+plot.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-0-65.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-1-18.sty))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.st
+y
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
+ty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
+code.tex))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z\tikz.code.tex
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryplothandlers.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+matrix.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarytopaths.code.tex)))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryarrows.meta.code.tex)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarychains.code.tex
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarypositioning.code.tex))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryshapes.geometric.code.tex
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\
+pgflibraryshapes.geometric.code.tex))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-apa\apa.dbx)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.def
+) (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
+) (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-apa\apa.bbx
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
+bx))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-apa\apa.cbx)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl3
+.sty))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
+ty) (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
+ty) (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+) (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+) (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
+.sty))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+echeck.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty)
+
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
+ounter.sty)))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/memoir\memhfixc.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/cleveref\cleveref.sty)
+==> First Aid for cleveref.sty applied!
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty)
+
+******************************************************
+Stock height and width: 794.96999pt by 614.295pt
+Top and edge trims: 0pt and 0pt
+Page height and width: 794.96999pt by 614.295pt
+Text height and width: 664.5pt by 457pt
+Spine and edge margins: 85.35826pt and 71.13188pt
+Upper and lower margins: 71.13188pt and 59.3381pt
+Headheight and headsep: 16pt and 19.8738pt
+Footskip: 12pt
+Columnsep and columnseprule: 10pt and 0pt
+Marginparsep and marginparwidth: 7pt and 57.13188pt
+Sidecapsep and sidecapwidth: 7pt and 50pt
+Sidebarhsep and sidebarwidth: 7pt and 50pt
+Sidebarvsep and sidebartopsep: 14.5pt and 0pt
+Sidebarheight: 546.64995pt
+Sidefoothsep and sidefootwidth: 7pt and 50pt
+Sidefootvsep and sidefootheight: 14.5pt and 546.64995pt
+******************************************************
+
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ppl.fd)
+No file main.aux.
+
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg))
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\tran
+slations-basic-dictionary-spanish.trsl)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-apa\spanish-ap
+a.lbx
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\spanish.lb
+x)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\spanish.lb
+x))
+No file main.bbl.
+(portada.tex
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ppl.fd)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omlzplm.fd)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omszplm.fd)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omxzplm.fd)
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1zplm.fd)
+[1{C:/Users/carlo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/ca
+rlo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./logo_uaysen.p
+ng>]) (preliminares.tex
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.I}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.18 \clearpage
+                [1])
+[2]
+No file main.toc.
+
+[3]
+No file main.lof.
+
+[4]
+No file main.lot.
+
+[5] (capitulos/01_introduccion.tex
+
+LaTeX Warning: Reference `chap:planteamiento-problema' on page 1 undefined on i
+nput line 26.
+
+
+LaTeX Warning: Reference `chap:hipotesis' on page 1 undefined on input line 27.
+
+
+
+LaTeX Warning: Reference `chap:objetivos' on page 1 undefined on input line 29.
+
+
+
+LaTeX Warning: Reference `chap:marco-teorico' on page 1 undefined on input line
+ 30.
+
+
+LaTeX Warning: Reference `chap:estado-del-arte' on page 1 undefined on input li
+ne 30.
+
+
+LaTeX Warning: Reference `chap:metodologia' on page 1 undefined on input line 3
+2.
+
+)
+[1] (capitulos/02_planteamiento_problema.tex
+[2]
+
+LaTeX Warning: Citation 'CIEP2025' on page 3 undefined on input line 48.
+
+
+Overfull \hbox (29.0016pt too wide) in paragraph at lines 47--62
+[]\T1/ppl/m/n/12 La es-truc-tu-ra de la ca-de-na de su-mi-nis-tro, de-ta-lla-da
+ en el in-for-me de re-fe-ren-cia [][][][],
+
+LaTeX Warning: Citation 'CIEP2025' on page 3 undefined on input line 75.
+
+
+[3]
+
+LaTeX Warning: Citation 'CIEP2025' on page 4 undefined on input line 95.
+
+
+LaTeX Warning: Citation 'CIEP2025' on page 4 undefined on input line 101.
+
+
+[4]
+
+LaTeX Warning: Citation 'CIEP2025' on page 5 undefined on input line 119.
+
+)
+[5] (capitulos/03_hipotesis.tex
+
+LaTeX Warning: Reference `chap:planteamiento-problema' on page 1 undefined on i
+nput line 4.
+
+
+[6]
+
+LaTeX Warning: Reference `chap:metodologia' on page 1 undefined on input line 5
+4.
+
+)
+[7] (capitulos/04_objetivos.tex
+
+LaTeX Warning: Reference `chap:planteamiento-problema' on page 1 undefined on i
+nput line 5.
+
+
+[8])
+[9] (capitulos/05_marco_teorico.tex
+[10]
+Overfull \hbox (14.56534pt too wide) in paragraph at lines 109--110
+ [][] 
+
+LaTeX Warning: Citation 'Christopher2004' on page 11 undefined on input line 13
+4.
+
+
+LaTeX Warning: Reference `fig:resilience-tradeoff' on page 11 undefined on inpu
+t line 137.
+
+
+[11]
+
+LaTeX Warning: Citation 'CIEP2025' on page 12 undefined on input line 198.
+
+
+LaTeX Warning: Citation 'Law2015' on page 12 undefined on input line 205.
+
+
+[12]
+
+LaTeX Warning: Citation 'Banks2010' on page 13 undefined on input line 211.
+
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd)
+Overfull \hbox (14.20708pt too wide) in paragraph at lines 215--217
+[]\T1/lmtt/m/n/12 PlantaAlmacenamiento \T1/ppl/m/n/12 (con atri-bu-tos: ca-pa-c
+i-dad_max, ni-vel_inventario, ROP),
+)
+[13{C:/Users/carlo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}]
+
+[14] (capitulos/06_estado_del_arte.tex
+
+LaTeX Warning: Citation 'Banks2010' on page 15 undefined on input line 32.
+
+
+[15]
+
+LaTeX Warning: Citation 'Law2015' on page 16 undefined on input line 40.
+
+
+LaTeX Warning: Citation 'CIEP2025' on page 16 undefined on input line 48.
+
+
+[16]
+
+LaTeX Warning: Citation 'CIEP2025' on page 17 undefined on input line 89.
+
+)
+[17] (capitulos/07_metodologia.tex
+[18]
+
+LaTeX Warning: Reference `fig:conceptual-diagram-detailed' on page 19 undefined
+ on input line 52.
+
+
+Overfull \hbox (11.69287pt too wide) in paragraph at lines 67--67
+ [][]\T1/ppl/m/n/10.95 Almacenamiento 
+
+Overfull \hbox (7.04303pt too wide) in paragraph at lines 93--94
+ [][] 
+
+LaTeX Warning: Citation 'CIEP2025' on page 19 undefined on input line 100.
+
+
+[19]
+Overfull \hbox (56.60239pt too wide) in paragraph at lines 141--145
+\T1/ppl/m/n/12 pa-ran-do la ló-gi-ca de la si-mu-la-ción (\T1/lmtt/m/n/12 model
+o.py\T1/ppl/m/n/12 ), de la or-ques-ta-ción de es-ce-na-rios (\T1/lmtt/m/n/12 e
+xperimento.py\T1/ppl/m/n/12 )
+
+[20] (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ppl.fd)
+
+LaTeX Warning: Citation 'CIEP2025' on page 21 undefined on input line 162.
+
+)
+[21] (capitulos/08_contribuciones_plan.tex
+[22]
+[23])
+[24]
+
+LaTeX Warning: Empty bibliography on input line 110.
+
+(main.aux (portada.aux) (preliminares.aux) (capitulos/01_introduccion.aux)
+(capitulos/02_planteamiento_problema.aux) (capitulos/03_hipotesis.aux)
+(capitulos/04_objetivos.aux) (capitulos/05_marco_teorico.aux)
+(capitulos/06_estado_del_arte.aux) (capitulos/07_metodologia.aux)
+(capitulos/08_contribuciones_plan.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
+
+ )
+(see the transcript file for additional information)<C:/Users/carlo/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/carlo/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/
+carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+C:/Users/carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/fplmr.
+pfb><C:/Users/carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/mathpazo/f
+plmri.pfb><C:/Users/carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
+mtt12.pfb><C:/Users/carlo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatin
+o/uplb8a.pfb><C:/Users/carlo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/pala
+tino/uplr8a.pfb><C:/Users/carlo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/p
+alatino/uplri8a.pfb>
+Output written on main.pdf (30 pages, 251511 bytes).
+Transcript written on main.log.

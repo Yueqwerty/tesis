@@ -1,0 +1,49 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{Agradecimientos}{\es@scroman {i}}{chapter*.1}%
+\contentsline {chapter}{Resumen}{\es@scroman {ii}}{chapter*.2}%
+\contentsline {chapter}{\'{I}ndice general}{\es@scroman {iii}}{section*.3}%
+\contentsline {chapter}{\'{I}ndice de figuras}{\es@scroman {v}}{section*.4}%
+\contentsline {chapter}{\'{I}ndice de cuadros}{\es@scroman {vi}}{section*.5}%
+\contentsline {chapter}{\chapternumberline {1}Introducción}{1}{chapter.1}%
+\contentsline {chapter}{\chapternumberline {2}Planteamiento del Problema}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Caracterización del Sistema: Un Ecosistema Energético Crítico}{2}{section.2.1}%
+\contentsline {subsection}{La Dimensión de la Demanda: Criticidad y Crecimiento Sostenido}{2}{section*.6}%
+\contentsline {subsection}{La Dimensión del Suministro: Topología Lineal y Soberanía Comprometida}{3}{section*.7}%
+\contentsline {section}{\numberline {2.2}Análisis de Vulnerabilidades: La Disonancia Crítica del Sistema}{3}{section.2.2}%
+\contentsline {subsection}{Vulnerabilidades Exógenas: Amenazas Recurrentes y de Larga Duración}{4}{section*.8}%
+\contentsline {subsection}{Vulnerabilidades Endógenas: Un Buffer Insuficiente y Estratégicamente Degradado}{4}{section*.9}%
+\contentsline {section}{\numberline {2.3}Insuficiencia de los Marcos de Análisis y la Brecha Metodológica}{5}{section.2.3}%
+\contentsline {chapter}{\chapternumberline {3}Hipótesis y Pregunta de Investigación}{6}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Pregunta de Investigación}{6}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Hipótesis Central}{7}{section.3.2}%
+\contentsline {chapter}{\chapternumberline {4}Objetivos}{8}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Objetivo General}{8}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Objetivos Específicos}{8}{section.4.2}%
+\contentsline {chapter}{\chapternumberline {5}Marco Teórico}{10}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Teorías del Dominio del Problema: La Cadena de Suministro}{10}{section.5.1}%
+\contentsline {subsection}{Dinámica y Control de Inventarios en Entornos Estocásticos}{10}{section*.10}%
+\contentsline {subsection}{El Paradigma de la Resiliencia Logística}{11}{section*.11}%
+\contentsline {subsection}{Dinámicas de Competencia y Coordinación: El Aporte de la Teoría de Juegos}{12}{section*.12}%
+\contentsline {section}{\numberline {5.2}Metodología del Dominio de la Solución: La Simulación de Sistemas}{13}{section.5.2}%
+\contentsline {subsection}{Simulación de Eventos Discretos (SED)}{13}{section*.13}%
+\contentsline {subsection}{Protocolos de Credibilidad: Verificación y Validación (V\&V)}{13}{section*.14}%
+\contentsline {subsection}{Análisis de Resultados: Diseño de Experimentos (DoE)}{13}{section*.15}%
+\contentsline {chapter}{\chapternumberline {6}Estado del Arte}{15}{chapter.6}%
+\contentsline {section}{\numberline {6.1}La Simulación como Estándar en la Gestión de Riesgos Logísticos}{15}{section.6.1}%
+\contentsline {section}{\numberline {6.2}El Diagnóstico de Vulnerabilidad en Aysén: Un Análisis Estático}{16}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Identificación del Vacío de Conocimiento y Contribución Original}{17}{section.6.3}%
+\contentsline {chapter}{\chapternumberline {7}Diseño Metodológico}{18}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Fase 1: Modelado Conceptual del Sistema (Objetivo 1)}{18}{section.7.1}%
+\contentsline {subsection}{Definición de Límites y Supuestos del Modelo}{18}{section*.16}%
+\contentsline {section}{\numberline {7.2}Enfoque de la Investigación: Simulación como Experimentación Computacional}{19}{section.7.2}%
+\contentsline {subsection}{Parametrización y Modelado Estocástico}{20}{section*.17}%
+\contentsline {section}{\numberline {7.3}Fase 2: Implementación del Prototipo (Objetivo 2)}{20}{section.7.3}%
+\contentsline {subsection}{Stack Tecnológico y Arquitectura de Software}{20}{section*.18}%
+\contentsline {section}{\numberline {7.4}Fase 3: Evaluación y Experimentación (Objetivo 3)}{21}{section.7.4}%
+\contentsline {subsection}{Protocolo de Verificación y Validación (V\&V)}{21}{section*.19}%
+\contentsline {subsection}{Diseño de Experimentos (DoE)}{21}{section*.20}%
+\contentsline {chapter}{\chapternumberline {8}Conclusiones y Proyección del Trabajo}{22}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Síntesis del Problema y la Solución Propuesta}{22}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Contribuciones Esperadas}{23}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Limitaciones y Líneas de Trabajo Futuro}{23}{section.8.3}%
+\contentsline {chapter}{Referencias}{25}{section*.22}%

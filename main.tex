@@ -1,0 +1,112 @@
+% ==============================================================================
+% Carlos Subiabre Saldivia - Ingeniería Civil Informática - U. Aysén
+% ==============================================================================
+
+\documentclass[12pt, letterpaper, oneside]{memoir}
+
+% --- Codificación y Lenguaje ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{csquotes}
+% --- Tipografía Profesional ---
+\usepackage{lmodern} 
+\usepackage{mathpazo} 
+\linespread{1.3}
+
+% --- Paquetes Esenciales y de Ingeniería ---
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{numprint}
+\npthousandsep{.}
+\npdecimalsign{,}
+\sisetup{
+  output-decimal-marker = {,},
+  group-separator = {.},
+  group-minimum-digits = 4,
+  per-mode = symbol,
+  detect-all = true,
+  parse-numbers = false
+}
+\setheadfoot{16pt}{12pt}
+% --- Paquetes para Diagramas (TikZ) ---
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, chains, positioning, shapes.geometric}
+
+% --- Configuración de Bibliografía (biblatex) ---
+% --- Configuración de Bibliografía (biblatex) ---
+\usepackage[backend=biber, style=apa, sorting=nyt]{biblatex}
+\addbibresource{bibliografia.bib} % Nombre de tu archivo .bib
+
+% --- Configuración de Hipervínculos y Referencias Inteligentes ---
+\usepackage[hidelinks]{hyperref}
+\usepackage[spanish,nameinlink]{cleveref}
+
+% --- Configuración para Listados de Código ---
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.97,0.97,0.95}
+\lstdefinestyle{pythonstyle}{
+    backgroundcolor=\color{backcolour}, commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta}, numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple}, basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false, breaklines=true, captionpos=b, keepspaces=true,
+    numbers=left, numbersep=5pt, showspaces=false, showstringspaces=false,
+    showtabs=false, tabsize=2, language=Python
+}
+\lstset{style=pythonstyle}
+
+% ==============================================================================
+% DISEÑO DEL DOCUMENTO (Controlado por memoir)
+% ==============================================================================
+\chapterstyle{veelo}
+\setstocksize{11in}{8.5in}
+\settrimmedsize{\stockheight}{\stockwidth}{*}
+\setlrmarginsandblock{3cm}{2.5cm}{*}
+\setulmarginsandblock{2.5cm}{2.5cm}{*}
+\checkandfixthelayout
+\makepagestyle{main}
+\makeevenhead{main}{\thepage}{}{\leftmark}
+\makeoddhead{main}{\rightmark}{}{\thepage}
+\makepagestyle{plain}
+\makeevenhead{plain}{\thepage}{}{}
+\makeoddhead{plain}{}{}{\thepage}
+\pagestyle{main}
+\aliaspagestyle{chapter}{plain}
+\firmlists
+\renewcommand{\listtablename}{Índice de Cuadros}
+% ==============================================================================
+% INICIO DEL DOCUMENTO
+% ==============================================================================
+\begin{document}
+
+\frontmatter
+\include{portada}
+\include{preliminares}
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+
+
+
+\mainmatter
+\include{capitulos/01_introduccion}
+\include{capitulos/02_planteamiento_problema}
+\include{capitulos/03_hipotesis}
+\include{capitulos/04_objetivos}
+\include{capitulos/05_marco_teorico}
+\include{capitulos/06_estado_del_arte}
+\include{capitulos/07_metodologia}
+\include{capitulos/08_contribuciones_plan}
+
+\backmatter
+\printbibliography[title={Referencias}]
+
+\end{document}

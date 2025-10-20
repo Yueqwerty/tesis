@@ -1,0 +1,201 @@
+\chapter{Diseño Metodológico}
+\label{chap:metodologia}
+
+Este capítulo detalla el plan de trabajo y el conjunto de métodos formales que 
+se emplearán para alcanzar los objetivos de la investigación. El enfoque se 
+enmarca en las disciplinas de la Ciencia Computacional y la Ingeniería de 
+Sistemas, adoptando un proceso sistemático para el diseño, la implementación 
+y la evaluación de un artefacto computacional. El propósito es establecer un 
+marco de trabajo riguroso, transparente y, fundamentalmente, replicable.
+
+\section{Fase 1: Modelado Conceptual del Sistema (Objetivo 1)}
+\label{sec:conceptual-modeling}
+
+El objetivo de esta fase es la abstracción formal del sistema real en un 
+modelo conceptual que sirva como especificación para la implementación.
+
+% --- SECCIÓN REESCRITA PARA MÁXIMA CLARIDAD ---
+\subsection{Definición de Límites y Supuestos del Modelo}
+\label{sec:limites-supuestos}
+
+Para abordar el problema regional de manera cuantitativa, es imperativo 
+establecer un límite de sistema (\textit{system boundary}) claro para el 
+modelo computacional. Si bien el impacto de una disrupción en el suministro 
+de GLP es de alcance regional, el centro de gravedad logístico y el punto 
+de control más crítico de la cadena se encuentra en el nodo de 
+almacenamiento primario de Coyhaique.
+
+Por consiguiente, el modelo se centrará en la dinámica de inventarios de 
+las tres plantas mayoristas ubicadas en dicho nodo. Se modelará el flujo de 
+suministro desde los puntos de origen (Neuquén y Cabo Negro) hasta estas 
+plantas, y la salida de producto se modelará como una demanda agregada que 
+representa el consumo de la zona de influencia directa.
+
+Este enfoque se justifica porque la resiliencia del nodo de Coyhaique actúa 
+como un \textbf{proxy directo} de la resiliencia de toda la región. Un 
+quiebre de stock en este punto neurálgico implica, por definición, la 
+incapacidad de abastecer a las demás localidades. La modelización de la red 
+de distribución de última milla y las dinámicas de inventario en otros puntos 
+de la región quedan fuera del alcance de este estudio y se plantean como 
+líneas de trabajo futuro.
+
+\section{Enfoque de la Investigación: Simulación como Experimentación Computacional}
+\label{sec:research-approach}
+
+La presente investigación adopta un enfoque cuantitativo basado en la 
+simulación como método de experimentación computacional. Dada la naturaleza 
+estocástica y dinámicamente compleja de la cadena de suministro de GLP, los 
+modelos puramente analíticos son insuficientes. La simulación permite la 
+creación de un laboratorio virtual donde se pueden probar hipótesis y evaluar 
+políticas bajo condiciones controladas, algo inviable en el sistema real. El 
+desarrollo se estructura en las tres fases ilustradas en la 
+Figura~\ref{fig:conceptual-diagram-detailed}.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[
+        node distance=4cm,
+        box/.style = {rectangle, draw, thick, rounded corners=2pt, 
+                     minimum height=1.5cm, text width=2.5cm, 
+                     text centered, font=\small, align=center},
+        arrow/.style = {->, >=stealth, thick}
+    ]
+        
+        % Componentes principales en línea
+        \node[box, fill=blue!15] (A) at (0,0) {Generación de Pedidos};
+        \node[box, fill=green!15] (B) at (4.5,0) {Transporte y Logística};
+        \node[box, fill=purple!15] (C) at (9,0) {Almacenamiento y Distribución};
+        \node[box, fill=orange!15] (D) at (13.5,0) {Consumo Final};
+        
+        % Flujo principal
+        \draw[arrow, blue] (A) -- (B);
+        \draw[arrow, blue] (B) -- (C);
+        \draw[arrow, blue] (C) -- (D);
+        
+        % Elemento disruptivo
+        \node[box, fill=red!15] (E) at (2.25,-3) {Sistema de Disrupciones};
+        \draw[arrow, red, thick] (E) -- (A) node[midway, left, font=\footnotesize, text=red] {Interrumpe};
+        \draw[arrow, red, thick] (E) -- (B) node[midway, below, font=\footnotesize, text=red] {Retrasa};
+        
+        % Parámetros
+        \node[box, fill=gray!15] (F) at (6.75,-3) {Base de Parámetros};
+        \draw[arrow, dashed, gray] (F) -- (A);
+        \draw[arrow, dashed, gray] (F) -- (C);
+        \draw[arrow, dashed, gray] (F) -- (D);
+        
+        % Leyenda simple
+        \node[below=1.2cm of F, font=\footnotesize] {
+            \textcolor{blue}{\rule{1cm}{1.5pt}} Flujo Principal \quad
+            \textcolor{red}{\rule{1cm}{1.5pt}} Disrupciones \quad
+            \textcolor{gray}{\rule[0.5pt]{1cm}{1pt}} Parámetros
+        };
+        
+    \end{tikzpicture}
+    \caption{Modelo Conceptual del Sistema de Distribución de GLP.}
+    \label{fig:conceptual-diagram-detailed}
+\end{figure}
+
+\subsection{Parametrización y Modelado Estocástico}
+Los parámetros deterministas (ej. capacidad de almacenamiento por empresa) 
+se tomarán directamente del informe \cite{CIEP2025}. Las variables 
+estocásticas se modelarán mediante distribuciones de probabilidad:
+
+\begin{itemize}
+    \item \textbf{Tiempo entre Disrupciones:} Se modelará como una variable 
+    aleatoria de una distribución \textbf{Exponencial}(\(\lambda\)), donde 
+    la tasa \(\lambda\) se calibrará según la frecuencia de Nivel 4 (1/90 
+    días).
+    
+    \item \textbf{Duración de Disrupciones:} Se modelará con una distribución 
+    \textbf{Triangular}(\(a, b, c\)), donde los parámetros (mínimo, más 
+    probable, máximo) se basarán en los datos históricos (ej. 21 días para 
+    conflictos sociales).
+    
+    \item \textbf{Demanda Diaria \(D(t)\):} Se modelará como un proceso 
+    estocástico con tendencia y estacionalidad: 
+    \[ D(t) = \text{Base} \cdot (1+g)^t + S(t) + \epsilon \]
+    donde \(g\) es la tasa de crecimiento, \(S(t)\) es el componente 
+    estacional y \(\epsilon\) es un ruido aleatorio.
+\end{itemize}
+
+\section{Fase 2: Implementación del Prototipo (Objetivo 2)}
+\label{sec:implementation}
+
+\subsection{Stack Tecnológico y Arquitectura de Software}
+La selección de herramientas busca maximizar la flexibilidad y la 
+reproducibilidad científica:
+
+\begin{itemize}
+    \item \textbf{Núcleo:} \textbf{Python 3.x} y \textbf{SimPy}, por su 
+    capacidad para modelar procesos complejos de forma nativa.
+    
+    \item \textbf{Análisis y Visualización:} \textbf{Pandas}, \textbf{Matplotlib}, 
+    y \textbf{Seaborn} para el procesamiento de datos y la generación de 
+    gráficos.
+    
+    \item \textbf{Reproducibilidad:} Se utilizará \textbf{Git} para el control 
+    de versiones y un gestor de entornos virtuales (\textbf{venv} o 
+    \textbf{Conda}) para encapsular las dependencias.
+\end{itemize}
+
+La arquitectura del software seguirá un patrón \textbf{Modelo-Experimento-Análisis}, 
+separando la lógica de la simulación (\texttt{modelo.py}), de la orquestación de 
+escenarios (\texttt{experimento.py}) y de los scripts de análisis (\texttt{analisis.py}). 
+Los parámetros se externalizarán a un archivo \texttt{config.json}.
+
+\section{Fase 3: Evaluación y Experimentación (Objetivo 3)}
+\label{sec:validation-experimentation}
+
+\subsection{Protocolo de Verificación y Validación (V\&V)}
+Se aplicará un protocolo formal para establecer la credibilidad del modelo:
+
+\begin{itemize}
+    \item \textbf{Verificación:} Se realizarán \textit{code walkthroughs} y 
+    pruebas de componentes deterministas para asegurar que el código refleja 
+    el modelo conceptual.
+    
+    \item \textbf{Validación:} Se empleará un enfoque de múltiples facetas:
+    \begin{itemize}
+        \item \textbf{Validación de Datos Históricos:} Se compararán las 
+        distribuciones estadísticas (media, varianza) de las métricas 
+        clave del modelo (ej. días de autonomía) con los valores de 
+        referencia del informe \cite{CIEP2025} (ej. media de 8.2 días).
+        
+        \item \textbf{Validación por Juicio de Expertos (Face Validity):} 
+        Se realizarán ``pruebas de Turing'' para modelos, donde se 
+        presentarán trazas de salida del modelo a los expertos técnicos 
+        de la SEC para que evalúen su plausibilidad operativa.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Diseño de Experimentos (DoE)}
+Para probar la hipótesis central, se ejecutará un \textbf{Diseño Factorial \(2 \times 3\)}. 
+Se realizarán múltiples replicaciones para cada combinación de factores para 
+capturar la variabilidad estocástica.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Diseño Experimental para la Evaluación de la Resiliencia.}
+    \label{tab:doe}
+    \begin{tabular}{@{}ll@{}}
+        \toprule
+        \textbf{Componente} & \textbf{Especificación} \\ \midrule
+        \textbf{Factores} & 1. Capacidad de Almacenamiento (Endógeno) \\
+                          & 2. Duración de Disrupción (Exógeno) \\
+        \addlinespace
+        \textbf{Niveles Factor 1} & Nivel 1: Status Quo (431 ton) \\
+                                 & Nivel 2: Propuesta 10.4 (681 ton) \\
+        \addlinespace
+        \textbf{Niveles Factor 2} & Nivel 1: Corta (7 días) \\
+                                 & Nivel 2: Media (14 días) \\
+                                 & Nivel 3: Larga (21 días) \\
+        \addlinespace
+        \textbf{Variables de Respuesta} & 1. Nivel de Servicio (\%) \\
+        (KPIs)                          & 2. Probabilidad de Quiebre de Stock \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+Los resultados se analizarán mediante un \textbf{Análisis de Varianza (ANOVA)} 
+para determinar la significancia estadística de los efectos principales de 
+cada factor y de sus interacciones, proveyendo así la evidencia para 
+confirmar o refutar la hipótesis.

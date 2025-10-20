@@ -1,0 +1,104 @@
+\chapter{Estado del Arte}
+\label{chap:estado-del-arte}
+
+Para establecer la originalidad y pertinencia de esta investigación, es 
+necesario situarla en el contexto del conocimiento y la práctica existentes. 
+Este capítulo realiza una revisión crítica en dos frentes: primero, el estado 
+de la práctica en el uso de la simulación para la gestión de riesgos 
+logísticos a nivel global; y segundo, el estado del diagnóstico técnico 
+sobre la vulnerabilidad del suministro energético en Aysén. El objetivo es 
+demostrar que, si bien ambas áreas están desarrolladas por separado, existe 
+una brecha significativa en su intersección, la cual este proyecto se 
+propone cerrar.
+
+\section{La Simulación como Estándar en la Gestión de Riesgos Logísticos}
+\label{sec:soa-simulation-apps}
+
+La simulación de eventos discretos (SED) no es una metodología académica 
+incipiente, sino una herramienta consolidada y considerada el estándar de 
+oro para el análisis y la optimización de cadenas de suministro complejas. 
+Su aplicación es transversal, desde el sector comercial hasta el humanitario.
+
+En la industria, corporaciones con operaciones logísticas de alta intensidad 
+como Amazon, FedEx o Intel, emplean modelos de simulación de forma rutinaria 
+para la toma de decisiones estratégicas. Estos modelos se utilizan para el 
+diseño de redes de distribución, la optimización de operaciones en centros 
+de almacenamiento y, de manera crucial, para el análisis de riesgos y la 
+planificación de la continuidad del negocio (\textit{Business Continuity 
+Planning}). La simulación permite a estas organizaciones cuantificar el 
+impacto de escenarios de disrupción ---fallas en infraestructura, huelgas, 
+eventos climáticos extremos--- y evaluar la efectividad de planes de 
+contingencia antes de que ocurran, optimizando así el trade-off entre costo 
+y resiliencia \cite{Banks2010}.
+
+De manera análoga, en el ámbito de la logística humanitaria, organizaciones 
+como el Programa Mundial de Alimentos de las Naciones Unidas (WFP) utilizan 
+la simulación para planificar la distribución de ayuda ante desastres 
+naturales. Estos modelos son fundamentales para decidir sobre el 
+pre-posicionamiento de inventarios críticos (alimentos, medicinas) y para 
+optimizar las rutas de distribución en entornos caóticos y con 
+infraestructura dañada \cite{Law2015}. Estos casos de estudio demuestran que 
+la simulación es la metodología por excelencia para analizar sistemas donde 
+la incertidumbre, la complejidad y el riesgo son factores dominantes.
+
+\section{El Diagnóstico de Vulnerabilidad en Aysén: Un Análisis Estático}
+\label{sec:soa-aysen-report}
+
+El informe ``Investigación Vulnerabilidad de Suministro de GLP y 
+Combustibles Líquidos'' \cite{CIEP2025} constituye el diagnóstico técnico 
+más completo y actualizado del sistema bajo estudio. Este documento provee 
+una ``anatomía'' detallada de la cadena de suministro, pero no un análisis 
+de su ``fisiología'' bajo estrés. Sus contribuciones y limitaciones pueden 
+resumirse en:
+\begin{itemize}
+    \item \textbf{Fortaleza (Caracterización Exhaustiva):} El informe realiza 
+    un análisis descriptivo profundo de la demanda, las rutas, las 
+    capacidades de almacenamiento y los actores del sistema. Provee los 
+    datos agregados y las descripciones cualitativas que sirven como base 
+    indispensable para la parametrización de cualquier modelo cuantitativo.
+    \item \textbf{Limitación (Naturaleza Estática):} Su principal herramienta 
+    analítica es una matriz de riesgos que evalúa probabilidad e impacto de 
+    forma aislada. Este enfoque, si bien es útil para la identificación y 
+    priorización inicial, es inherentemente estático. No puede capturar la 
+    dinámica temporal del sistema, los efectos en cascada de una disrupción, 
+    ni la interacción no lineal entre los parámetros (ej. cómo una 
+    disrupción de 15 días impacta de forma diferente si ocurre en temporada 
+    de alta o baja demanda).
+\end{itemize}
+En esencia, el informe responde a la pregunta de qué puede fallar, pero 
+no provee una herramienta para responder a las preguntas de cuánto, 
+cuándo y con qué probabilidad el sistema completo fallará.
+
+\section{Identificación del Vacío de Conocimiento y Contribución Original}
+\label{sec:soa-gap}
+
+La revisión del estado del arte revela una situación paradójica: por un 
+lado, la práctica industrial y académica ha establecido la simulación como 
+la herramienta idónea para analizar la resiliencia de cadenas de suministro; 
+por otro, el diagnóstico más completo sobre la cadena de suministro de GLP 
+en Aysén carece de este tipo de análisis dinámico.
+
+El vacío de conocimiento que este proyecto aborda, por lo tanto, no es de 
+naturaleza teórica, sino de aplicación metodológica a un problema 
+específico, validado y de alta criticidad. La contribución original de 
+esta tesis radica en desarrollar el artefacto computacional que cierra 
+esa brecha.
+
+De manera explícita, este trabajo ejecuta la iniciativa de gestión 11.11: 
+``Simulación de emergencias energéticas'', propuesta en el propio informe 
+de referencia \cite{CIEP2025}. El informe califica la simulación como una 
+``buena práctica'' para la región y establece la meta de ``Realizar cada 2-3 
+años un ejercicio de simulación''. Mientras el informe propone esta 
+necesidad, y la autoridad regional la valida al identificar la urgencia de 
+un ``mecanismo que permita hacer un monitoreo permanente y en tiempo real'' 
+(Laibe, T., comunicación personal, 11 de junio, 2025), este proyecto de 
+tesis diseña, implementa y valida el artefacto que permite llevar a cabo 
+dicha tarea.
+
+Adicionalmente, el proyecto aborda una brecha de capacidad institucional 
+identificada por la propia autoridad regional. La falta de personal técnico 
+especializado para el monitoreo continuo de los hidrocarburos amplifica la 
+necesidad de una herramienta como la propuesta, que no solo permite análisis 
+más sofisticados, sino que también actúa como un multiplicador de 
+capacidades, encapsulando conocimiento experto para potenciar la toma de 
+decisiones de los equipos de gestión existentes.

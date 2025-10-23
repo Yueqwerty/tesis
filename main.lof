@@ -10,3 +10,10 @@
 \addvspace {10pt}
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Modelo Conceptual del Sistema de Distribución de GLP.}}{19}{figure.7.1}%
 \addvspace {10pt}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Distribución del nivel de servicio para las seis configuraciones experimentales. Los boxplots muestran la mediana, cuartiles y valores extremos basados en 30 réplicas por configuración.}}{26}{figure.8.1}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Mapa de calor del nivel de servicio para todas las combinaciones de factores experimentales. Los valores más oscuros indican menor resiliencia del sistema.}}{27}{figure.8.2}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Impacto de las disrupciones en el sistema de suministro. Panel (A): frecuencia de quiebres de stock por configuración. Panel (B): comparación entre tiempo con ruta bloqueada y tiempo con quiebre de stock, mostrando la capacidad del sistema para absorber disrupciones.}}{28}{figure.8.3}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Comparación del efecto de factores endógenos y exógenos sobre el nivel de servicio. Panel (A): efecto de la capacidad de almacenamiento. Panel (B): efecto de la duración de disrupciones. Las barras de error representan una desviación estándar.}}{30}{figure.8.4}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Prueba de hipótesis: comparación de sensibilidades. El ratio de 2,07× confirma que la resiliencia del sistema es significativamente más sensible a factores exógenos (duración de disrupciones) que a factores endógenos (capacidad de almacenamiento).}}{31}{figure.8.5}%
+\addvspace {10pt}
+\addvspace {10pt}

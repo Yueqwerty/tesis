@@ -1,12 +1,12 @@
 \chapter{Diseño Metodológico}
 \label{chap:metodologia}
 
-Este capítulo detalla el plan de trabajo y el conjunto de métodos formales que 
-se emplearán para alcanzar los objetivos de la investigación. El enfoque se 
-enmarca en las disciplinas de la Ciencia Computacional y la Ingeniería de 
-Sistemas, adoptando un proceso sistemático para el diseño, la implementación 
-y la evaluación de un artefacto computacional. El propósito es establecer un 
-marco de trabajo riguroso, transparente y, fundamentalmente, replicable.
+Este capítulo detalla el plan de trabajo y los métodos que se emplearán para
+alcanzar los objetivos de la investigación. El enfoque se enmarca en las
+disciplinas de la Ciencia Computacional y la Ingeniería de Sistemas, adoptando
+un proceso sistemático para el diseño, implementación y evaluación del modelo
+de simulación. El propósito es establecer un marco de trabajo riguroso,
+transparente y replicable.
 
 \section{Fase 1: Modelado Conceptual del Sistema (Objetivo 1)}
 \label{sec:conceptual-modeling}
@@ -39,16 +39,15 @@ de distribución de última milla y las dinámicas de inventario en otros puntos
 de la región quedan fuera del alcance de este estudio y se plantean como 
 líneas de trabajo futuro.
 
-\section{Enfoque de la Investigación: Simulación como Experimentación Computacional}
+\section{Enfoque de la Investigación}
 \label{sec:research-approach}
 
-La presente investigación adopta un enfoque cuantitativo basado en la 
-simulación como método de experimentación computacional. Dada la naturaleza 
-estocástica y dinámicamente compleja de la cadena de suministro de GLP, los 
-modelos puramente analíticos son insuficientes. La simulación permite la 
-creación de un laboratorio virtual donde se pueden probar hipótesis y evaluar 
-políticas bajo condiciones controladas, algo inviable en el sistema real. El 
-desarrollo se estructura en las tres fases ilustradas en la 
+Esta investigación adopta un enfoque cuantitativo basado en simulación como
+método de experimentación computacional. Dada la naturaleza estocástica y
+compleja de la cadena de suministro de GLP, los modelos puramente analíticos
+son insuficientes. La simulación permite probar hipótesis y evaluar políticas
+bajo condiciones controladas, algo inviable en el sistema real. El desarrollo
+se estructura en las tres fases ilustradas en la
 Figura~\ref{fig:conceptual-diagram-detailed}.
 
 \begin{figure}[htbp]
@@ -96,27 +95,84 @@ Figura~\ref{fig:conceptual-diagram-detailed}.
 \end{figure}
 
 \subsection{Parametrización y Modelado Estocástico}
-Los parámetros deterministas (ej. capacidad de almacenamiento por empresa) 
-se tomarán directamente del informe \cite{CIEP2025}. Las variables 
-estocásticas se modelarán mediante distribuciones de probabilidad:
+
+Los parámetros del modelo se dividen en dos categorías: deterministas,
+tomados directamente del informe \cite{CIEP2025}, y estocásticos, modelados
+mediante distribuciones de probabilidad calibradas con datos históricos.
+
+\subsubsection{Parámetros Deterministas}
 
 \begin{itemize}
-    \item \textbf{Tiempo entre Disrupciones:} Se modelará como una variable 
-    aleatoria de una distribución \textbf{Exponencial}(\(\lambda\)), donde 
-    la tasa \(\lambda\) se calibrará según la frecuencia de Nivel 4 (1/90 
-    días).
-    
-    \item \textbf{Duración de Disrupciones:} Se modelará con una distribución 
-    \textbf{Triangular}(\(a, b, c\)), donde los parámetros (mínimo, más 
-    probable, máximo) se basarán en los datos históricos (ej. 21 días para 
-    conflictos sociales).
-    
-    \item \textbf{Demanda Diaria \(D(t)\):} Se modelará como un proceso 
-    estocástico con tendencia y estacionalidad: 
-    \[ D(t) = \text{Base} \cdot (1+g)^t + S(t) + \epsilon \]
-    donde \(g\) es la tasa de crecimiento, \(S(t)\) es el componente 
-    estacional y \(\epsilon\) es un ruido aleatorio.
+    \item \textbf{Capacidad de Almacenamiento:}
+    \begin{itemize}
+        \item Status Quo: \SI{431}{TM} (Abastible: 150, Lipigas: 240, Gasco: 41)
+        \item Propuesta 10.4: \SI{681}{TM} (incremento de \SI{250}{TM})
+    \end{itemize}
+
+    \item \textbf{Política de Inventario $(Q, R)$:}
+    \begin{itemize}
+        \item Punto de Reorden ($R$): 50\% de la capacidad
+        \item Cantidad de Pedido ($Q$): 50\% de la capacidad
+        \item Inventario Inicial: 60\% de la capacidad (arranque realista)
+    \end{itemize}
+
+    \item \textbf{Lead Time Nominal:} \SI{6}{días} (tiempo promedio de entrega
+    desde Cabo Negro o Neuquén hasta Coyhaique)
+
+    \item \textbf{Horizonte de Simulación:} \SI{365}{días} (1 año)
 \end{itemize}
+
+\subsubsection{Variables Estocásticas y Distribuciones}
+
+Las variables aleatorias del modelo se parametrizan de la siguiente forma:
+
+\begin{enumerate}
+    \item \textbf{Frecuencia de Disrupciones:} Se modela como un proceso de
+    Poisson con tasa $\lambda = 4$ eventos/año. El tiempo entre disrupciones
+    consecutivas sigue una distribución \textbf{Exponencial}:
+    \[ T_{\text{entre}} \sim \text{Exp}\left(\frac{\lambda}{365}\right) = \text{Exp}(0.0110) \]
+    donde $\lambda$ corresponde a la frecuencia de Nivel 4 identificada en la
+    matriz de riesgos~\cite{CIEP2025}.
+
+    \item \textbf{Duración de Disrupciones:} Se emplea una distribución
+    \textbf{Triangular}($a$, $b$, $c$) calibrada con datos históricos:
+    \[ D_{\text{disrup}} \sim \text{Triangular}(a, b, c) \]
+    Los parámetros varían según el escenario experimental:
+    \begin{itemize}
+        \item Corta: $a = 3$, $b = 3.5$, $c = 7$ días
+        \item Media: $a = 3$, $b = 7$, $c = 14$ días
+        \item Larga: $a = 3$, $b = 10.5$, $c = 21$ días (conflicto Argentina 2021)
+    \end{itemize}
+    La distribución triangular permite modelar la incertidumbre con parámetros
+    interpretables: mínimo histórico, valor más probable, y máximo observado.
+
+    \item \textbf{Demanda Diaria:} Se modela como un proceso estocástico con
+    componente estacional y ruido:
+    \[ D(t) = D_{\text{base}} \cdot \left(1 + 0.25 \sin\left(\frac{2\pi(t - 172)}{365}\right)\right) \cdot \epsilon(t) \]
+    donde:
+    \begin{itemize}
+        \item $D_{\text{base}} = \SI{52.5}{TM/día}$ (demanda promedio del mes
+        de mayor consumo)
+        \item El término sinusoidal modela la estacionalidad invernal
+        (pico en julio, día $\approx 200$)
+        \item $\epsilon(t) \sim \mathcal{N}(1.0, 0.15)$ es el ruido estocástico
+        diario ($\pm 15\%$ de variabilidad)
+    \end{itemize}
+    La demanda base de \SI{52.5}{TM/día} se calibró para representar el escenario
+    de estrés del sistema (mes de mayor consumo), lo que genera una autonomía
+    conservadora de $\approx \SI{5}{días}$ en el escenario Status Quo, frente a
+    los \SI{8.2}{días} calculados con demanda promedio anual.
+\end{enumerate}
+
+\subsubsection{Generación de Números Aleatorios}
+
+Para garantizar la reproducibilidad de los experimentos, se utiliza el
+generador de números pseudoaleatorios Mersenne Twister (MT19937) de NumPy,
+con semillas controladas. Cada réplica $r$ de la configuración $c$ emplea
+una semilla única:
+\[ s_{c,r} = s_{\text{base}} + (c - 1) \times 1000 + r \]
+donde $s_{\text{base}} = 42$. Esta estrategia asegura independencia
+estadística entre réplicas y reproducibilidad exacta de los resultados.
 
 \section{Fase 2: Implementación del Prototipo (Objetivo 2)}
 \label{sec:implementation}

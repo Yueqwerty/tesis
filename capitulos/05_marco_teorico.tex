@@ -1,14 +1,12 @@
 \chapter{Marco Teórico}
 \label{chap:marco-teorico}
 
-El diseño de un artefacto computacional para el análisis de un sistema 
-sociotécnico complejo requiere un fundamento dual. Por un lado, es preciso 
-establecer el marco conceptual que gobierna la dinámica del sistema real 
----el dominio del problema---. Por otro, se debe formalizar la metodología 
-de análisis seleccionada para estudiar dicho sistema ---el dominio de la 
-solución---. Este capítulo establece ambos fundamentos, proporcionando el 
-andamiaje teórico y técnico para el diseño del prototipo de simulación y la 
-posterior interpretación de sus resultados.
+El diseño de un modelo de simulación para analizar un sistema sociotécnico
+complejo requiere un fundamento dual. Primero, establecer el marco conceptual
+que gobierna la dinámica del sistema real. Segundo, formalizar la metodología
+de análisis para estudiar dicho sistema. Este capítulo establece ambos
+fundamentos, proporcionando las bases teóricas y técnicas para el diseño del
+modelo de simulación y la interpretación de sus resultados.
 
 \section{Teorías del Dominio del Problema: La Cadena de Suministro}
 \label{sec:scm-theory}
@@ -127,15 +125,14 @@ central del sistema: una alta variabilidad en el tiempo de la ruta
 (\(\sigma_{LT}\) elevado) exige un alto stock de seguridad para mantener la 
 continuidad del servicio.
 
-\subsection{El Paradigma de la Resiliencia Logística}
-El paradigma tradicional de la eficiencia ha sido complementado por el 
-enfoque de la resiliencia, definida como la capacidad de una cadena de 
-suministro para absorber, adaptarse y recuperarse de disrupciones 
-\cite{Christopher2004}. Este concepto introduce un \textit{trade-off} 
-fundamental entre la eficiencia (minimización de costos) y la robustez 
-(inversión en redundancia). El sistema de Aysén, como se ilustra en la 
-Figura~\ref{fig:resilience-tradeoff}, se encuentra posicionado en una zona de 
-aparente eficiencia pero de alta vulnerabilidad.
+\subsection{Resiliencia en Cadenas de Suministro}
+El enfoque tradicional de eficiencia ha sido complementado por el concepto de
+resiliencia, definida como la capacidad de una cadena de suministro para
+absorber, adaptarse y recuperarse de disrupciones \cite{Christopher2004}. Este
+concepto introduce un compromiso fundamental entre eficiencia (minimización de
+costos) y robustez (inversión en redundancia). El sistema de Aysén, como
+muestra la Figura~\ref{fig:resilience-tradeoff}, se encuentra en una zona de
+aparente eficiencia pero alta vulnerabilidad.
 
 \begin{figure}[htbp]
     \centering
@@ -207,9 +204,9 @@ dinámico como el de Aysén, es la única metodología viable para evaluar el
 impacto de diferentes políticas bajo incertidumbre.
 
 \subsection{Simulación de Eventos Discretos (SED)}
-La SED es un paradigma de modelado que representa un sistema como una 
-secuencia cronológica de eventos \cite{Banks2010}. Los componentes 
-fundamentales de nuestro modelo SED son:
+La SED es un método de modelado que representa un sistema como una secuencia
+cronológica de eventos \cite{Banks2010}. Los componentes fundamentales de
+nuestro modelo SED son:
 \begin{description}
     \item[Entidades] \texttt{CamiónSuministro} (con atributos: capacidad, origen).
     \item[Recursos] \texttt{PlantaAlmacenamiento} (con atributos: capacidad\_max, 

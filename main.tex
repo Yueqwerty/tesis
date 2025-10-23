@@ -18,6 +18,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath, amssymb}
 \usepackage{booktabs}
+\usepackage{multirow}
 \usepackage{siunitx}
 \usepackage{numprint}
 \npthousandsep{.}
@@ -30,7 +31,7 @@
   detect-all = true,
   parse-numbers = false
 }
-\setheadfoot{16pt}{12pt}
+
 % --- Paquetes para Diagramas (TikZ) ---
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, chains, positioning, shapes.geometric}
@@ -69,6 +70,7 @@
 \settrimmedsize{\stockheight}{\stockwidth}{*}
 \setlrmarginsandblock{3cm}{2.5cm}{*}
 \setulmarginsandblock{2.5cm}{2.5cm}{*}
+\setheadfoot{16pt}{12pt}
 \checkandfixthelayout
 \makepagestyle{main}
 \makeevenhead{main}{\thepage}{}{\leftmark}
@@ -104,6 +106,8 @@
 \include{capitulos/05_marco_teorico}
 \include{capitulos/06_estado_del_arte}
 \include{capitulos/07_metodologia}
+\include{capitulos/09_resultados}
+\include{capitulos/10_discusion}
 \include{capitulos/08_contribuciones_plan}
 
 \backmatter

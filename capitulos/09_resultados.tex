@@ -94,13 +94,13 @@ configuración.
         \textbf{Capacidad} & \textbf{Duración} & \textbf{Nivel Servicio} & \textbf{Prob. Quiebre} & \textbf{Días Quiebre} \\
         & \textbf{Máxima} & \textbf{(\%)} & \textbf{(\%)} & \textbf{(promedio)} \\
         \midrule
-        Status Quo (431 TM) & Corta (7 días)   & 99,52 & 0,61 & 2,23 \\
-        Status Quo (431 TM) & Media (14 días)  & 99,24 & 0,99 & 3,63 \\
-        Status Quo (431 TM) & Larga (21 días)  & 97,70 & 2,28 & 8,33 \\
+        Status Quo (431 TM) & Corta (7 días)   & 100,00 & 0,01 & 0,03 \\
+        Status Quo (431 TM) & Media (14 días)  & 99,55 & 0,55 & 2,00 \\
+        Status Quo (431 TM) & Larga (21 días)  & 98,10 & 2,12 & 7,73 \\
         \addlinespace
-        Propuesta (681 TM)  & Corta (7 días)   & 99,96 & 0,05 & 0,17 \\
-        Propuesta (681 TM)  & Media (14 días)  & 99,60 & 0,40 & 1,47 \\
-        Propuesta (681 TM)  & Larga (21 días)  & 98,95 & 1,06 & 3,87 \\
+        Propuesta (681 TM)  & Corta (7 días)   & 100,00 & 0,00 & 0,00 \\
+        Propuesta (681 TM)  & Media (14 días)  & 99,96 & 0,04 & 0,13 \\
+        Propuesta (681 TM)  & Larga (21 días)  & 99,43 & 0,62 & 2,27 \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -206,9 +206,9 @@ ilustra de manera visual la magnitud de ambos efectos.
 
 \textbf{Resultados:}
 \begin{itemize}
-    \item Nivel de Servicio Promedio (Propuesta): 99,50\%
-    \item Nivel de Servicio Promedio (Status Quo): 98,82\%
-    \item \textbf{Efecto Endógeno: +0,69 puntos porcentuales}
+    \item Nivel de Servicio Promedio (Propuesta): 99,80\%
+    \item Nivel de Servicio Promedio (Status Quo): 99,22\%
+    \item \textbf{Efecto Endógeno: +0,58 puntos porcentuales}
 \end{itemize}
 
 \subsection{Efecto del Factor Exógeno (Duración de Disrupciones)}
@@ -223,9 +223,9 @@ días), agregando sobre ambos niveles del factor endógeno.
 
 \textbf{Resultados:}
 \begin{itemize}
-    \item Nivel de Servicio Promedio (Corta): 99,74\%
-    \item Nivel de Servicio Promedio (Larga): 98,32\%
-    \item \textbf{Efecto Exógeno: +1,42 puntos porcentuales}
+    \item Nivel de Servicio Promedio (Corta): 100,00\%
+    \item Nivel de Servicio Promedio (Larga): 98,77\%
+    \item \textbf{Efecto Exógeno: +1,23 puntos porcentuales}
 \end{itemize}
 
 \subsection{Ratio de Sensibilidad}
@@ -234,11 +234,11 @@ La comparación directa de los efectos permite cuantificar la sensibilidad
 relativa de la resiliencia del sistema a cada tipo de factor.
 
 \begin{equation}
-\text{Ratio de Sensibilidad} = \frac{\text{Efecto Exógeno}}{\text{Efecto Endógeno}} = \frac{1,42\%}{0,69\%} = 2,07
+\text{Ratio de Sensibilidad} = \frac{\text{Efecto Exógeno}}{\text{Efecto Endógeno}} = \frac{1,23\%}{0,58\%} = 2,12
 \end{equation}
 
 \textbf{Interpretación:} La resiliencia del sistema de suministro de GLP de
-Aysén es \textbf{2,07 veces más sensible} a la duración de las disrupciones
+Aysén es \textbf{2,12 veces más sensible} a la duración de las disrupciones
 (factor exógeno) que a la capacidad de almacenamiento (factor endógeno).
 
 \begin{figure}[htbp]
@@ -264,9 +264,9 @@ significativamente mayor a parámetros exógenos que a parámetros endógenos.
 
 La evidencia experimental demuestra que incrementar la capacidad de
 almacenamiento en un 58\% (de 431 TM a 681 TM) mejora el nivel de servicio en
-0,69 puntos porcentuales. Sin embargo, incrementar la duración máxima de
-disrupciones de 7 a 21 días degrada el nivel de servicio en 1,42 puntos
-porcentuales. El ratio 2,07 indica que el sistema es aproximadamente el doble
+0,58 puntos porcentuales. Sin embargo, incrementar la duración máxima de
+disrupciones de 7 a 21 días degrada el nivel de servicio en 1,23 puntos
+porcentuales. El ratio 2,12 indica que el sistema es aproximadamente el doble
 de sensible a factores que no están bajo control directo de los actores
 regionales (duración de disrupciones) que a factores que sí lo están
 (inversión en capacidad).

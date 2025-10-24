@@ -45,38 +45,50 @@
 \contentsline {section}{\numberline {7.4}Fase 3: Evaluación y Experimentación (Objetivo 3)}{22}{section.7.4}%
 \contentsline {subsection}{Protocolo de Verificación y Validación (V\&V)}{22}{section*.22}%
 \contentsline {subsection}{Diseño de Experimentos (DoE)}{22}{section*.23}%
+\contentsline {subsection}{Análisis Estadístico}{23}{section*.24}%
 \contentsline {chapter}{\chapternumberline {8}Resultados}{24}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Validación del Modelo de Simulación}{24}{section.8.1}%
-\contentsline {subsection}{Parámetros de Entrada y Calibración}{24}{section*.24}%
-\contentsline {subsection}{Métricas de Validación}{24}{section*.25}%
-\contentsline {section}{\numberline {8.2}Análisis Descriptivo del Rendimiento del Sistema}{25}{section.8.2}%
-\contentsline {subsection}{Nivel de Servicio por Configuración}{25}{section*.26}%
-\contentsline {subsection}{Análisis de Disrupciones}{27}{section*.27}%
-\contentsline {section}{\numberline {8.3}Prueba de Hipótesis: Análisis de Sensibilidad}{28}{section.8.3}%
-\contentsline {subsection}{Efecto del Factor Endógeno (Capacidad)}{29}{section*.28}%
-\contentsline {subsection}{Efecto del Factor Exógeno (Duración de Disrupciones)}{29}{section*.29}%
-\contentsline {subsection}{Ratio de Sensibilidad}{29}{section*.30}%
-\contentsline {subsection}{Conclusión de la Prueba de Hipótesis}{30}{section*.31}%
-\contentsline {section}{\numberline {8.4}Resumen del Capítulo}{31}{section.8.4}%
-\contentsline {chapter}{\chapternumberline {9}Discusión}{33}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Interpretación Teórica de los Hallazgos}{33}{section.9.1}%
-\contentsline {subsection}{La Dominancia de los Factores Exógenos}{33}{section*.32}%
-\contentsline {subsection}{El Efecto No Lineal de las Disrupciones Largas}{34}{section*.33}%
-\contentsline {section}{\numberline {9.2}Implicaciones para la Política Pública}{34}{section.9.2}%
-\contentsline {subsection}{Evaluación Costo-Beneficio de Inversiones}{34}{section*.34}%
-\contentsline {subsection}{Estrategias de Mitigación Específicas}{35}{section*.35}%
-\contentsline {subsection}{El Rol de la Coordinación entre Actores}{36}{section*.36}%
-\contentsline {section}{\numberline {9.3}Limitaciones del Estudio}{36}{section.9.3}%
-\contentsline {subsection}{Simplificaciones del Modelo}{36}{section*.37}%
-\contentsline {subsection}{Limitaciones de los Datos de Entrada}{37}{section*.38}%
-\contentsline {subsection}{Alcance Temporal y Estocástico}{37}{section*.39}%
-\contentsline {section}{\numberline {9.4}Oportunidades para Investigación Futura}{38}{section.9.4}%
-\contentsline {subsection}{Extensiones del Modelo de Simulación}{38}{section*.40}%
-\contentsline {subsection}{Validación con Datos Operativos}{38}{section*.41}%
-\contentsline {subsection}{Integración con Sistema de Gestión en Tiempo Real}{39}{section*.42}%
-\contentsline {subsection}{Aplicación a Otros Sistemas Energéticos}{39}{section*.43}%
-\contentsline {section}{\numberline {9.5}Resumen del Capítulo}{39}{section.9.5}%
-\contentsline {chapter}{\chapternumberline {10}Conclusiones y Proyección del Trabajo}{41}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Síntesis del Problema y la Solución Propuesta}{41}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Contribuciones Esperadas}{42}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Limitaciones y Líneas de Trabajo Futuro}{42}{section.10.3}%
+\contentsline {subsection}{Parametrización del Modelo}{24}{section*.25}%
+\contentsline {subsection}{Validación de Reproducibilidad}{24}{section*.26}%
+\contentsline {subsection}{Validación contra Datos Reales}{25}{section*.27}%
+\contentsline {section}{\numberline {8.2}Análisis Descriptivo del Rendimiento}{25}{section.8.2}%
+\contentsline {subsection}{Nivel de Servicio por Configuración}{25}{section*.28}%
+\contentsline {subsection}{Análisis de Distribuciones de Probabilidad}{27}{section*.29}%
+\contentsline {subsection}{Validación de Supuestos de Normalidad}{27}{section*.30}%
+\contentsline {section}{\numberline {8.3}Análisis Estadístico Inferencial}{28}{section.8.3}%
+\contentsline {subsection}{Análisis de Varianza (ANOVA)}{28}{section*.31}%
+\contentsline {subsection}{Tests Post-hoc: Comparaciones Múltiples}{29}{section*.32}%
+\contentsline {subsection}{Efectos Principales de los Factores}{29}{section*.33}%
+\contentsline {subsection}{Interacciones entre Factores}{30}{section*.34}%
+\contentsline {section}{\numberline {8.4}Prueba de Hipótesis: Análisis de Sensibilidad}{30}{section.8.4}%
+\contentsline {subsection}{Cuantificación de Sensibilidades}{31}{section*.35}%
+\contentsline {subsection}{Ratio de Sensibilidad}{31}{section*.36}%
+\contentsline {subsection}{Comparación con Boxplots}{31}{section*.37}%
+\contentsline {subsection}{Conclusión de la Prueba de Hipótesis}{31}{section*.38}%
+\contentsline {section}{\numberline {8.5}Resumen del Capítulo}{33}{section.8.5}%
+\contentsline {chapter}{\chapternumberline {9}Discusión}{34}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Interpretación Teórica de los Hallazgos}{34}{section.9.1}%
+\contentsline {subsection}{La Dominancia del Factor Endógeno: Un Resultado Contraintuitivo}{34}{section*.39}%
+\contentsline {subsection}{El Efecto Umbral de la Capacidad}{35}{section*.40}%
+\contentsline {subsection}{Reinterpretación de la Sensibilidad a Disrupciones}{35}{section*.41}%
+\contentsline {section}{\numberline {9.2}Implicaciones para la Política Pública}{36}{section.9.2}%
+\contentsline {subsection}{Prioridad 1: Expansión Urgente de Capacidad}{36}{section*.42}%
+\contentsline {subsection}{Prioridad 2: Mitigación Complementaria de Disrupciones}{36}{section*.43}%
+\contentsline {subsection}{Análisis Costo-Beneficio Cuantitativo}{37}{section*.44}%
+\contentsline {subsection}{El Rol de la Coordinación entre Actores}{38}{section*.45}%
+\contentsline {section}{\numberline {9.3}Limitaciones del Estudio}{39}{section.9.3}%
+\contentsline {subsection}{Calibración de la Demanda}{39}{section*.46}%
+\contentsline {subsection}{Simplificaciones del Modelo}{39}{section*.47}%
+\contentsline {subsection}{Alcance Temporal}{40}{section*.48}%
+\contentsline {subsection}{Limitaciones de los Datos de Entrada}{40}{section*.49}%
+\contentsline {section}{\numberline {9.4}Oportunidades para Investigación Futura}{40}{section.9.4}%
+\contentsline {subsection}{Extensiones del Modelo}{40}{section*.50}%
+\contentsline {subsection}{Validación con Datos Operativos}{41}{section*.51}%
+\contentsline {subsection}{Integración con Sistema de Gestión en Tiempo Real}{41}{section*.52}%
+\contentsline {subsection}{Aplicación a Otros Sistemas Energéticos}{41}{section*.53}%
+\contentsline {section}{\numberline {9.5}Resumen del Capítulo}{42}{section.9.5}%
+\contentsline {chapter}{\chapternumberline {10}Conclusiones y Proyección del Trabajo}{43}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Síntesis del Problema y la Solución Propuesta}{43}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Contribuciones Esperadas}{44}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Limitaciones y Líneas de Trabajo Futuro}{44}{section.10.3}%
+\contentsline {chapter}{Referencias}{46}{section*.55}%

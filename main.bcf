@@ -3087,9 +3087,6 @@
     <bcf:citekey order="15" intorder="1">CIEP2025</bcf:citekey>
     <bcf:citekey order="16" intorder="1">CIEP2025</bcf:citekey>
     <bcf:citekey order="17" intorder="1">CIEP2025</bcf:citekey>
-    <bcf:citekey order="18" intorder="1">CIEP2025</bcf:citekey>
-    <bcf:citekey order="19" intorder="1">Christopher2004</bcf:citekey>
-    <bcf:citekey order="20" intorder="1">CIEP2025</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

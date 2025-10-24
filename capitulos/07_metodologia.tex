@@ -53,42 +53,47 @@ Figura~\ref{fig:conceptual-diagram-detailed}.
 \begin{figure}[htbp]
     \centering
     \begin{tikzpicture}[
-        node distance=4cm,
-        box/.style = {rectangle, draw, thick, rounded corners=2pt, 
-                     minimum height=1.5cm, text width=2.5cm, 
-                     text centered, font=\small, align=center},
-        arrow/.style = {->, >=stealth, thick}
+        font=\small,
+        node distance=4.5cm,
+        box/.style = {rectangle, draw=black!80, line width=1.2pt, rounded corners=3pt,
+                     minimum height=1.8cm, text width=2.8cm,
+                     text centered, font=\small\bfseries, align=center,
+                     drop shadow={opacity=0.15, shadow xshift=0.5mm, shadow yshift=-0.5mm}},
+        arrow/.style = {->, >=Stealth, line width=1.8pt},
+        dashed arrow/.style = {->, >=Stealth, dashed, line width=1pt, opacity=0.7}
     ]
-        
-        % Componentes principales en línea
-        \node[box, fill=blue!15] (A) at (0,0) {Generación de Pedidos};
-        \node[box, fill=green!15] (B) at (4.5,0) {Transporte y Logística};
-        \node[box, fill=purple!15] (C) at (9,0) {Almacenamiento y Distribución};
-        \node[box, fill=orange!15] (D) at (13.5,0) {Consumo Final};
-        
-        % Flujo principal
-        \draw[arrow, blue] (A) -- (B);
-        \draw[arrow, blue] (B) -- (C);
-        \draw[arrow, blue] (C) -- (D);
-        
-        % Elemento disruptivo
-        \node[box, fill=red!15] (E) at (2.25,-3) {Sistema de Disrupciones};
-        \draw[arrow, red, thick] (E) -- (A) node[midway, left, font=\footnotesize, text=red] {Interrumpe};
-        \draw[arrow, red, thick] (E) -- (B) node[midway, below, font=\footnotesize, text=red] {Retrasa};
-        
-        % Parámetros
-        \node[box, fill=gray!15] (F) at (6.75,-3) {Base de Parámetros};
-        \draw[arrow, dashed, gray] (F) -- (A);
-        \draw[arrow, dashed, gray] (F) -- (C);
-        \draw[arrow, dashed, gray] (F) -- (D);
-        
-        % Leyenda simple
-        \node[below=1.2cm of F, font=\footnotesize] {
-            \textcolor{blue}{\rule{1cm}{1.5pt}} Flujo Principal \quad
-            \textcolor{red}{\rule{1cm}{1.5pt}} Disrupciones \quad
-            \textcolor{gray}{\rule[0.5pt]{1cm}{1pt}} Parámetros
+
+        % Componentes principales del flujo
+        \node[box, fill=blue!20] (A) at (0,0) {Generación\\de Pedidos};
+        \node[box, fill=green!25] (B) at (4.8,0) {Transporte\\y Logística};
+        \node[box, fill=purple!20] (C) at (9.6,0) {Almacenamiento\\y Distribución};
+        \node[box, fill=orange!20] (D) at (14.4,0) {Consumo\\Final};
+
+        % Flujo principal con flechas mejoradas
+        \draw[arrow, blue!70] (A) -- (B);
+        \draw[arrow, blue!70] (B) -- (C);
+        \draw[arrow, blue!70] (C) -- (D);
+
+        % Sistema de disrupciones (elemento crítico)
+        \node[box, fill=red!20, minimum height=2.2cm] (E) at (2.4,-3.5) {Sistema de\\Disrupciones\\Exógenas};
+        \draw[arrow, red!70] (E) -- (A.south) node[midway, left, font=\footnotesize, text=red!70] {Interrumpe};
+        \draw[arrow, red!70] (E) -- (B.south) node[midway, right, font=\footnotesize, text=red!70] {Retrasa};
+
+        % Base de parámetros
+        \node[box, fill=gray!20, minimum height=2.2cm] (F) at (7.2,-3.5) {Base de\\Parámetros\\del Sistema};
+        \draw[dashed arrow, gray!70] (F) -- (A.south);
+        \draw[dashed arrow, gray!70] (F) -- (C.south);
+        \draw[dashed arrow, gray!70] (F) -- (D.south);
+
+        % Leyenda mejorada con recuadro
+        \node[below=1.8cm of F, font=\footnotesize, align=center] (leyenda) {
+            \begin{tabular}{@{}c@{\hspace{0.5cm}}c@{\hspace{0.5cm}}c@{}}
+                \textcolor{blue!70}{\rule{1.2cm}{2pt}} Flujo Principal &
+                \textcolor{red!70}{\rule{1.2cm}{2pt}} Disrupciones &
+                \textcolor{gray!70}{\rule[0.5pt]{1.2cm}{1.5pt}} Parámetros
+            \end{tabular}
         };
-        
+
     \end{tikzpicture}
     \caption{Modelo Conceptual del Sistema de Distribución de GLP.}
     \label{fig:conceptual-diagram-detailed}
@@ -225,33 +230,70 @@ Se aplicará un protocolo formal para establecer la credibilidad del modelo:
 \end{itemize}
 
 \subsection{Diseño de Experimentos (DoE)}
-Para probar la hipótesis central, se ejecutará un \textbf{Diseño Factorial \(2 \times 3\)}. 
-Se realizarán múltiples replicaciones para cada combinación de factores para 
-capturar la variabilidad estocástica.
+
+Para probar la hipótesis central, se ejecutará un \textbf{Experimento Monte Carlo}
+con diseño factorial $2 \times 3$. Se realizarán 1,000 réplicas independientes
+para cada combinación de factores, totalizando 6,000 simulaciones. Este tamaño
+de muestra garantiza:
+
+\begin{itemize}
+    \item Estimación precisa de las medias poblacionales (error estándar < 0,2\%),
+    \item Intervalos de confianza al 95\% con amplitud reducida,
+    \item Potencia estadística > 0,95 para detectar diferencias de 1\% entre medias,
+    \item Validación robusta de supuestos de normalidad mediante tests formales.
+\end{itemize}
 
 \begin{table}[htbp]
     \centering
-    \caption{Diseño Experimental para la Evaluación de la Resiliencia.}
+    \caption{Diseño Experimental Monte Carlo para Evaluación de Resiliencia.}
     \label{tab:doe}
     \begin{tabular}{@{}ll@{}}
         \toprule
         \textbf{Componente} & \textbf{Especificación} \\ \midrule
+        \textbf{Método} & Experimento Monte Carlo \\
+        \addlinespace
         \textbf{Factores} & 1. Capacidad de Almacenamiento (Endógeno) \\
                           & 2. Duración de Disrupción (Exógeno) \\
         \addlinespace
-        \textbf{Niveles Factor 1} & Nivel 1: Status Quo (431 ton) \\
-                                 & Nivel 2: Propuesta 10.4 (681 ton) \\
+        \textbf{Niveles Factor 1} & Nivel 1: Status Quo (431 TM) \\
+                                 & Nivel 2: Propuesta 10.4 (681 TM) \\
         \addlinespace
-        \textbf{Niveles Factor 2} & Nivel 1: Corta (7 días) \\
-                                 & Nivel 2: Media (14 días) \\
-                                 & Nivel 3: Larga (21 días) \\
+        \textbf{Niveles Factor 2} & Nivel 1: Corta (7 días máximo) \\
+                                 & Nivel 2: Media (14 días máximo) \\
+                                 & Nivel 3: Larga (21 días máximo) \\
+        \addlinespace
+        \textbf{Réplicas} & 1,000 por configuración \\
+        \textbf{Total simulaciones} & 6,000 \\
         \addlinespace
         \textbf{Variables de Respuesta} & 1. Nivel de Servicio (\%) \\
-        (KPIs)                          & 2. Probabilidad de Quiebre de Stock \\ \bottomrule
+        (KPIs)                          & 2. Probabilidad de Quiebre de Stock \\
+                                       & 3. Días con Quiebre \\
+                                       & 4. Inventario Promedio \\ \bottomrule
     \end{tabular}
 \end{table}
 
-Los resultados se analizarán mediante un \textbf{Análisis de Varianza (ANOVA)} 
-para determinar la significancia estadística de los efectos principales de 
-cada factor y de sus interacciones, proveyendo así la evidencia para 
-confirmar o refutar la hipótesis.
+\subsection{Análisis Estadístico}
+
+Los resultados se analizarán mediante un protocolo de análisis estadístico
+completo que incluye:
+
+\begin{enumerate}
+    \item \textbf{Estadística Descriptiva:} Media, mediana, desviación estándar,
+    y cuartiles para cada configuración. Intervalos de confianza al 95\%
+    calculados mediante método bootstrap.
+
+    \item \textbf{Análisis de Varianza (ANOVA):} ANOVA de dos vías para
+    determinar la significancia estadística de los efectos principales de
+    cada factor y de sus interacciones.
+
+    \item \textbf{Validación de Supuestos:} Tests de normalidad (Shapiro-Wilk)
+    y Q-Q plots para validar supuestos paramétricos. Tests de homogeneidad
+    de varianzas (Levene).
+
+    \item \textbf{Análisis de Sensibilidad:} Cuantificación de la sensibilidad
+    del nivel de servicio a cada factor, expresada como cambio absoluto en
+    puntos porcentuales.
+\end{enumerate}
+
+Este protocolo proveerá la evidencia estadística necesaria para confirmar o
+refutar la hipótesis central de manera rigurosa.

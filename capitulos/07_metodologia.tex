@@ -53,49 +53,64 @@ Figura~\ref{fig:conceptual-diagram-detailed}.
 \begin{figure}[htbp]
     \centering
     \begin{tikzpicture}[
-        font=\small,
-        node distance=4.5cm,
-        box/.style = {rectangle, draw=black!80, line width=1.2pt, rounded corners=3pt,
-                     minimum height=1.8cm, text width=2.8cm,
-                     text centered, font=\small\bfseries, align=center,
-                     drop shadow={opacity=0.15, shadow xshift=0.5mm, shadow yshift=-0.5mm}},
-        arrow/.style = {->, >=Stealth, line width=1.8pt},
-        dashed arrow/.style = {->, >=Stealth, dashed, line width=1pt, opacity=0.7}
+        font=\sffamily\small,
+        scale=0.95,
+        node distance=5cm,
+        box/.style = {rectangle, draw=black!50, line width=1.5pt, rounded corners=3pt,
+                     minimum height=2cm, minimum width=3cm,
+                     text centered, font=\sffamily\small, align=center},
+        arrow/.style = {->, >=Stealth, line width=2pt},
+        dashed arrow/.style = {->, >=Stealth, dashed, line width=1pt, opacity=0.7},
+        label/.style = {font=\sffamily\footnotesize, fill=white, inner sep=1pt}
     ]
 
-        % Componentes principales del flujo
-        \node[box, fill=blue!20] (A) at (0,0) {Generación\\de Pedidos};
-        \node[box, fill=green!25] (B) at (4.8,0) {Transporte\\y Logística};
-        \node[box, fill=purple!20] (C) at (9.6,0) {Almacenamiento\\y Distribución};
-        \node[box, fill=orange!20] (D) at (14.4,0) {Consumo\\Final};
-
-        % Flujo principal con flechas mejoradas
-        \draw[arrow, blue!70] (A) -- (B);
-        \draw[arrow, blue!70] (B) -- (C);
-        \draw[arrow, blue!70] (C) -- (D);
-
-        % Sistema de disrupciones (elemento crítico)
-        \node[box, fill=red!20, minimum height=2.2cm] (E) at (2.4,-3.5) {Sistema de\\Disrupciones\\Exógenas};
-        \draw[arrow, red!70] (E) -- (A.south) node[midway, left, font=\footnotesize, text=red!70] {Interrumpe};
-        \draw[arrow, red!70] (E) -- (B.south) node[midway, right, font=\footnotesize, text=red!70] {Retrasa};
-
-        % Base de parámetros
-        \node[box, fill=gray!20, minimum height=2.2cm] (F) at (7.2,-3.5) {Base de\\Parámetros\\del Sistema};
-        \draw[dashed arrow, gray!70] (F) -- (A.south);
-        \draw[dashed arrow, gray!70] (F) -- (C.south);
-        \draw[dashed arrow, gray!70] (F) -- (D.south);
-
-        % Leyenda mejorada con recuadro
-        \node[below=1.8cm of F, font=\footnotesize, align=center] (leyenda) {
-            \begin{tabular}{@{}c@{\hspace{0.5cm}}c@{\hspace{0.5cm}}c@{}}
-                \textcolor{blue!70}{\rule{1.2cm}{2pt}} Flujo Principal &
-                \textcolor{red!70}{\rule{1.2cm}{2pt}} Disrupciones &
-                \textcolor{gray!70}{\rule[0.5pt]{1.2cm}{1.5pt}} Parámetros
-            \end{tabular}
+        % Componentes principales - clean
+        \node[box, fill={rgb,255:red,127;green,161;blue,169}, fill opacity=0.2] (A) at (0,0) {
+            Política\\(Q,R)
         };
 
+        \node[box, fill={rgb,255:red,143;green,193;blue,169}, fill opacity=0.2] (B) at (4.5,0) {
+            Transporte\\(LT = 6d)
+        };
+
+        \node[box, fill={rgb,255:red,180;green,167;blue,214}, fill opacity=0.2] (C) at (9,0) {
+            Almacenamiento\\(431/681 TM)
+        };
+
+        \node[box, fill={rgb,255:red,244;green,213;blue,141}, fill opacity=0.2] (D) at (13.5,0) {
+            Demanda\\(52.5 TM/d)
+        };
+
+        % Flujo principal - clean
+        \draw[arrow, color={rgb,255:red,127;green,161;blue,169}] (A) -- (B);
+        \draw[arrow, color={rgb,255:red,127;green,161;blue,169}] (B) -- (C);
+        \draw[arrow, color={rgb,255:red,127;green,161;blue,169}] (C) -- (D);
+
+        % Retroalimentación
+        \draw[arrow, color={rgb,255:red,111;green,179;blue,184}, dashed]
+            (C.south) .. controls (4.5,-1.2) and (2,-1.2) .. (A.south);
+
+        % Disrupciones - clean
+        \node[box, fill={rgb,255:red,247;green,161;blue,183}, fill opacity=0.15,
+              minimum height=2cm] (E) at (2.2,-3) {
+            Disrupciones\\$\lambda=4$/año
+        };
+
+        \draw[arrow, color={rgb,255:red,200;green,106;blue,83}]
+            (E.north) -- (A.south);
+        \draw[arrow, color={rgb,255:red,200;green,106;blue,83}]
+            (E.north east) -- (B.south);
+
+        % Parámetros
+        \node[box, fill=gray!10,
+              minimum height=2cm] (F) at (9,-3) {
+            Parámetros\\Configurables
+        };
+
+        \draw[dashed arrow, gray!60] (F.north) -- (C.south);
+
     \end{tikzpicture}
-    \caption{Modelo Conceptual del Sistema de Distribución de GLP.}
+    \caption{Modelo Conceptual del Sistema de Distribución de GLP en Aysén. El diagrama muestra el flujo operacional (azul), las disrupciones exógenas (rosa/terracota), los parámetros configurables (gris) y la métrica de resiliencia (borgoña). La política $(Q,R)$ controla el reabastecimiento basándose en el nivel de inventario.}
     \label{fig:conceptual-diagram-detailed}
 \end{figure}
 

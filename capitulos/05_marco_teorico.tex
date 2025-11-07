@@ -30,82 +30,63 @@ modelo de revisión continua \((Q, R)\), donde se ordena una cantidad fija
 \begin{figure}[htbp]
     \centering
     \begin{tikzpicture}[
-        font=\footnotesize,
-        axis/.style={->, >=Stealth, thick, black!80},
-        inventory/.style={thick, line width=2.5pt},
-        reference/.style={dashed, gray!60, line width=1.2pt},
-        leadtime/.style={<->, line width=2pt},
-        annotation/.style={font=\tiny, align=center}
+        font=\sffamily\small,
+        scale=1.1,
+        axis/.style={->, >=Stealth, thick, black!60},
+        inventory/.style={thick, color={rgb,255:red,127;green,161;blue,169}, line width=2pt},
+        reference/.style={dashed, gray!40, line width=1pt},
+        annotation/.style={font=\sffamily\footnotesize},
+        zone/.style={font=\sffamily\small}
     ]
         % Definir parámetros
-        \def\ss{1.2}
-        \def\rop{2.4}
-        \def\maxinv{4.8}
-        \def\minlevel{0.8}
-        
-        % Ejes principales
-        \draw[axis] (0,0) -- (12,0) node[below right] {\textbf{Tiempo}};
-        \draw[axis] (0,0) -- (0,5.5) node[above left, rotate=90, anchor=south] {\textbf{Nivel de Inventario}};
-        
-        % Líneas de referencia con mejor estilo
+        \def\ss{1.5}
+        \def\rop{3.0}
+        \def\maxinv{5.2}
+        \def\minlevel{0.9}
+
+        % Ejes principales simples
+        \draw[axis] (-0.2,0) -- (12,0) node[below right, font=\small] {Tiempo};
+        \draw[axis] (0,-0.2) -- (0,6) node[above, rotate=90, anchor=south, font=\small] {Nivel de Inventario};
+
+        % Zonas con relleno sutil (mantener colores Wes Anderson)
+        \fill[color={rgb,255:red,244;green,213;blue,141}, opacity=0.15] (0,0) rectangle (11.5,\ss);
+        \fill[color={rgb,255:red,143;green,193;blue,169}, opacity=0.1] (0,\ss) rectangle (11.5,\rop);
+
+        % Líneas de referencia sutiles
         \draw[reference] (0,\ss) -- (11.5,\ss);
-        \node[right, black, font=\small] at (11.5,\ss) {Stock de Seguridad (SS)};
-        
+        \node[right, font=\small, color={rgb,255:red,155;green,79;blue,90}] at (11.5,\ss) {$SS$};
+
         \draw[reference] (0,\rop) -- (11.5,\rop);
-        \node[right, black, font=\small] at (11.5,\rop) {Punto de Reorden (R)};
-        
-        % Curva de inventario mejorada
-        % Primer ciclo
+        \node[right, font=\small, color={rgb,255:red,143;green,193;blue,169}] at (11.5,\rop) {$R$};
+
+        % Curva de inventario - clean
         \draw[inventory] (0.5,\maxinv) -- (4,\rop);
         \draw[inventory, dashed] (4,\rop) -- (6,\minlevel);
-        
-        % Llegada de orden 1
+
+        % Reposición
         \draw[inventory] (6,\minlevel) -- (6,\maxinv);
-        \draw[red, thick, ->] (6,0.3) -- (6,\minlevel) node[midway, right, red, annotation] {Llegada};
-        
+
         % Segundo ciclo
         \draw[inventory] (6,\maxinv) -- (9,\rop);
         \draw[inventory, dashed] (9,\rop) -- (11,\minlevel);
-        
-        % Llegada de orden 2
-        \draw[red, thick, ->] (11,0.3) -- (11,\minlevel) node[midway, right, red, annotation] {Llegada};
-        
-        % Indicadores de emisión de órdenes
-        \fill[red] (4,\rop) circle (2.5pt);
-        \node[below, red, annotation] at (4,\rop-0.3) {Se emite orden 1};
-        
-        \fill[red] (9,\rop) circle (2.5pt);
-        \node[below, red, annotation] at (9,\rop-0.3) {Se emite orden 2};
-        
-        % Lead times con mejor visualización
-        \draw[leadtime] (4,0.4) -- (6,0.4) node[midway, below, red!70] {\(LT_1\)};
-        \draw[leadtime] (9,0.4) -- (11,0.4) node[midway, below, red!70] {\(LT_2\)};
-        
-        % Líneas verticales de referencia
-        \draw[gray, thin, dotted] (4,0) -- (4,\rop);
-        \draw[gray, thin, dotted] (6,0) -- (6,\maxinv);
-        \draw[gray, thin, dotted] (9,0) -- (9,\rop);
-        \draw[gray, thin, dotted] (11,0) -- (11,\maxinv);
-        
-        % Etiquetas de cantidades en el eje Y
-        \node[left, font=\small] at (0,\maxinv) {\(Q\)};
-        \node[left, font=\small] at (0,\rop) {\(R\)};
-        \node[left, font=\small] at (0,\ss) {\(SS\)};
-        
-        % Anotación del consumo
-        \draw[blue!60, <->] (2,\maxinv-0.2) -- (2,\rop+0.2) 
-            node[midway, right, blue!80, annotation, text width=1.8cm] {Consumo normal \(D(t)\)};
-            
-        % Anotación del consumo durante lead time
-        \draw[red!60, <->] (4.8,\rop) -- (4.8,\minlevel) 
-            node[midway, right, red!70, annotation, text width=2cm] {Consumo durante \textit{lead time}};
-            
-        % Área sombreada para stock de seguridad
-        \fill[blue!5] (0,0) rectangle (11.5,\ss);
-        \node[blue!60, annotation] at (5.75,0.6) {Zona de Stock de Seguridad};
-        
+
+        % Puntos de reorden (simples)
+        \fill[color={rgb,255:red,200;green,106;blue,83}] (4,\rop) circle (2.5pt);
+        \fill[color={rgb,255:red,200;green,106;blue,83}] (9,\rop) circle (2.5pt);
+
+        % Lead times (sutiles)
+        \draw[color={rgb,255:red,247;green,161;blue,183}, <->, line width=1.5pt]
+            (4,0.3) -- (6,0.3) node[midway, below, font=\footnotesize] {$LT$};
+        \draw[color={rgb,255:red,247;green,161;blue,183}, <->, line width=1.5pt]
+            (9,0.3) -- (11,0.3) node[midway, below, font=\footnotesize] {$LT$};
+
+        % Etiquetas eje Y (minimalistas)
+        \node[left, font=\small] at (-0.2,\maxinv) {$Q$};
+        \node[left, font=\small] at (-0.2,\rop) {$R$};
+        \node[left, font=\small] at (-0.2,\ss) {$SS$};
+
     \end{tikzpicture}
-    \caption{Modelo de inventario $(Q,R)$ con Punto de Reorden (ROP) y Stock de Seguridad (SS) bajo incertidumbre en el \textit{lead time}.}
+    \caption{Modelo de inventario $(Q,R)$ con Punto de Reorden (ROP) y Stock de Seguridad (SS) bajo incertidumbre en el \textit{lead time}. El sistema reordena cantidad $Q$ cuando el inventario alcanza el nivel $R$, manteniendo un buffer $SS$ para proteger contra variabilidad.}
     \label{fig:inventory-model-detailed}
 \end{figure}
 
@@ -137,51 +118,44 @@ aparente eficiencia pero alta vulnerabilidad.
 \begin{figure}[htbp]
     \centering
     \begin{tikzpicture}[
-        font=\small,
-        axis/.style={->, >=Stealth, thick, black!80},
-        curve/.style={thick, blue!60, line width=2pt}
+        font=\sffamily\small,
+        scale=1.15,
+        axis/.style={->, >=Stealth, thick, black!60},
+        curve/.style={thick, color={rgb,255:red,127;green,161;blue,169}, line width=2.5pt}
     ]
-        % Ejes principales
-        \draw[axis] (0,0) -- (8,0) node[below] {\textbf{Eficiencia (Costos Bajos)}};
-        \draw[axis] (0,0) -- (0,5) node[left, rotate=90, anchor=south] {\textbf{Resiliencia}};
-        
-        % Curva frontera más suave
-        \draw[curve] (1,4.2) .. controls (3,2.8) and (5,1.5) .. (7.5,0.6);
-        
-        % Áreas de las zonas (más sutiles)
-        \fill[blue!8] (0,0) -- (1,4.2) .. controls (3,2.8) and (5,1.5) .. (7.5,0.6) -- (7.5,0) -- cycle;
-        \fill[red!8] (1,4.2) .. controls (3,2.8) and (5,1.5) .. (7.5,0.6) -- (7.5,5) -- (0,5) -- (0,4.2) -- cycle;
-        
-        % Redibujar la curva
-        \draw[curve] (1,4.2) .. controls (3,2.8) and (5,1.5) .. (7.5,0.6);
-        
-        % Etiquetas de las zonas (más simples)
-        \node[align=center, font=\footnotesize] at (1.8,3.5) {
-            \textbf{Zona de Alta Robustez}\\
-            \textcolor{gray}{(Alto costo, alta redundancia)}
-        };
-        
-        \node[align=center, font=\footnotesize] at (5.5,3.2) {
-            \textbf{Zona de Alta Vulnerabilidad}\\
-            \textcolor{gray}{(Bajo costo, baja robustez)}
-        };
-        
-        % Posición de Aysén (más simple)
-        \fill[red] (6,1.2) circle (3pt);
-        \node[below right, red, font=\footnotesize] at (6,1.2) {Sistema Aysén};
-        
-        % Líneas de referencia discretas
-        \draw[gray!40, dashed, very thin] (6,0) -- (6,1.2);
-        \draw[gray!40, dashed, very thin] (0,1.2) -- (6,1.2);
-        
-        % Etiquetas en los extremos de los ejes
-        \node[below, gray] at (1,0) {Mayor};
-        \node[below, gray] at (7,0) {Menor};
-        \node[left, gray] at (0,0.5) {Menor};
-        \node[left, gray] at (0,4) {Mayor};
-        
+        % Ejes principales simples
+        \draw[axis] (-0.2,0) -- (9,0);
+        \node[below, font=\small] at (4.5,-0.3) {Eficiencia Operacional};
+
+        \draw[axis] (0,-0.2) -- (0,5.5);
+        \node[above, font=\small, rotate=90] at (-0.4,2.75) {Resiliencia};
+
+        % Curva frontera - clean
+        \draw[curve] (1,4.2) .. controls (3,2.8) and (5.2,1.5) .. (8,0.6);
+
+        % Áreas sutiles
+        \fill[color={rgb,255:red,143;green,193;blue,169}, opacity=0.06]
+            (0,0) -- (1,4.2) .. controls (3,2.8) and (5.2,1.5) .. (8,0.6) -- (8,0) -- cycle;
+
+        % Puntos - clean
+        \fill[color={rgb,255:red,200;green,106;blue,83}] (6.5,1.1) circle (3.5pt);
+        \node[below right, color={rgb,255:red,200;green,106;blue,83}, font=\footnotesize]
+            at (6.5,1.1) {Actual};
+
+        \fill[color={rgb,255:red,143;green,193;blue,169}] (3.5,2.5) circle (3.5pt);
+        \node[above left, color={rgb,255:red,143;green,193;blue,169}, font=\footnotesize]
+            at (3.5,2.5) {Propuesta};
+
+        % Flecha sutil
+        \draw[color={rgb,255:red,155;green,79;blue,90}, ->, >=Stealth, dashed, line width=1.5pt]
+            (6.3,1.3) .. controls (5,1.7) and (4.2,2.1) .. (3.7,2.4);
+
+        % Etiqueta de curva
+        \node[font=\footnotesize, color={rgb,255:red,127;green,161;blue,169}]
+            at (4.5,2.2) [above left] {Frontera Eficiente};
+
     \end{tikzpicture}
-    \caption{El \textit{trade-off} entre eficiencia y resiliencia en la gestión de cadenas de suministro.}
+    \caption{El \textit{trade-off} entre eficiencia y resiliencia en la gestión de cadenas de suministro. La frontera eficiente muestra las configuraciones óptimas de Pareto. El sistema Aysén opera actualmente en zona de alta vulnerabilidad; la Propuesta 10.4 (+250 TM) lo desplaza hacia mayor resiliencia con inversión moderada.}
     \label{fig:resilience-tradeoff}
 \end{figure}
 

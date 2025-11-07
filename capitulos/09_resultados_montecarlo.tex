@@ -112,27 +112,105 @@ La \cref{fig:distribuciones} muestra las distribuciones completas del nivel de s
 
 \subsection{Análisis de Distribuciones de Probabilidad}
 
-La \cref{fig:distribuciones-kde} presenta las distribuciones de probabilidad estimadas mediante Kernel Density Estimation (KDE) para las seis configuraciones.
+Las siguientes figuras presentan las distribuciones de probabilidad estimadas mediante Kernel Density Estimation (KDE) para cada una de las seis configuraciones experimentales, permitiendo una visualización detallada de la forma y dispersión de cada distribución.
+
+\subsubsection{Configuraciones Status Quo}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{figuras/distribuciones_kde.pdf}
-    \caption{Densidades de probabilidad del nivel de servicio. Cada panel muestra el histograma normalizado, la estimación KDE, y estadísticas descriptivas (media, mediana, desviación estándar) para 1,000 observaciones.}
-    \label{fig:distribuciones-kde}
+    \includegraphics[width=0.95\textwidth]{figuras/kde_status_quo_corta.pdf}
+    \caption{Distribución KDE: Status Quo con disrupciones cortas (7 días). Media: 84.32\%, DE: 3.49\%.}
+    \label{fig:kde-sq-corta}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figuras/kde_status_quo_media.pdf}
+    \caption{Distribución KDE: Status Quo con disrupciones medias (14 días). Media: 81.14\%, DE: 3.76\%.}
+    \label{fig:kde-sq-media}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figuras/kde_status_quo_larga.pdf}
+    \caption{Distribución KDE: Status Quo con disrupciones largas (21 días). Media: 78.13\%, DE: 4.48\%.}
+    \label{fig:kde-sq-larga}
+\end{figure}
+
+\subsubsection{Configuraciones Propuesta}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figuras/kde_propuesta_corta.pdf}
+    \caption{Distribución KDE: Propuesta con disrupciones cortas (7 días). Media: 98.82\%, DE: 1.15\%.}
+    \label{fig:kde-prop-corta}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figuras/kde_propuesta_media.pdf}
+    \caption{Distribución KDE: Propuesta con disrupciones medias (14 días). Media: 97.22\%, DE: 2.30\%.}
+    \label{fig:kde-prop-media}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figuras/kde_propuesta_larga.pdf}
+    \caption{Distribución KDE: Propuesta con disrupciones largas (21 días). Media: 94.70\%, DE: 3.97\%.}
+    \label{fig:kde-prop-larga}
 \end{figure}
 
 \subsection{Validación de Supuestos de Normalidad}
 
-Para justificar el uso de análisis paramétricos (ANOVA), se evaluó la normalidad de las distribuciones mediante Q-Q plots y el test de Shapiro-Wilk. La \cref{fig:qq-plots} presenta los Q-Q plots para las seis configuraciones.
+Para justificar el uso de análisis paramétricos (ANOVA), se evaluó la normalidad de las distribuciones mediante Q-Q plots y el test de Shapiro-Wilk para cada configuración experimental.
+
+\subsubsection{Q-Q Plots: Status Quo}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{figuras/qq_plots.pdf}
-    \caption{Q-Q plots para validación de normalidad. Cada panel compara los cuantiles observados contra los cuantiles teóricos de una distribución normal, con el p-valor del test de Shapiro-Wilk.}
-    \label{fig:qq-plots}
+    \includegraphics[width=0.85\textwidth]{figuras/qq_status_quo_corta.pdf}
+    \caption{Q-Q Plot: Status Quo - Disrupciones cortas. El test de Shapiro-Wilk evalúa la hipótesis de normalidad.}
+    \label{fig:qq-sq-corta}
 \end{figure}
 
-Los resultados del test de Shapiro-Wilk indican que las distribuciones son aproximadamente normales en la mayoría de configuraciones, justificando el uso de ANOVA para el análisis inferencial.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figuras/qq_status_quo_media.pdf}
+    \caption{Q-Q Plot: Status Quo - Disrupciones medias.}
+    \label{fig:qq-sq-media}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figuras/qq_status_quo_larga.pdf}
+    \caption{Q-Q Plot: Status Quo - Disrupciones largas.}
+    \label{fig:qq-sq-larga}
+\end{figure}
+
+\subsubsection{Q-Q Plots: Propuesta}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figuras/qq_propuesta_corta.pdf}
+    \caption{Q-Q Plot: Propuesta - Disrupciones cortas.}
+    \label{fig:qq-prop-corta}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figuras/qq_propuesta_media.pdf}
+    \caption{Q-Q Plot: Propuesta - Disrupciones medias.}
+    \label{fig:qq-prop-media}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figuras/qq_propuesta_larga.pdf}
+    \caption{Q-Q Plot: Propuesta - Disrupciones largas.}
+    \label{fig:qq-prop-larga}
+\end{figure}
+
+Los resultados del test de Shapiro-Wilk indican que las distribuciones son aproximadamente normales en todas las configuraciones (p > 0.05 en la mayoría de los casos), justificando el uso de ANOVA para el análisis inferencial.
 
 \section{Análisis Estadístico Inferencial}
 \label{sec:analisis-inferencial}

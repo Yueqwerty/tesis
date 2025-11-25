@@ -1,0 +1,244 @@
+\chapter{Código Fuente del Simulador}
+\label{ap:codigo-fuente}
+
+Este apéndice presenta el código fuente completo del sistema de simulación desarrollado para el modelo de suministro de GLP en Aysén. El código está organizado en módulos especializados según el patrón arquitectónico Modelo-Experimento-Análisis descrito en el Capítulo \ref{chap:metodologia}.
+
+\section{Módulo de Configuración}
+\label{ap:configuracion}
+
+El módulo \texttt{configuracion.py} encapsula todos los parámetros del sistema.
+
+\begin{lstlisting}[language=Python, caption={Módulo de configuración del sistema}]
+"""
+Configuracion del sistema de suministro de GLP.
+Author: Carlos Subiabre
+"""
+from dataclasses import dataclass
+from typing import Optional
+import logging
+
+logger = logging.getLogger(__name__)
+
+@dataclass
+class ConfiguracionSimulacion:
+    """Parametros de la simulacion."""
+
+    # Parametros de capacidad
+    capacidadHubTm: float = 431.0
+    puntoReordenTm: float = 394.0
+    cantidadPedidoTm: float = 230.0
+    inventarioInicialTm: float = 258.6
+
+    # Parametros de demanda
+    demandaBaseDiariaTm: float = 52.5
+    variabilidadDemanda: float = 0.15
+    amplitudEstacional: float = 0.30
+    diaPicoInvernal: int = 200
+
+    # Parametros operacionales
+    leadTimeNominalDias: float = 6.0
+
+    # Parametros de riesgo (disrupciones)
+    tasaDisrupcionesAnual: float = 4.0
+    duracionDisrupcionMinDias: float = 3.0
+    duracionDisrupcionModeDias: float = 7.0
+    duracionDisrupcionMaxDias: float = 21.0
+
+    # Control de simulacion
+    duracionSimulacionDias: int = 365
+    semillaAleatoria: int = 42
+    usarEstacionalidad: bool = True
+
+    def validar(self) -> None:
+        """Verifica que los parametros tengan sentido."""
+        assert self.capacidadHubTm > 0, \
+            "Capacidad debe ser positiva"
+
+        assert self.puntoReordenTm < self.capacidadHubTm, \
+            f"Punto de reorden debe ser menor que capacidad"
+
+        # ... (validaciones adicionales)
+
+    def calcularAutonomiaTeoriacaDias(self) -> float:
+        """Cuantos dias dura el tanque lleno."""
+        return self.capacidadHubTm / self.demandaBaseDiariaTm
+\end{lstlisting}
+
+\section{Módulo de Entidades}
+\label{ap:entidades}
+
+El módulo \texttt{entidades.py} define las clases \texttt{HubCoyhaique} y \texttt{RutaSuministro}.
+
+\begin{lstlisting}[language=Python, caption={Clase HubCoyhaique: Tanques de almacenamiento}]
+class HubCoyhaique:
+    """Tanques de GLP en Coyhaique."""
+
+    def __init__(self, env: simpy.Environment,
+                 config: ConfiguracionSimulacion):
+        self.env = env
+        self.config = config
+
+        self.inventario = simpy.Container(
+            env,
+            capacity=config.capacidadHubTm,
+            init=config.inventarioInicialTm
+        )
+
+        self.totalRecibidoTm = 0.0
+        self.totalDespachadoTm = 0.0
+        self.quiebresStock = 0
+
+    def recibirSuministro(self, cantidadTm: float) -> simpy.Event:
+        """Recibe suministro y lo agrega al inventario."""
+        self.totalRecibidoTm += cantidadTm
+        return self.inventario.put(cantidadTm)
+
+    def despacharAClientes(self, demandaTm: float) -> float:
+        """Despacha lo que se pueda."""
+        disponible = self.inventario.level
+
+        if disponible >= demandaTm:
+            self.inventario.get(demandaTm)
+            self.totalDespachadoTm += demandaTm
+            return demandaTm
+        else:
+            if disponible > 0:
+                self.inventario.get(disponible)
+                self.totalDespachadoTm += disponible
+            self.quiebresStock += 1
+            return disponible
+
+    def necesitaReabastecimiento(self) -> bool:
+        """Verifica si el inventario ya bajo del punto de reorden."""
+        return self.inventario.level <= self.config.puntoReordenTm
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, caption={Clase RutaSuministro: Ruta con disrupciones}]
+class RutaSuministro:
+    """Ruta de transporte con disrupciones aleatorias."""
+
+    def __init__(self, env: simpy.Environment,
+                 config: ConfiguracionSimulacion,
+                 rng: np.random.Generator):
+        self.env = env
+        self.config = config
+        self.rng = rng
+
+        self.bloqueada = False
+        self.tiempoDesbloqueo = 0.0
+
+        self.disrupcionesTotales = 0
+        self.diasBloqueadosAcumulados = 0.0
+
+    def estaOperativa(self) -> bool:
+        """Verifica si la ruta esta libre."""
+        if self.bloqueada and self.env.now >= self.tiempoDesbloqueo:
+            self.bloqueada = False
+        return not self.bloqueada
+
+    def bloquearPorDisrupcion(self, duracionDias: float) -> None:
+        """Bloquea la ruta por X dias."""
+        self.bloqueada = True
+        self.tiempoDesbloqueo = self.env.now + duracionDias
+        self.disrupcionesTotales += 1
+        self.diasBloqueadosAcumulados += duracionDias
+
+    def calcularLeadTime(self) -> float:
+        """Calcula cuanto tarda en llegar un pedido."""
+        leadTimeBase = self.config.leadTimeNominalDias
+
+        if self.bloqueada:
+            tiempoRestante = max(0, self.tiempoDesbloqueo - self.env.now)
+            return leadTimeBase + tiempoRestante
+
+        return leadTimeBase
+\end{lstlisting}
+
+\section{Módulo de Simulación}
+\label{ap:simulacion}
+
+El módulo \texttt{simulacion.py} contiene la clase principal \texttt{SimulacionGlpAysen} que orquesta los tres procesos concurrentes.
+
+\begin{lstlisting}[language=Python, caption={Clase SimulacionGlpAysen: Motor de simulación}]
+class SimulacionGlpAysen:
+    """Simulacion del sistema de suministro de GLP."""
+
+    def __init__(self, config: ConfiguracionSimulacion):
+        self.config = config
+        self.rng = np.random.default_rng(config.semillaAleatoria)
+
+        self.env = simpy.Environment()
+
+        self.hub = HubCoyhaique(self.env, config)
+        self.ruta = RutaSuministro(self.env, config, self.rng)
+
+        self.pedidosEnTransito: List[simpy.Event] = []
+        self.metricasDiarias: List[MetricasDiarias] = []
+
+    def run(self) -> None:
+        """Corre la simulacion."""
+        self.env.process(self._procesoDemandaDiaria())
+        self.env.process(self._procesoReabastecimiento())
+        self.env.process(self._procesoDisrupciones())
+
+        self.env.run(until=self.config.duracionSimulacionDias)
+
+    def _procesoDemandaDiaria(self):
+        """Proceso que genera la demanda diaria."""
+        dia = 0
+        while True:
+            demandaDia = self.calcularDemandaDia(dia)
+            despachado = self.hub.despacharAClientes(demandaDia)
+
+            # Registrar metricas...
+
+            yield self.env.timeout(1.0)
+            dia += 1
+
+    def _procesoReabastecimiento(self):
+        """Proceso que crea pedidos cuando el inventario baja."""
+        while True:
+            if self.hub.necesitaReabastecimiento():
+                if self.ruta.estaOperativa():
+                    cantidad = self.config.cantidadPedidoTm
+                    leadTime = self.ruta.calcularLeadTime()
+
+                    evento = self.env.process(
+                        self._llegadaSuministro(cantidad, leadTime)
+                    )
+                    self.pedidosEnTransito.append(evento)
+
+            yield self.env.timeout(1.0)
+
+    def _procesoDisrupciones(self):
+        """Proceso que genera disrupciones."""
+        lambdaDias = self.config.tasaDisrupcionesAnual / 365.0
+
+        while True:
+            tiempoHastaProxima = self.rng.exponential(1.0 / lambdaDias)
+            yield self.env.timeout(tiempoHastaProxima)
+
+            duracion = self.rng.triangular(
+                self.config.duracionDisrupcionMinDias,
+                self.config.duracionDisrupcionModeDias,
+                self.config.duracionDisrupcionMaxDias
+            )
+
+            self.ruta.bloquearPorDisrupcion(duracion)
+\end{lstlisting}
+
+\section{Repositorio Completo}
+\label{ap:repositorio}
+
+El código fuente completo está disponible en el repositorio GitHub:
+
+\url{https://github.com/usuario/simres-glp-aysen}
+
+El repositorio incluye:
+\begin{itemize}
+    \item Código fuente completo (\texttt{src/})
+    \item Suite de tests unitarios (\texttt{tests/})
+    \item Scripts de experimentación Monte Carlo (\texttt{scripts/})
+    \item Resultados de las 60,000 simulaciones (\texttt{results/})
+    \item Documentación técnica completa
+\end{itemize}

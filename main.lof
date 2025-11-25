@@ -1,31 +1,42 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10pt}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Ubicación geográfica de la Región de Aysén y la Ruta 7. Fuente: Elaboración propia con datos de~\blx@tocontentsinit {0}\cite {CIEP2025}.}}{2}{figure.1.1}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Modelo de inventario $(Q,R)$ con Punto de Reorden (ROP) y Stock de Seguridad (SS) bajo incertidumbre en el \textit {lead time}. El sistema reordena cantidad $Q$ cuando el inventario alcanza el nivel $R$, manteniendo un buffer $SS$ para proteger contra variabilidad.}}{11}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces El \textit {trade-off} entre eficiencia y resiliencia en la gestión de cadenas de suministro. La frontera eficiente muestra las configuraciones óptimas de Pareto. El sistema Aysén opera actualmente en zona de alta vulnerabilidad; la Propuesta 10.4 (+250 TM) lo desplaza hacia mayor resiliencia con inversión moderada.}}{12}{figure.5.2}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Modelo de inventario $(Q,R)$ con Punto de Reorden (ROP) y Stock de Seguridad (SS).}}{16}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Frontera eficiente entre eficiencia y resiliencia en cadenas de suministro.}}{20}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Arquitectura modular del sistema de simulación en tres capas.}}{21}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Diagrama de interacción de los tres procesos concurrentes del simulador.}}{23}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama de flujo del proceso de reabastecimiento basado en política $(Q,R)$.}}{24}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Diagrama de flujo del proceso de generación de disrupciones.}}{25}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Máquina de estados de la Ruta 7 (operativa/bloqueada).}}{25}{figure.5.7}%
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Modelo Conceptual del Sistema de Distribución de GLP en Aysén. El diagrama muestra el flujo operacional (azul), las disrupciones exógenas (rosa/terracota), los parámetros configurables (gris) y la métrica de resiliencia (borgoña). La política $(Q,R)$ controla el reabastecimiento basándose en el nivel de inventario.}}{19}{figure.7.1}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Modelo conceptual del sistema de distribución de GLP en Aysén.}}{33}{figure.7.1}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Diagrama de clases UML del simulador.}}{37}{figure.7.2}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Distribuciones del nivel de servicio por configuración experimental. Los violin plots muestran la densidad de probabilidad completa, mediana (línea negra) y media (línea roja) basados en 1,000 réplicas por configuración.}}{26}{figure.8.1}%
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Distribución KDE: Status Quo con disrupciones cortas (7 días). Media: 84.32\%, DE: 3.49\%.}}{27}{figure.8.2}%
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Distribución KDE: Status Quo con disrupciones medias (14 días). Media: 81.14\%, DE: 3.76\%.}}{28}{figure.8.3}%
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Distribución KDE: Status Quo con disrupciones largas (21 días). Media: 78.13\%, DE: 4.48\%.}}{28}{figure.8.4}%
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Distribución KDE: Propuesta con disrupciones cortas (7 días). Media: 98.82\%, DE: 1.15\%.}}{29}{figure.8.5}%
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Distribución KDE: Propuesta con disrupciones medias (14 días). Media: 97.22\%, DE: 2.30\%.}}{29}{figure.8.6}%
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Distribución KDE: Propuesta con disrupciones largas (21 días). Media: 94.70\%, DE: 3.97\%.}}{30}{figure.8.7}%
-\contentsline {figure}{\numberline {8.8}{\ignorespaces Q-Q Plot: Status Quo - Disrupciones cortas. El test de Shapiro-Wilk evalúa la hipótesis de normalidad.}}{31}{figure.8.8}%
-\contentsline {figure}{\numberline {8.9}{\ignorespaces Q-Q Plot: Status Quo - Disrupciones medias.}}{32}{figure.8.9}%
-\contentsline {figure}{\numberline {8.10}{\ignorespaces Q-Q Plot: Status Quo - Disrupciones largas.}}{33}{figure.8.10}%
-\contentsline {figure}{\numberline {8.11}{\ignorespaces Q-Q Plot: Propuesta - Disrupciones cortas.}}{34}{figure.8.11}%
-\contentsline {figure}{\numberline {8.12}{\ignorespaces Q-Q Plot: Propuesta - Disrupciones medias.}}{35}{figure.8.12}%
-\contentsline {figure}{\numberline {8.13}{\ignorespaces Q-Q Plot: Propuesta - Disrupciones largas.}}{36}{figure.8.13}%
-\contentsline {figure}{\numberline {8.14}{\ignorespaces Efectos principales de los factores experimentales. Panel (A): efecto de la capacidad de almacenamiento (factor endógeno). Panel (B): efecto de la duración máxima de disrupciones (factor exógeno). Las barras de error representan intervalos de confianza al 95\%.}}{37}{figure.8.14}%
-\contentsline {figure}{\numberline {8.15}{\ignorespaces Nivel de servicio promedio por combinación de factores. Los valores más bajos (rojos) indican menor resiliencia del sistema.}}{37}{figure.8.15}%
-\contentsline {figure}{\numberline {8.16}{\ignorespaces Análisis de sensibilidad comparativo. El tornado diagram muestra el cambio en nivel de servicio ante variaciones de cada factor entre sus niveles extremos. El factor endógeno (capacidad) produce un efecto 3,05 veces mayor que el factor exógeno (duración).}}{38}{figure.8.16}%
-\contentsline {figure}{\numberline {8.17}{\ignorespaces Comparación de configuraciones mediante boxplots. Se observa claramente la separación entre los dos niveles de capacidad (Status Quo vs. Propuesta), evidenciando el dominio del factor endógeno.}}{39}{figure.8.17}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Caso 1: Escenario normal con disrupciones cortas (máximo 7 días).}}{42}{figure.8.1}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Caso 2: Escenario crítico con disrupciones prolongadas (21 días).}}{44}{figure.8.2}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Caso 3: Comparación de capacidades bajo mismo escenario de disrupciones.}}{46}{figure.8.3}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Distribuciones del nivel de servicio por configuración experimental (violin plots).}}{50}{figure.8.4}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Distribución KDE: Status Quo con disrupciones cortas (7 días). Media: 84.32\%, DE: 3.49\%.}}{51}{figure.8.5}%
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Distribución KDE: Status Quo con disrupciones medias (14 días). Media: 81.14\%, DE: 3.76\%.}}{51}{figure.8.6}%
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Distribución KDE: Status Quo con disrupciones largas (21 días). Media: 78.13\%, DE: 4.48\%.}}{52}{figure.8.7}%
+\contentsline {figure}{\numberline {8.8}{\ignorespaces Distribución KDE: Propuesta con disrupciones cortas (7 días). Media: 98.82\%, DE: 1.15\%.}}{52}{figure.8.8}%
+\contentsline {figure}{\numberline {8.9}{\ignorespaces Distribución KDE: Propuesta con disrupciones medias (14 días). Media: 97.22\%, DE: 2.30\%.}}{53}{figure.8.9}%
+\contentsline {figure}{\numberline {8.10}{\ignorespaces Distribución KDE: Propuesta con disrupciones largas (21 días). Media: 94.70\%, DE: 3.97\%.}}{53}{figure.8.10}%
+\contentsline {figure}{\numberline {8.11}{\ignorespaces Q-Q Plot: Status Quo - Disrupciones cortas. El test de Shapiro-Wilk evalúa la hipótesis de normalidad.}}{54}{figure.8.11}%
+\contentsline {figure}{\numberline {8.12}{\ignorespaces Q-Q Plot: Status Quo - Disrupciones medias.}}{55}{figure.8.12}%
+\contentsline {figure}{\numberline {8.13}{\ignorespaces Q-Q Plot: Status Quo - Disrupciones largas.}}{56}{figure.8.13}%
+\contentsline {figure}{\numberline {8.14}{\ignorespaces Q-Q Plot: Propuesta - Disrupciones cortas.}}{57}{figure.8.14}%
+\contentsline {figure}{\numberline {8.15}{\ignorespaces Q-Q Plot: Propuesta - Disrupciones medias.}}{58}{figure.8.15}%
+\contentsline {figure}{\numberline {8.16}{\ignorespaces Q-Q Plot: Propuesta - Disrupciones largas.}}{59}{figure.8.16}%
+\contentsline {figure}{\numberline {8.17}{\ignorespaces Efectos principales de los factores experimentales sobre el nivel de servicio.}}{59}{figure.8.17}%
+\contentsline {figure}{\numberline {8.18}{\ignorespaces Nivel de servicio promedio por combinación de factores. Los valores más bajos (rojos) indican menor resiliencia del sistema.}}{60}{figure.8.18}%
+\contentsline {figure}{\numberline {8.19}{\ignorespaces Análisis de sensibilidad comparativo (tornado diagram).}}{62}{figure.8.19}%
+\contentsline {figure}{\numberline {8.20}{\ignorespaces Comparación de configuraciones experimentales (boxplots).}}{63}{figure.8.20}%
+\addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

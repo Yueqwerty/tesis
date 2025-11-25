@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Gantt - Proyecto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .button-group {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .export-btn {
+            padding: 12px 24px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .png {
+            background-color: #0f9d58;
+        }
+        
+        .png:hover {
+            background-color: #0b7e46;
+        }
+        
+        .svg {
+            background-color: #007cba;
+        }
+        
+        .svg:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button-group">
+            <button class="export-btn png" onclick="exportPNG()">📥 Descargar PNG (Google Slides)</button>
+            <button class="export-btn svg" onclick="exportSVG()">📥 Descargar SVG</button>
+        </div>
+        
+        <svg id="gantt" width="1280" height="720" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <style>
+                    .bg { fill: white; }
+                    .header-box { fill: none; stroke: #dc3545; stroke-width: 3; }
+                    .header-text { fill: #dc3545; font-weight: bold; font-size: 16px; font-family: Arial; }
+                    .week-label { fill: #333; font-size: 13px; font-family: Arial; text-anchor: middle; font-weight: 600; }
+                    .week-sublabel { fill: #666; font-size: 11px; font-family: Arial; text-anchor: middle; }
+                    .section-title { fill: #000; font-weight: bold; font-size: 14px; font-family: Arial; }
+                    .task-text { fill: #333; font-size: 12px; font-family: Arial; }
+                    .grid-line { stroke: #d0d0d0; stroke-width: 1; }
+                    .today-line { stroke: #0066cc; stroke-width: 3; stroke-dasharray: 6,4; }
+                    .deadline-line { stroke: #dc3545; stroke-width: 3; stroke-dasharray: 6,4; }
+                    .current-box { fill: none; stroke: #dc3545; stroke-width: 3; stroke-dasharray: 8,5; }
+                    .marker-text { fill: #dc3545; font-size: 12px; font-weight: bold; font-family: Arial; }
+                    .today-text { fill: #0066cc; font-size: 12px; font-weight: bold; font-family: Arial; text-anchor: middle; }
+                    .footer-box { fill: #e3f2fd; stroke: #0066cc; stroke-width: 2; }
+                    .footer-text { fill: #0066cc; font-size: 13px; font-family: Arial; font-weight: bold; }
+                </style>
+            </defs>
+            
+            <!-- Fondo blanco -->
+            <rect class="bg" x="0" y="0" width="1280" height="720"/>
+            
+            <!-- Header -->
+            <rect class="header-box" x="15" y="15" width="1250" height="40" rx="5"/>
+            <text class="header-text" x="230" y="42">5 Dic: Entrega 4 (Final)</text>
+            <text class="header-text" x="640" y="42" text-anchor="middle">FECHAS CLAVE:</text>
+            <text class="header-text" x="1050" y="42">12 Dic: Entrega Definitiva</text>
+            
+            <!-- Timeline -->
+            <text class="week-label" x="490" y="75">Oct 14-20</text>
+            <text class="week-sublabel" x="490" y="90">Sem 2</text>
+            
+            <text class="week-label" x="600" y="75">Oct 28-Nov 3</text>
+            <text class="week-sublabel" x="600" y="90">Sem 4</text>
+            
+            <text class="week-label" x="710" y="75">Nov 11-17</text>
+            <text class="week-sublabel" x="710" y="90">Sem 6</text>
+            
+            <text class="week-label" x="820" y="75">Nov 25-Dec 1</text>
+            <text class="week-sublabel" x="820" y="90">Sem 8</text>
+            
+            <text class="week-label" x="930" y="75">Dec 9-15</text>
+            <text class="week-sublabel" x="930" y="90">Sem 10</text>
+            
+            <text class="week-label" x="1040" y="75">Dec 23-29</text>
+            <text class="week-sublabel" x="1040" y="90">Sem 12</text>
+            
+            <text class="week-label" x="1150" y="75">Ene 6-12</text>
+            <text class="week-sublabel" x="1150" y="90">Sem 14</text>
+            
+            <!-- Grid -->
+            <line class="grid-line" x1="490" y1="100" x2="490" y2="650"/>
+            <line class="grid-line" x1="600" y1="100" x2="600" y2="650"/>
+            <line class="grid-line" x1="710" y1="100" x2="710" y2="650"/>
+            <line class="grid-line" x1="820" y1="100" x2="820" y2="650"/>
+            <line class="grid-line" x1="930" y1="100" x2="930" y2="650"/>
+            <line class="grid-line" x1="1040" y1="100" x2="1040" y2="650"/>
+            <line class="grid-line" x1="1150" y1="100" x2="1150" y2="650"/>
+            
+            <!-- HOY (7 Nov) -->
+            <line class="today-line" x1="693" y1="60" x2="693" y2="650"/>
+            <text class="today-text" x="693" y="56">7 Nov</text>
+            <text class="week-sublabel" x="693" y="103">HOY</text>
+            
+            <!-- 5 Dic -->
+            <line class="deadline-line" x1="913" y1="60" x2="913" y2="650"/>
+            <text class="marker-text" x="913" y="56" text-anchor="middle">5 Dic</text>
+            
+            <!-- 12 Dic -->
+            <line class="deadline-line" x1="958" y1="60" x2="958" y2="650"/>
+            <text class="marker-text" x="958" y="56" text-anchor="middle">12 Dic</text>
+            
+            <!-- EJE 1 -->
+            <text class="section-title" x="20" y="135">EJE 1: GESTIÓN Y PUBLICACIÓN</text>
+            
+            <text class="task-text" x="35" y="157">Planificación y Requisitos</text>
+            <rect x="490" y="148" width="100" height="18" fill="#4285f4" rx="3"/>
+            
+            <text class="task-text" x="35" y="182">Repositorio y Versionamiento</text>
+            <rect x="490" y="173" width="330" height="18" fill="#9e9e9e" rx="3"/>
+            
+            <text class="task-text" x="35" y="207">Documentación Continua</text>
+            <rect x="600" y="198" width="280" height="18" fill="#9e9e9e" rx="3"/>
+            
+            <text class="task-text" x="35" y="232">Consolidación y Formateo</text>
+            <rect x="820" y="223" width="85" height="18" fill="#9e9e9e" rx="3"/>
+            
+            <text class="task-text" x="35" y="257">Material para Defensa</text>
+            <rect x="885" y="248" width="75" height="18" fill="#9e9e9e" rx="3"/>
+            
+            <!-- EJE 2 -->
+            <text class="section-title" x="20" y="295">EJE 2: DISEÑO E INGENIERÍA DEL MODELO</text>
+            
+            <text class="task-text" x="35" y="317">Arquitectura UML</text>
+            <rect x="490" y="308" width="100" height="18" fill="#4285f4" rx="3"/>
+            
+            <text class="task-text" x="35" y="342">Motor de Simulación</text>
+            <rect x="590" y="333" width="120" height="18" fill="#ff9800" rx="3"/>
+            
+            <text class="task-text" x="35" y="367">Lógica de Negocio</text>
+            <rect x="670" y="358" width="105" height="18" fill="#f44336" rx="3"/>
+            
+            <text class="task-text" x="35" y="392">Pruebas e Integración</text>
+            <rect x="715" y="383" width="155" height="18" fill="#4caf50" rx="3"/>
+            
+            <text class="task-text" x="35" y="417">Modelado de Disrupciones</text>
+            <rect x="775" y="408" width="85" height="18" fill="#f44336" rx="3"/>
+            
+            <text class="task-text" x="35" y="442">Calibración del Modelo</text>
+            <rect x="815" y="433" width="75" height="18" fill="#4caf50" rx="3"/>
+            
+            <!-- EJE 3 -->
+            <text class="section-title" x="20" y="480">EJE 3: EXPERIMENTACIÓN Y ANÁLISIS</text>
+            
+            <text class="task-text" x="35" y="502">Diseño de Experimentos (DoE)</text>
+            <rect x="675" y="493" width="85" height="18" fill="#4285f4" rx="3"/>
+            
+            <text class="task-text" x="35" y="527">Automatización (Batch Runs)</text>
+            <rect x="725" y="518" width="65" height="18" fill="#f44336" rx="3"/>
+            
+            <text class="task-text" x="35" y="552">Ejecución y Recolección</text>
+            <rect x="740" y="543" width="85" height="18" fill="#4caf50" rx="3"/>
+            
+            <text class="task-text" x="35" y="577">Pipeline de Datos</text>
+            <rect x="760" y="568" width="95" height="18" fill="#9c27b0" rx="3"/>
+            
+            <text class="task-text" x="35" y="602">ANOVA y Pruebas</text>
+            <rect x="683" y="593" width="100" height="18" fill="#9c27b0" rx="3"/>
+            <rect class="current-box" x="677" y="587" width="112" height="30" rx="4"/>
+            <text class="marker-text" x="795" y="603">← AQUÍ (7 Nov)</text>
+            
+            <text class="task-text" x="35" y="627">Artefactos Visuales</text>
+            <rect x="760" y="618" width="95" height="18" fill="#9c27b0" rx="3"/>
+            
+            <!-- HITOS -->
+            <text class="section-title" x="20" y="660">HITOS: Entrega Final</text>
+            <polygon points="913,650 932,658 913,666" fill="#dc3545"/>
+            <text class="marker-text" x="940" y="661">5 Dic</text>
+            
+            <polygon points="958,650 977,658 958,666" fill="#dc3545"/>
+            <text class="marker-text" x="985" y="661">12 Dic</text>
+            
+            <!-- Footer -->
+            <rect class="footer-box" x="25" y="685" width="1160" height="30" rx="5"/>
+            <text class="footer-text" x="40" y="706">Faltan 28 días para Entrega 4 (5 Dic)  |  Faltan 35 días para Entrega Definitiva (12 Dic)</text>
+        </svg>
+    </div>
+    
+    <script>
+        function exportSVG() {
+            const svg = document.getElementById('gantt');
+            const svgData = new XMLSerializer().serializeToString(svg);
+            const blob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'gantt-tesis.svg';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+        
+        function exportPNG() {
+            const svg = document.getElementById('gantt');
+            const svgData = new XMLSerializer().serializeToString(svg);
+            
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Resolución HD para presentaciones
+            canvas.width = 1280;
+            canvas.height = 720;
+            
+            const img = new Image();
+            const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+            const url = URL.createObjectURL(svgBlob);
+            
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0);
+                
+                canvas.toBlob(function(blob) {
+                    const pngUrl = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = pngUrl;
+                    link.download = 'gantt-tesis.png';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(pngUrl);
+                    URL.revokeObjectURL(url);
+                }, 'image/png');
+            };
+            
+            img.src = url;
+        }
+    </script>
+</body>
+</html>

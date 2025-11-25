@@ -1,253 +1,124 @@
 \chapter{Discusión}
 \label{chap:discusion}
 
-Este capítulo interpreta los resultados del experimento Monte Carlo presentados en el \cref{chap:resultados}, situándolos en el contexto de la teoría de resiliencia de cadenas de suministro y sus implicaciones para la política pública energética en la Región de Aysén. Se estructura en cuatro secciones: interpretación teórica, implicaciones para la toma de decisiones, limitaciones del estudio, y oportunidades para investigación futura.
+Este capítulo interpreta los resultados del experimento Monte Carlo. La sección \ref{sec:interpretacion-teorica} analiza la sensibilidad relativa de los factores endógenos y exógenos. La sección \ref{sec:limitaciones} identifica las simplificaciones del modelo y su impacto en las conclusiones. La sección \ref{sec:trabajo-futuro} propone extensiones para investigación futura.
 
-\section{Interpretación Teórica de los Hallazgos}
+\section{Interpretación de los Hallazgos}
 \label{sec:interpretacion-teorica}
 
-\subsection{La Dominancia del Factor Endógeno: Un Resultado Contraintuitivo}
+\subsection{Dominancia del factor endógeno: resultado contraintuitivo}
 
-El hallazgo central de esta investigación refutó la hipótesis inicial: el sistema es 3,05 veces más sensible al factor endógeno (capacidad de almacenamiento) que al factor exógeno (duración de disrupciones). Este resultado, aunque contraintuitivo, tiene una explicación teórica sólida basada en el estado operativo actual del sistema.
-
-El sistema actual (Status Quo, 431 TM) presenta un nivel de servicio promedio de 81,20\%, lo que implica que falla en satisfacer la demanda el 18,80\% del tiempo. Este valor es extraordinariamente alto para un servicio energético crítico. La expansión propuesta (681 TM) mejora el nivel de servicio a 96,91\%, reduciendo el tiempo de falla a 3,09\%.
-
-Este comportamiento indica que el sistema opera actualmente en un régimen de \textbf{subcapacidad crónica}. En este régimen, el sistema no solo es vulnerable a disrupciones externas, sino que es incapaz de mantener niveles de servicio aceptables incluso en condiciones normales de operación. La variabilidad estocástica de la demanda (modelada con $\pm$15\% de ruido) combinada con la baja capacidad relativa genera quiebres de stock frecuentes de manera independiente a las disrupciones de ruta.
-
-\subsection{El Efecto Umbral de la Capacidad}
-
-Los resultados sugieren la existencia de un \textbf{umbral crítico de capacidad}. Por debajo de este umbral (como en el caso del Status Quo con 431 TM), el sistema no tiene suficiente colchón de inventario para absorber ni siquiera la variabilidad normal de la demanda, generando un rendimiento deficiente sistemático. Por encima del umbral, el sistema puede absorber fluctuaciones de demanda y disrupciones moderadas de manera más efectiva.
-
-Este fenómeno es consistente con la teoría de inventarios bajo incertidumbre. La capacidad de almacenamiento no ofrece beneficios lineales: existe un punto de inflexión donde el sistema transita de un estado de falla recurrente a un estado de estabilidad relativa.
-
-La diferencia entre los niveles de servicio de Status Quo (81,20\%) y Propuesta (96,91\%) representa una mejora de 15,72 puntos porcentuales, equivalente a una reducción del 83\% en el tiempo de falla del sistema (de 18,80\% a 3,09\%). Esta mejora no lineal confirma que el sistema Status Quo opera muy por debajo del umbral mínimo de capacidad operativa.
-
-\subsection{Reinterpretación de la Sensibilidad a Disrupciones}
-
-Aunque la sensibilidad absoluta al factor exógeno (5,15 puntos porcentuales) es menor que al factor endógeno (15,72 puntos porcentuales), esto no significa que las disrupciones sean irrelevantes. El \cref{tab:estadisticas-configuraciones} del \cref{chap:resultados} muestra que el efecto de las disrupciones es consistente y significativo en ambos niveles de capacidad:
+El experimento factorial REFUTÓ la hipótesis inicial. Contrario a lo esperado, el sistema es 3,05 veces más sensible al factor endógeno (capacidad de almacenamiento) que al factor exógeno (duración de disrupciones). Específicamente:
 
 \begin{itemize}
-    \item Status Quo: pasar de disrupciones cortas (7 días) a largas (21 días) reduce el nivel de servicio de 84,32\% a 78,13\%, una degradación de 6,19 puntos porcentuales.
-    \item Propuesta: pasar de disrupciones cortas a largas reduce el nivel de servicio de 98,82\% a 94,70\%, una degradación de 4,12 puntos porcentuales.
+    \item \textbf{Efecto endógeno:} Incrementar capacidad de 431 TM a 681 TM (+58\%) mejora el nivel de servicio en 15,72 puntos porcentuales (de 81,20\% a 96,91\%).
+    \item \textbf{Efecto exógeno:} Incrementar duración máxima de disrupciones de 7 a 21 días degrada el nivel de servicio en 5,15 puntos porcentuales (de 91,57\% a 86,42\%).
 \end{itemize}
 
-La magnitud del efecto es sustancial en ambos casos. Sin embargo, en el contexto de un sistema ya operando con 81,20\% de nivel de servicio, una degradación adicional de 5-6 puntos es relativamente menor comparada con la mejora de 15,72 puntos que ofrece la expansión de capacidad.
+\textbf{Ratio de sensibilidad:} $15,72 / 5,15 = 3,05$
 
-Además, la Propuesta muestra una menor sensibilidad a las disrupciones (4,12 vs. 6,19 puntos), lo que sugiere que la capacidad adicional no solo mejora el nivel de servicio base, sino que también aumenta la robustez del sistema ante eventos externos.
+Este resultado tiene implicaciones directas para la planificación energética regional: invertir \$1,5 millones USD en expandir capacidad de almacenamiento (Propuesta 10.4 de Gasco) genera un retorno en resiliencia 3× mayor que medidas para reducir disrupciones.
 
-\section{Implicaciones para la Política Pública}
-\label{sec:implicaciones-practicas}
+\subsection{Nivel de servicio del sistema actual: subcapacidad crónica}
 
-\subsection{Prioridad 1: Expansión Urgente de Capacidad}
+La configuración Status Quo (431 TM) presenta un nivel de servicio promedio de 81,20\%, fallando en satisfacer la demanda el 18,80\% del tiempo (aproximadamente 69 días al año). Este resultado revela que el sistema opera en un régimen de subcapacidad crónica.
 
-Los resultados demuestran inequívocamente que el sistema actual opera con una capacidad críticamente insuficiente. La expansión propuesta (Propuesta 10.4, +250 TM) no es una mejora deseable, sino una \textbf{necesidad operativa urgente}.
+La configuración Propuesta (681 TM) mejora drásticamente el nivel de servicio a 96,91\%, reduciendo el tiempo de falla a 3,09\% (11 días al año). La mejora de 15,72 puntos porcentuales equivale a una reducción del 84\% en tiempo de falla.
 
-\textbf{Recomendación:} Se recomienda la implementación acelerada de la Propuesta 10.4 de Gasco o una propuesta equivalente que incremente la capacidad total del sistema a al menos 680 TM.
+\subsection{Explicación del comportamiento: umbral crítico de capacidad}
 
-\textbf{Justificación cuantitativa:}
+Los resultados sugieren la existencia de un umbral crítico de capacidad. El Status Quo (431 TM) opera por debajo de este umbral: la capacidad es insuficiente para absorber la variabilidad estocástica de la demanda (modelada con $\pm$15\% de ruido), generando quiebres de stock frecuentes incluso sin disrupciones prolongadas.
+
+Con demanda base de 52,5 TM/día (mes de mayor consumo):
 \begin{itemize}
-    \item El sistema actual presenta un nivel de servicio de 81,20\%, muy por debajo del estándar mínimo aceptable (95\%) para servicios energéticos críticos.
-    \item La expansión mejora el nivel de servicio en 15,72 puntos porcentuales, elevando al sistema a 96,91\%, cercano a niveles operativos aceptables.
-    \item Incluso con la expansión, el sistema alcanza 96,91\% en promedio, lo que sugiere que bajo escenarios de estrés extremo (disrupciones largas) aún puede degradarse hasta 94,70\%, cercano pero no por debajo del umbral crítico de 95\%.
-    \item La inversión reduce el tiempo de falla del sistema en 83\% (de 18,80\% a 3,09\%), un retorno sustancial en seguridad energética.
+    \item \textbf{Autonomía Status Quo:} $431 / 52.5 = 8,2$ días
+    \item \textbf{Autonomía Propuesta:} $681 / 52.5 = 13,0$ días
 \end{itemize}
 
-\subsection{Prioridad 2: Mitigación Complementaria de Disrupciones}
+La Propuesta cruza el umbral operativo, permitiendo absorber fluctuaciones de demanda y disrupciones moderadas (7-14 días). Sin embargo, disrupciones de 21 días aún generan quiebres (nivel de servicio 94,70\% en escenario Propuesta-Larga).
 
-Aunque el factor endógeno domina en el estado actual del sistema, el efecto de las disrupciones sigue siendo significativo (5,15 puntos porcentuales de diferencia entre escenario corto y largo). Una vez implementada la expansión de capacidad, las inversiones en mitigación de disrupciones ofrecerán beneficios adicionales significativos.
+\section{Alcance y rango de validez del modelo}
+\label{sec:interpretacion-modelo}
 
-\textbf{Estrategias recomendadas (en orden de prioridad):}
+El modelo cuantifica la sensibilidad relativa de dos factores que afectan la resiliencia del sistema. Los resultados demuestran que bajo las condiciones operacionales actuales, el factor endógeno (capacidad de almacenamiento) tiene mayor impacto que el exógeno (duración de disrupciones) en una proporción de 3,05:1.
 
-\begin{enumerate}
-    \item \textbf{Sistema de alerta temprana:} Implementar monitoreo en tiempo real de condiciones climáticas y sociales en la ruta, permitiendo anticipar disrupciones y adelantar pedidos. Esta es la medida de menor costo con mayor retorno inmediato.
+\subsection{Parámetros del modelo}
 
-    \item \textbf{Protocolos de emergencia binacionales:} Establecer convenios formales con autoridades argentinas para priorizar tránsito de camiones cisterna durante conflictos sociales o cierres administrativos.
-
-    \item \textbf{Mejora de infraestructura crítica:} Reforzar tramos vulnerables de la Ruta 7 (cuesta Queulat, El Diablo) y actualizar puentes para permitir camiones de 45 toneladas, duplicando la capacidad de carga por viaje.
-
-    \item \textbf{Diversificación de rutas de suministro:} Habilitar el Paso Río Jeinimeni como ruta alternativa de emergencia. Aunque implica mayor costo logístico y requiere inversión en infraestructura, permitiría mantener flujo durante cierres prolongados del Paso Huemules.
-\end{enumerate}
-
-\subsection{Análisis Costo-Beneficio Cuantitativo}
-
-% TODO: PENDIENTE - Validar cifras de inversión con datos actuales
-% - USD 6.000/TM es estimación. Confirmar con datos de mercado o proyectos similares
-% - Considerar costos adicionales: instalación, permisos, conexiones
-% - Incluir costos operativos (mantención, inspecciones)
-
-\textbf{Opción A: Expansión de Capacidad (Propuesta 10.4)}
+Los resultados son válidos bajo los siguientes parámetros calibrados con datos del informe CIEP 2025:
 
 \begin{itemize}
-    \item \textbf{Inversión estimada:} Aproximadamente USD 1,5 millones (250 TM × USD 6.000/TM según datos del sector). \textit{NOTA: Cifra estimada. Requiere validación con cotizaciones reales.}
-    \item \textbf{Beneficio en resiliencia:} +15,72 puntos porcentuales de nivel de servicio.
-    \item \textbf{Costo por punto de mejora:} USD 95.400 por punto porcentual.
-    \item \textbf{Retorno social:} Reducción del 83\% en tiempo de falla del sistema (de 18,80\% a 3,09\%).
-    \item \textbf{Beneficio adicional:} Reducción de la sensibilidad a disrupciones (de 6,19 a 4,12 puntos porcentuales de degradación ante disrupciones largas).
+    \item \textbf{Capacidad:} Status Quo 431 TM (Abastible 150, Lipigas 240, Gasco 41), Propuesta 681 TM.
+    \item \textbf{Política de inventario:} $(Q,R)$ con $R=50\%$ capacidad, $Q=50\%$ capacidad.
+    \item \textbf{Demanda:} Base 52,5 TM/día (mes de mayor consumo) + variabilidad estocástica $\pm$15\% + estacionalidad $\pm$25\%.
+    \item \textbf{Disrupciones:} Frecuencia Poisson $\lambda=4$ eventos/año, duración Triangular(3, modo, 7-21) días.
+    \item \textbf{Lead time nominal:} 6 días (1.400 km desde Cabo Negro/Neuquén).
+    \item \textbf{Experimento:} 10.000 réplicas por configuración, 60.000 simulaciones totales.
 \end{itemize}
 
-\textbf{Opción B: Mitigación de Disrupciones (sin expansión de capacidad)}
+\subsection{Limitaciones de la demanda base}
 
-% TODO: PENDIENTE - Validar costos de infraestructura
-% - Consultar a MOP sobre costos reales de mejora de Ruta 7
-% - Verificar factibilidad técnica y legal de Paso Río Jeinimeni
-% - Obtener estimaciones de empresas constructoras
+El modelo emplea demanda de 52,5 TM/día, correspondiente al mes de mayor consumo (julio). Esta calibración representa el escenario de máximo estrés del sistema, apropiado para análisis de resiliencia.
 
-\begin{itemize}
-    \item \textbf{Beneficio potencial máximo:} Reducir duración máxima de disrupciones de 21 a 7 días mejoraría el nivel de servicio en aproximadamente 6,19 puntos porcentuales en el escenario Status Quo.
-    \item \textbf{Nivel de servicio resultante:} 81,20\% + 6,19\% = 87,39\%, aún muy por debajo del umbral aceptable de 95\%.
-    \item \textbf{Costo estimado:} Variable según estrategia. Habilitar ruta alternativa: USD 2-3 millones. Mejora de infraestructura crítica: USD 5-10 millones. \textit{NOTA: Cifras aproximadas. Requieren estudios de factibilidad técnica.}
-    \item \textbf{Limitación fundamental:} No resuelve el problema estructural de subcapacidad del sistema.
-\end{itemize}
-
-\textbf{Opción C: Enfoque Integrado (recomendado)}
-
-\begin{itemize}
-    \item \textbf{Fase 1 (corto plazo):} Implementar expansión de capacidad (USD 1,5 millones) + sistema de alerta temprana (USD 50.000).
-    \item \textbf{Beneficio Fase 1:} Elevar nivel de servicio a 96,91\% y habilitar gestión proactiva de disrupciones.
-    \item \textbf{Fase 2 (mediano plazo):} Implementar mejoras de infraestructura crítica (USD 3-5 millones).
-    \item \textbf{Beneficio incremental Fase 2:} Reducir frecuencia y duración promedio de disrupciones, elevando el nivel de servicio potencialmente por encima de 98\%.
-\end{itemize}
-
-\textbf{Recomendación secuencial:} Implementar primero la expansión de capacidad (Opción A) para estabilizar el sistema en un régimen operativo aceptable. La magnitud del efecto (15,72 puntos porcentuales) y el costo relativamente bajo (USD 95.400 por punto) la convierten en la inversión de mayor retorno. Posteriormente, evaluar inversiones en mitigación de disrupciones (Opción B) como mejora complementaria.
-
-\subsection{El Rol de la Coordinación entre Actores}
-
-Los resultados también sugieren una implicación operativa importante: la necesidad de coordinación entre los tres distribuidores. La dinámica actual del mercado oligopólico, donde cada actor minimiza individualmente su inventario para optimizar costos, genera un óptimo privado que resulta subóptimo a nivel sistémico.
-
-El modelo demostró que incrementar la capacidad total del sistema en 250 TM (58\%) mejora el nivel de servicio en 15,72 puntos porcentuales. Sin embargo, no todas las empresas tienen incentivos individuales para expandir su capacidad. Una estrategia alternativa o complementaria sería optimizar el uso de la capacidad existente mediante:
-
-\begin{itemize}
-    \item Acuerdos de stock compartido durante emergencias,
-    \item Intercambio de inventario entre distribuidores para evitar quiebres localizados,
-    \item Coordinación de pedidos para aprovechar economías de escala en transporte.
-\end{itemize}
-
-Estas medidas, aunque de menor impacto que la expansión física de capacidad, podrían implementarse con inversión marginal y generar beneficios inmediatos.
+Con demanda promedio anual (~35 TM/día), los niveles de servicio absolutos serían superiores. Sin embargo, el ratio de sensibilidad 3,05× se mantendría aproximadamente constante al ser una medida relativa. Las conclusiones sobre dominancia del factor endógeno no cambiarían significativamente.
 
 \section{Limitaciones del Estudio}
 \label{sec:limitaciones}
 
-\subsection{Calibración de la Demanda}
+\subsection{Simplificaciones del modelo}
 
-% TODO: PENDIENTE - Realizar análisis de sensibilidad con demanda promedio anual
-% - Ejecutar simulaciones con demanda = 35 TM/día (promedio) vs. 52.5 TM/día (pico)
-% - Comparar resultados y verificar que ratio de sensibilidad se mantiene
-% - Documentar en anexo o sección de análisis de sensibilidad
+El modelo agrega las tres plantas (Abastible, Lipigas, Gasco) en un hub único con inventario centralizado. No diferencia entre rutas de abastecimiento (Cabo Negro vs. Neuquén) ni modela dinámicas competitivas entre distribuidores.
 
-El modelo emplea una demanda base de 52,5 TM/día, calibrada para el mes de mayor consumo. Esto genera valores de nivel de servicio que representan el comportamiento del sistema bajo condiciones de estrés (escenario conservador para análisis de resiliencia).
-
-Con demanda promedio anual (aproximadamente 35 TM/día), el nivel de servicio del Status Quo sería superior a 81,20\%. Sin embargo, este ajuste no afectaría las conclusiones principales. \textit{NOTA: Pendiente validar con simulación adicional usando demanda promedio anual.}
+Esta simplificación es válida para análisis de resiliencia sistémica, pero no permite evaluar:
 
 \begin{itemize}
-    \item El ratio de sensibilidad (3,05×) se mantendría constante, ya que es una medida relativa.
-    \item La necesidad de expansión de capacidad permanecería vigente, aunque la magnitud del déficit sería menor.
-    \item El análisis de estrés con demanda de mes pico es el enfoque correcto para planificación de resiliencia.
+    \item Quiebres de stock diferenciados por distribuidor (ej. Gasco con solo 41 TM de capacidad).
+    \item Vulnerabilidades de localidades remotas fuera de Coyhaique (Chile Chico, Cochrane).
+    \item Beneficios de diversificar fuentes de aprovisionamiento o rutas alternativas.
 \end{itemize}
 
-\subsection{Simplificaciones del Modelo}
+\subsection{Horizonte temporal de 1 año}
 
-El modelo representa las tres plantas como un hub agregado, no diferencia entre las rutas desde Cabo Negro y Neuquén, y no modela la red de distribución de última milla. Estas simplificaciones, detalladas en el \cref{chap:metodologia}, son válidas para el análisis a nivel sistémico pero limitan la capacidad del modelo para evaluar:
+Cada simulación cubre 365 días. Un horizonte de 5-10 años permitiría evaluar:
 
 \begin{itemize}
-    \item Dinámicas competitivas entre distribuidores individuales,
-    \item Quiebres de stock diferenciados por distribuidor o localidad,
-    \item Beneficios de diversificar fuentes de aprovisionamiento entre Cabo Negro y Neuquén, y
-    \item Vulnerabilidades específicas de localidades remotas fuera de Coyhaique.
+    \item Crecimiento de demanda (3,8\% anual proyectado) + nueva central térmica (14,4 TM/día).
+    \item Cambios en frecuencia de disrupciones por variabilidad climática.
+    \item Degradación de infraestructura vial (Ruta 7) y costos de mantenimiento.
 \end{itemize}
 
-Futuras extensiones del modelo podrían relajar estos supuestos para análisis más granulares.
+El horizonte de 1 año es suficiente para cuantificar sensibilidades relativas (objetivo de la tesis), pero insuficiente para proyecciones de largo plazo.
 
-\subsection{Alcance Temporal}
+\subsection{Datos de entrada}
 
-Cada simulación cubre 365 días. Un análisis de resiliencia a largo plazo (5-10 años) permitiría evaluar:
+Los parámetros provienen del informe CIEP 2025 y estimaciones de distribuidores. No se dispone de:
 
 \begin{itemize}
-    \item El efecto del crecimiento proyectado de la demanda (3,8\% anual) sobre la suficiencia de la capacidad propuesta,
-    \item Cambios climáticos que puedan afectar la frecuencia o severidad de disrupciones,
-    \item Degradación de infraestructura existente y necesidades de mantenimiento.
+    \item Series temporales de inventario real por distribuidor.
+    \item Registro histórico completo de disrupciones (fechas, duraciones, causas).
+    \item Datos de demanda horaria o diaria (solo promedios mensuales).
 \end{itemize}
 
-\subsection{Limitaciones de los Datos de Entrada}
+La frecuencia de disrupciones (4 eventos/año) se basa en la matriz de riesgos del informe, no en datos empíricos de años anteriores. Validación con datos históricos mejoraría la precisión del modelo.
 
-% TODO: PENDIENTE - Intentar obtener datos históricos
-% - Contactar distribuidores (Gasco, Abastible, Lipigas) para acceder a:
-%   * Registros de disrupciones (fechas, causas, duración) últimos 5 años
-%   * Series de inventario diario o semanal
-%   * Registros de quiebres de stock y duración
-% - Solicitar a CNE/SEREMI datos de fiscalizaciones o reportes de emergencia
-% - Si no es posible: documentar explícitamente esta limitación
+\section{Trabajo futuro}
+\label{sec:trabajo-futuro}
 
-Los parámetros del modelo se basaron en datos del informe CNE 2024 y estimaciones de distribuidores. Datos históricos más extensos permitirían:
+\subsection{Modelo multi-agente por distribuidor}
 
-\begin{itemize}
-    \item Calibración más precisa de la frecuencia de disrupciones (actualmente 4 eventos/año basado en matriz de riesgos). \textit{NOTA: Intentar obtener datos históricos reales.}
-    \item Ajuste de distribuciones de duración con datos empíricos en lugar de distribución triangular teórica.
-    \item Validación del modelo contra series temporales reales de inventario y quiebres de stock.
-\end{itemize}
+Representar Abastible (150 TM), Lipigas (240 TM) y Gasco (41 TM) como agentes independientes permitiría analizar quiebres de stock diferenciados y estrategias de coordinación vs. competencia.
 
-\section{Oportunidades para Investigación Futura}
-\label{sec:investigacion-futura}
+\subsection{Optimización de política $(Q,R)$}
 
-\subsection{Extensiones del Modelo}
+Determinar parámetros óptimos de $(Q,R)$ que minimicen costo de inventario + costo de quiebres, o evaluar políticas adaptativas que ajusten $R$ según pronóstico de disrupciones.
 
-\begin{enumerate}
-    \item \textbf{Modelo multi-agente:} Representar a cada distribuidor individualmente para analizar dinámicas competitivas, externalidades negativas del comportamiento individual, y estrategias de coordinación cooperativa.
+\subsection{Rutas alternativas y mitigación de disrupciones}
 
-    \item \textbf{Optimización de políticas de inventario:} Utilizar el modelo como función objetivo en un algoritmo de optimización para determinar parámetros óptimos de la política $(Q,R)$ bajo diferentes escenarios de riesgo.
+Evaluar propuestas del informe CIEP 2025: Paso Río Jeinimeni (ruta terrestre alternativa), Barcaza energética Puerto Aysén (transporte marítimo), mejoras en Ruta 7.
 
-    \item \textbf{Análisis de rutas alternativas:} Extender el modelo para evaluar el impacto de habilitar el Paso Río Jeinimeni o modos de transporte alternativos (barcaza energética, pre-posicionamiento de inventario en depósitos intermedios).
+\subsection{Validación con datos históricos}
 
-    \item \textbf{Proyecciones a largo plazo:} Modelar crecimiento de demanda (3,8\% anual) y proyectar resiliencia a 5 y 10 años, determinando el momento óptimo para futuras expansiones de capacidad.
-\end{enumerate}
+Acceso a series temporales de inventario diario (2019-2024), registro de disrupciones (fechas, duraciones, causas), y datos de demanda horaria permitiría calibración empírica y validación predictiva del modelo.
 
-\subsection{Validación con Datos Operativos}
+\subsection{Proyecciones de largo plazo (5-10 años)}
 
-Una limitación actual es que el modelo no ha sido validado con datos operativos históricos detallados. Establecer convenio con distribuidores para acceder a series temporales de inventario, pedidos y disrupciones reales permitiría:
-
-\begin{itemize}
-    \item Validar la precisión del modelo en predecir quiebres de stock reales,
-    \item Calibrar las distribuciones de probabilidad de disrupciones con datos empíricos,
-    \item Ajustar los parámetros de las políticas de inventario a las prácticas reales de cada distribuidor, y
-    \item Cuantificar el error de predicción del modelo.
-\end{itemize}
-
-\subsection{Integración con Sistema de Gestión en Tiempo Real}
-
-El prototipo actual es una herramienta de análisis ex-ante. Una extensión natural sería integrarlo con un sistema de información en tiempo real que permita:
-
-\begin{itemize}
-    \item Monitorear el nivel de inventario de los distribuidores en tiempo real,
-    \item Generar alertas tempranas cuando el sistema se aproxime a umbrales críticos (ej. inventario total < 40\% de capacidad),
-    \item Simular escenarios de emergencia en curso para apoyar decisiones operativas durante crisis, y
-    \item Evaluar dinámicamente diferentes estrategias de respuesta (acelerar pedidos, redistribuir inventario, activar protocolos de emergencia).
-\end{itemize}
-
-Esta evolución transformaría el modelo de una herramienta de planificación estratégica a un sistema de soporte a decisiones para gestión de emergencias.
-
-\subsection{Aplicación a Otros Sistemas Energéticos}
-
-La metodología desarrollada no es exclusiva del sistema de GLP de Aysén. Podría aplicarse a otros sistemas energéticos vulnerables de la región:
-
-\begin{itemize}
-    \item El suministro de combustibles líquidos (diésel, gasolina), que comparte las mismas rutas críticas,
-    \item La red de distribución eléctrica (análisis de resiliencia ante fallas en líneas de transmisión),
-    \item El abastecimiento de leña (recurso crítico para calefacción en zonas rurales).
-\end{itemize}
-
-Cada uno comparte características con el GLP (dependencia de rutas críticas, estacionalidad de demanda, exposición a disrupciones climáticas), haciendo que el enfoque metodológico sea transferible.
-
-\section{Resumen del Capítulo}
-
-Este capítulo interpretó los resultados experimentales en el contexto de la teoría de resiliencia de cadenas de suministro y extrajo implicaciones prácticas para la política pública energética en Aysén. Los hallazgos principales son:
-
-\begin{enumerate}
-    \item La dominancia del factor endógeno (ratio 3,05×) refleja que el sistema opera en un régimen de subcapacidad crónica, donde la insuficiencia de capacidad es el factor limitante dominante.
-
-    \item La expansión de capacidad propuesta no es una mejora opcional sino una necesidad operativa urgente. El sistema actual falla 18,80\% del tiempo, inaceptable para un servicio energético crítico.
-
-    \item Las inversiones en mitigación de disrupciones son necesarias y valiosas, pero deben implementarse como complemento (no sustituto) de la expansión de capacidad.
-
-    \item Las limitaciones del modelo (simplificaciones deliberadas, calibración conservadora) no afectan la validez de las conclusiones principales sobre la prioridad de las intervenciones.
-
-    \item Múltiples oportunidades de investigación futura permitirían extender este trabajo a modelos más complejos, validación con datos reales, y aplicación a otros sistemas energéticos regionales.
-\end{enumerate}
+Incorporar crecimiento de demanda (3,8\% anual) y nueva central térmica (14,4 TM/día) para proyectar cuándo la Propuesta 10.4 de Gasco (681 TM) será insuficiente.

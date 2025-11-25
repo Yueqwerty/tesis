@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.9)  23 OCT 2025 22:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.9)  23 NOV 2025 16:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1106,11 +1106,7 @@ Package biblatex Info: ... file 'blx-dm.def' found.
 File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'apa.dbx' found.
-
-(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-apa\apa.dbx
-File: apa.dbx 2023/03/20 v9.17 APA biblatex style data model
-)
+Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@afterword=\count449
@@ -1149,48 +1145,38 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@savedshortauthor=\count482
 \c@shorteditor=\count483
 \c@savedshorteditor=\count484
-\c@narrator=\count485
-\c@savednarrator=\count486
-\c@execproducer=\count487
-\c@savedexecproducer=\count488
-\c@execdirector=\count489
-\c@savedexecdirector=\count490
-\c@with=\count491
-\c@savedwith=\count492
-\c@labelname=\count493
-\c@savedlabelname=\count494
-\c@institution=\count495
-\c@savedinstitution=\count496
-\c@lista=\count497
-\c@savedlista=\count498
-\c@listb=\count499
-\c@savedlistb=\count500
-\c@listc=\count501
-\c@savedlistc=\count502
-\c@listd=\count503
-\c@savedlistd=\count504
-\c@liste=\count505
-\c@savedliste=\count506
-\c@listf=\count507
-\c@savedlistf=\count508
-\c@location=\count509
-\c@savedlocation=\count510
-\c@organization=\count511
-\c@savedorganization=\count512
-\c@origlocation=\count513
-\c@savedoriglocation=\count514
-\c@origpublisher=\count515
-\c@savedorigpublisher=\count516
-\c@publisher=\count517
-\c@savedpublisher=\count518
-\c@language=\count519
-\c@savedlanguage=\count520
-\c@origlanguage=\count521
-\c@savedoriglanguage=\count522
-\c@citation=\count523
-\c@savedcitation=\count524
-\c@pageref=\count525
-\c@savedpageref=\count526
+\c@labelname=\count485
+\c@savedlabelname=\count486
+\c@institution=\count487
+\c@savedinstitution=\count488
+\c@lista=\count489
+\c@savedlista=\count490
+\c@listb=\count491
+\c@savedlistb=\count492
+\c@listc=\count493
+\c@savedlistc=\count494
+\c@listd=\count495
+\c@savedlistd=\count496
+\c@liste=\count497
+\c@savedliste=\count498
+\c@listf=\count499
+\c@savedlistf=\count500
+\c@location=\count501
+\c@savedlocation=\count502
+\c@organization=\count503
+\c@savedorganization=\count504
+\c@origlocation=\count505
+\c@savedoriglocation=\count506
+\c@origpublisher=\count507
+\c@savedorigpublisher=\count508
+\c@publisher=\count509
+\c@savedpublisher=\count510
+\c@language=\count511
+\c@savedlanguage=\count512
+\c@origlanguage=\count513
+\c@savedoriglanguage=\count514
+\c@pageref=\count515
+\c@savedpageref=\count516
 \shorthandwidth=\skip263
 \shortjournalwidth=\skip264
 \shortserieswidth=\skip265
@@ -1215,66 +1201,52 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
-\c@textcitecount=\count527
-\c@textcitetotal=\count528
-\c@textcitemaxnames=\count529
-\c@biburlbigbreakpenalty=\count530
-\c@biburlbreakpenalty=\count531
-\c@biburlnumpenalty=\count532
-\c@biburlucpenalty=\count533
-\c@biburllcpenalty=\count534
+\c@textcitecount=\count517
+\c@textcitetotal=\count518
+\c@textcitemaxnames=\count519
+\c@biburlbigbreakpenalty=\count520
+\c@biburlbreakpenalty=\count521
+\c@biburlnumpenalty=\count522
+\c@biburlucpenalty=\count523
+\c@biburllcpenalty=\count524
 \biburlbigskip=\muskip19
 \biburlnumskip=\muskip20
 \biburlucskip=\muskip21
 \biburllcskip=\muskip22
-\c@smartand=\count535
+\c@smartand=\count525
 )
-Package biblatex Info: Trying to load bibliography style 'apa'...
-Package biblatex Info: ... file 'apa.bbx' found.
- (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-apa\apa.bbx
-File: apa.bbx 2023/03/20 v9.17 APA biblatex references style
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.bb
+x
+File: numeric.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
 (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
 bx
 File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count536
-\c@bbx:relatedtotal=\count537
-)
-Package biblatex Info: Delimiter 'nameyeardelim' in context 'bib' already defin
-ed, overwriting.
-Package biblatex Info: Delimiter 'nameyeardelim' in context 'biblist' already d
-efined, overwriting.
-Package biblatex Info: Delimiter 'nonameyeardelim' in context 'bib' already def
-ined, overwriting.
-Package biblatex Info: Delimiter 'nonameyeardelim' in context 'biblist' already
- defined, overwriting.
-)
-Package biblatex Info: Trying to load citation style 'apa'...
-Package biblatex Info: ... file 'apa.cbx' found.
+\c@bbx:relatedcount=\count526
+\c@bbx:relatedtotal=\count527
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
 
-(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-apa\apa.cbx
-File: apa.cbx 2023/03/20 v9.17 APA biblatex citation style
-Package biblatex Info: Delimiter 'nameyeardelim' in context '' already defined,
- overwriting.
-Package biblatex Info: Delimiter 'andothersdelim' in context '' already defined
-, overwriting.
-Package biblatex Info: Redefining '\fullcite'.
-Package biblatex Info: Redefining '\citeauthor'.
-Package biblatex Info: Redefining '\citeyear'.
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.cb
+x
+File: numeric.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
-Package biblatex Info: Redefining '\cites'.
 Package biblatex Info: Redefining '\parencite'.
-Package biblatex Info: Redefining '\parencites'.
 Package biblatex Info: Redefining '\footcite'.
-Package biblatex Info: Redefining '\footcites'.
 Package biblatex Info: Redefining '\footcitetext'.
-Package biblatex Info: Redefining '\footcitetexts'.
 Package biblatex Info: Redefining '\smartcite'.
-Package biblatex Info: Redefining '\smartcites'.
+Package biblatex Info: Redefining '\supercite'.
 Package biblatex Info: Redefining '\textcite'.
 Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
@@ -1312,8 +1284,8 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \@linkdim=\dimen321
-\Hy@linkcounter=\count538
-\Hy@pagecounter=\count539
+\Hy@linkcounter=\count528
+\Hy@pagecounter=\count529
  (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2025-05-20 v7.01m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -1321,7 +1293,7 @@ Now handling font encoding PD1 ...
 ) (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count540
+\Hy@SavedSpaceFactor=\count530
  (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2025-05-20 v7.01m Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -1334,7 +1306,7 @@ Package hyperref Info: Plain pages OFF on input line 4172.
 Package hyperref Info: Backreferencing OFF on input line 4177.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count541
+\c@Hy@tempcnt=\count531
 LaTeX Info: Redefining \url on input line 4763.
 \XeTeXLinkMargin=\dimen322
 
@@ -1346,7 +1318,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count542
+\Fld@menulength=\count532
 \Field@Width=\dimen323
 \Fld@charsize=\dimen324
 Package hyperref Info: Hyper figures OFF on input line 6042.
@@ -1361,15 +1333,15 @@ Package hyperref Info: PDF/A mode OFF on input line 6072.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count543
-\c@Item=\count544
-\c@Hfootnote=\count545
+\Hy@abspage=\count533
+\c@Item=\count534
+\c@Hfootnote=\count535
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2025-05-20 v7.01m Hyperref driver for pdfTeX
-\Fld@listcount=\count546
-\c@bookmark@seq@number=\count547
+\Fld@listcount=\count536
+\c@bookmark@seq@number=\count537
 
 (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
@@ -1391,8 +1363,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/memoir\memhfixc.sty
 Package: memhfixc 2025/03/06 v1.23 hyperref package fixes for memoir class
-\c@memhycontfloat=\count548
-\c@mem@Hpagenote=\count549
+\c@memhycontfloat=\count538
+\c@mem@Hpagenote=\count539
 )
 (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/cleveref\cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
@@ -1415,17 +1387,17 @@ e 7852.
 )
 ==> First Aid for cleveref.sty applied!
 (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count550
+\lst@mode=\count540
 \lst@gtempboxa=\box79
 \lst@token=\toks49
-\lst@length=\count551
+\lst@length=\count541
 \lst@currlwidth=\dimen325
-\lst@column=\count552
-\lst@pos=\count553
+\lst@column=\count542
+\lst@pos=\count543
 \lst@lostspace=\dimen326
 \lst@width=\dimen327
-\lst@newlines=\count554
-\lst@lineno=\count555
+\lst@newlines=\count544
+\lst@lineno=\count545
 \lst@maxwidth=\dimen328
 
 (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
@@ -1433,8 +1405,8 @@ File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
 )
 (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
-\c@lstnumber=\count556
-\lst@skipnumbers=\count557
+\c@lstnumber=\count546
+\lst@skipnumbers=\count547
 \lst@framebox=\box80
 )
 (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
@@ -1468,8 +1440,8 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
-LaTeX Font Info:    Trying to load font information for T1+ppl on input line 88
-.
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 10
+6.
 (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ppl.fd
 File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
 )
@@ -1487,8 +1459,74 @@ LaTeX Warning: Label `f' multiply defined.
 
 LaTeX Warning: Label `f@cref' multiply defined.
 
-) (capitulos/06_estado_del_arte.aux) (capitulos/07_metodologia.aux)
-(capitulos/09_resultados_montecarlo.aux
+
+LaTeX Warning: Label `f' multiply defined.
+
+
+LaTeX Warning: Label `f@cref' multiply defined.
+
+
+LaTeX Warning: Label `f' multiply defined.
+
+
+LaTeX Warning: Label `f@cref' multiply defined.
+
+
+LaTeX Warning: Label `f' multiply defined.
+
+
+LaTeX Warning: Label `f@cref' multiply defined.
+
+
+LaTeX Warning: Label `f' multiply defined.
+
+
+LaTeX Warning: Label `f@cref' multiply defined.
+
+
+LaTeX Warning: Label `f' multiply defined.
+
+
+LaTeX Warning: Label `f@cref' multiply defined.
+
+
+LaTeX Warning: Label `f' multiply defined.
+
+
+LaTeX Warning: Label `f@cref' multiply defined.
+
+) (capitulos/06_estado_del_arte.aux) (capitulos/07_metodologia.aux
+
+LaTeX Warning: Label `f' multiply defined.
+
+
+LaTeX Warning: Label `f@cref' multiply defined.
+
+
+LaTeX Warning: Label `f' multiply defined.
+
+
+LaTeX Warning: Label `f@cref' multiply defined.
+
+) (capitulos/09_resultados_montecarlo.aux
+
+LaTeX Warning: Label `f' multiply defined.
+
+
+LaTeX Warning: Label `f@cref' multiply defined.
+
+
+LaTeX Warning: Label `f' multiply defined.
+
+
+LaTeX Warning: Label `f@cref' multiply defined.
+
+
+LaTeX Warning: Label `f' multiply defined.
+
+
+LaTeX Warning: Label `f@cref' multiply defined.
+
 
 LaTeX Warning: Label `t' multiply defined.
 
@@ -1550,6 +1588,18 @@ LaTeX Warning: Label `f' multiply defined.
 LaTeX Warning: Label `f@cref' multiply defined.
 
 
+LaTeX Warning: Label `f' multiply defined.
+
+
+LaTeX Warning: Label `f@cref' multiply defined.
+
+
+LaTeX Warning: Label `f' multiply defined.
+
+
+LaTeX Warning: Label `f@cref' multiply defined.
+
+
 LaTeX Warning: Label `t' multiply defined.
 
 
@@ -1598,54 +1648,49 @@ LaTeX Warning: Label `f' multiply defined.
 LaTeX Warning: Label `f@cref' multiply defined.
 
 
-LaTeX Warning: Label `f' multiply defined.
+LaTeX Warning: Label `t' multiply defined.
 
 
-LaTeX Warning: Label `f@cref' multiply defined.
+LaTeX Warning: Label `t@cref' multiply defined.
 
-
-LaTeX Warning: Label `f' multiply defined.
-
-
-LaTeX Warning: Label `f@cref' multiply defined.
-
-) (capitulos/10_discusion_revisada.aux) (capitulos/08_contribuciones_plan.aux))
+) (capitulos/10_discusion_revisada.aux) (capitulos/08_contribuciones_plan.aux)
+(capitulos/apendice_a_codigo.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Info: Redefining \. on input line 88.
-LaTeX Info: Redefining \% on input line 88.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Info: Redefining \. on input line 106.
+LaTeX Info: Redefining \% on input line 106.
 
 (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count558
+\scratchcounter=\count548
 \scratchdimen=\dimen329
 \scratchbox=\box81
-\nofMPsegments=\count559
-\nofMParguments=\count560
+\nofMPsegments=\count549
+\nofMParguments=\count550
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count561
+\MPscratchCnt=\count551
 \MPscratchDim=\dimen330
-\MPnumerator=\count562
-\makeMPintoPDFobject=\count563
+\MPnumerator=\count552
+\makeMPintoPDFobject=\count553
 \everyMPtoPDFconversion=\toks51
 )
 (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -1664,13 +1709,7 @@ File: translations-basic-dictionary-spanish.trsl (spanish translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `spanish'. on input line 88.
-Package biblatex Info: Trying to load language 'spanish' -> 'spanish-apa'...
-Package biblatex Info: ... file 'spanish-apa.lbx' found.
-
-(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-apa\spanish-ap
-a.lbx
-File: spanish-apa.lbx 2023/03/20 v9.17 APA biblatex localisation
+or `spanish'. on input line 106.
 Package biblatex Info: Trying to load language 'spanish'...
 Package biblatex Info: ... file 'spanish.lbx' found.
 
@@ -1678,13 +1717,6 @@ Package biblatex Info: ... file 'spanish.lbx' found.
 x
 File: spanish.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 )
-Package biblatex Info: Trying to load language 'spanish'...
-Package biblatex Info: ... file 'spanish.lbx' found.
-
-(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\spanish.lb
-x
-File: spanish.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
-))
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -1692,19 +1724,27 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (main.bbl)
-Package biblatex Info: Reference section=0 on input line 88.
-Package biblatex Info: Reference segment=0 on input line 88.
-Package hyperref Info: Link coloring OFF on input line 88.
+ (main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                Balcik2008
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
+Package biblatex Info: Reference section=0 on input line 106.
+Package biblatex Info: Reference segment=0 on input line 106.
+Package hyperref Info: Link coloring OFF on input line 106.
  (main.out) (main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
-\c@lstlisting=\count564
+\c@lstlisting=\count554
 \openout2 = `portada.aux'.
 
  (portada.tex
-<logo_uaysen.png, id=186, 513.92pt x 513.92pt>
+<logo_uaysen.png, id=234, 513.92pt x 513.92pt>
 File: logo_uaysen.png Graphic file (type png)
 <use logo_uaysen.png>
 Package pdftex.def Info: logo_uaysen.png  used on input line 6.
@@ -1759,10 +1799,18 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 
 {C:/Users/carlo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/carl
 o/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./logo_uaysen.png
->])
+>]
+
+[2])
 \openout2 = `preliminares.aux'.
 
  (preliminares.tex
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 2
+.
+
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.I}) has 
@@ -1776,12 +1824,20 @@ l.18 \clearpage
 
 
 
-])
-
-[2
+{C:/Users/carlo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}])
 
 
-] (main.toc
+pdfTeX warning (ext4): destination with the same identifier (name{page.II}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.110 \include{preliminares}
+                             [2
+
+
+]
+
+[3] (main.toc
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -1800,206 +1856,167 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 2.
 
 
-[3
+[4
 
 
-])
+]
 
-LaTeX Info: Redefining \. on input line 94.
-LaTeX Info: Redefining \% on input line 94.
-Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported  on input line 94.
-Package cleveref Info: loaded `spanish' language definitions on input line 94.
-[4] (main.lof
+[5])
+
+[6] (main.lof
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 Package cleveref Info: loaded `spanish' language definitions on input line 1.
 
-Overfull \hbox (10.20772pt too wide) in paragraph at lines 13--13
+Overfull \hbox (10.20772pt too wide) in paragraph at lines 24--24
  [][] [][]\T1/ppl/m/n/12 Distribución KDE: Sta-tus Quo con dis-rup-cio-nes cor-
 tas (7 días). Me-dia: 84.32$ $%, 
  []
 
 
-Overfull \hbox (16.36386pt too wide) in paragraph at lines 15--15
+Overfull \hbox (16.36386pt too wide) in paragraph at lines 26--26
  [][] [][]\T1/ppl/m/n/12 Distribución KDE: Sta-tus Quo con dis-rup-cio-nes lar-
 gas (21 días). Me-dia: 78.13$ $%, 
  []
 
 
-Overfull \hbox (5.77966pt too wide) in paragraph at lines 16--16
+Overfull \hbox (5.77966pt too wide) in paragraph at lines 27--27
  [][] [][]\T1/ppl/m/n/12 Distribución KDE: Pro-pues-ta con dis-rup-cio-nes cor-
 tas (7 días). Me-dia: 98.82$ $%, 
  []
 
 
-Overfull \hbox (18.41573pt too wide) in paragraph at lines 17--17
+
+[7
+
+]
+Overfull \hbox (18.41573pt too wide) in paragraph at lines 28--28
  [][] [][]\T1/ppl/m/n/12 Distribución KDE: Pro-pues-ta con dis-rup-cio-nes me-d
 ias (14 días). Me-dia: 97.22$ $%, 
  []
 
 
-Overfull \hbox (11.9358pt too wide) in paragraph at lines 18--18
+Overfull \hbox (11.9358pt too wide) in paragraph at lines 29--29
  [][] [][]\T1/ppl/m/n/12 Distribución KDE: Pro-pues-ta con dis-rup-cio-nes lar-
 gas (21 días). Me-dia: 94.70$ $%, 
  []
 
+)
 
-
-[5
-
-])
-
-LaTeX Info: Redefining \. on input line 96.
-LaTeX Info: Redefining \% on input line 96.
-Package cleveref Info: loaded `spanish' language definitions on input line 96.
-[6] (main.lot
+[8] (main.lot
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 Package cleveref Info: loaded `spanish' language definitions on input line 1.
 )
 
-[7
+[9
 
 ]
 \openout2 = `capitulos/01_introduccion.aux'.
 
- (capitulos/01_introduccion.tex)
+ (capitulos/01_introduccion.tex
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 1
+4.
+
+(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ppl.fd
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
+)
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 14.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 14.
+
+Missing character: There is no ° in font pplr7t!
+
 
 [1
 
 
 
 ]
+
+LaTeX Warning: Reference `fig:mapa-aysen' on page 2 undefined on input line 16.
+
+
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 67.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 5.21004pt on input line 67.
+
+
+[2]
+
+[3]
+
+[4]
+
+[5])
+
+[6]
 \openout2 = `capitulos/02_planteamiento_problema.aux'.
 
  (capitulos/02_planteamiento_problema.tex
 
-[2
+[7
 
 
 
 
 ]
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 47.
+(Font)              scaled to size 7.91925pt on input line 40.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 47.
+(Font)              scaled to size 6.25204pt on input line 40.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 47.
+(Font)              scaled to size 7.91925pt on input line 40.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 47.
+(Font)              scaled to size 6.25204pt on input line 40.
 
 
-LaTeX Info: Redefining \. on input line 85.
-LaTeX Info: Redefining \% on input line 85.
-Package cleveref Info: loaded `spanish' language definitions on input line 85.
-[3]
+[8]
 
-LaTeX Info: Redefining \. on input line 110.
-LaTeX Info: Redefining \% on input line 110.
-Package cleveref Info: loaded `spanish' language definitions on input line 110.
+[9])
 
-[4])
-
-LaTeX Info: Redefining \. on input line 103.
-LaTeX Info: Redefining \% on input line 103.
-Package cleveref Info: loaded `spanish' language definitions on input line 103.
-
-[5]
+[10]
 \openout2 = `capitulos/03_hipotesis.aux'.
 
  (capitulos/03_hipotesis.tex
 
-[6
+[11
 
 
 
 
 ])
 
-LaTeX Info: Redefining \. on input line 104.
-LaTeX Info: Redefining \% on input line 104.
-Package cleveref Info: loaded `spanish' language definitions on input line 104.
-
-[7]
+[12]
 \openout2 = `capitulos/04_objetivos.aux'.
 
  (capitulos/04_objetivos.tex
 
-[8
+[13
 
 
 
 
 ])
 
-LaTeX Info: Redefining \. on input line 105.
-LaTeX Info: Redefining \% on input line 105.
-Package cleveref Info: loaded `spanish' language definitions on input line 105.
-
-[9]
+[14]
 \openout2 = `capitulos/05_marco_teorico.aux'.
 
  (capitulos/05_marco_teorico.tex
+
+LaTeX Warning: Reference `fig:inventory-model-detailed' on page 15 undefined on
+ input line 15.
+
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 57.
+(Font)              scaled to size 11.40997pt on input line 42.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 57.
+(Font)              scaled to size 11.40997pt on input line 42.
 
-
-[10
-
-
-
-
-]
-
-LaTeX Warning: Reference `fig:resilience-tradeoff' on page 11 undefined on inpu
-t line 115.
-
-
-
-LaTeX Info: Redefining \. on input line 117.
-LaTeX Info: Redefining \% on input line 117.
-Package cleveref Info: loaded `spanish' language definitions on input line 117.
-
-[11]
-
-LaTeX Info: Redefining \. on input line 172.
-LaTeX Info: Redefining \% on input line 172.
-Package cleveref Info: loaded `spanish' language definitions on input line 172.
-
-[12]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-85.
- (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Overfull \hbox (14.20708pt too wide) in paragraph at lines 186--188
-[]\T1/lmtt/m/n/12 PlantaAlmacenamiento \T1/ppl/m/n/12 (con atri-bu-tos: ca-pa-c
-i-dad_max, ni-vel_inventario, ROP),
- []
-
-)
-
-LaTeX Info: Redefining \. on input line 106.
-LaTeX Info: Redefining \% on input line 106.
-Package cleveref Info: loaded `spanish' language definitions on input line 106.
-
-[13{C:/Users/carlo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}]
-
-
-LaTeX Info: Redefining \. on input line 106.
-LaTeX Info: Redefining \% on input line 106.
-Package cleveref Info: loaded `spanish' language definitions on input line 106.
-
-[14]
-\openout2 = `capitulos/06_estado_del_arte.aux'.
-
- (capitulos/06_estado_del_arte.tex
 
 [15
 
@@ -2008,349 +2025,445 @@ Package cleveref Info: loaded `spanish' language definitions on input line 106.
 
 ]
 
-LaTeX Info: Redefining \. on input line 72.
-LaTeX Info: Redefining \% on input line 72.
-Package cleveref Info: loaded `spanish' language definitions on input line 72.
-[16])
-
-LaTeX Info: Redefining \. on input line 107.
-LaTeX Info: Redefining \% on input line 107.
-Package cleveref Info: loaded `spanish' language definitions on input line 107.
+[16]
 
 [17]
-\openout2 = `capitulos/07_metodologia.aux'.
 
- (capitulos/07_metodologia.tex
+[18]
 
-[18
-
-
+LaTeX Warning: Reference `fig:resilience-tradeoff' on page 19 undefined on inpu
+t line 175.
 
 
-]
-
-LaTeX Warning: Reference `fig:conceptual-diagram-detailed' on page 19 undefined
- on input line 51.
-
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 6
-8.
-(C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
-File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-
-LaTeX Info: Redefining \. on input line 122.
-LaTeX Info: Redefining \% on input line 122.
-Package cleveref Info: loaded `spanish' language definitions on input line 122.
 
 [19]
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 1
-28.
- (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ppl.fd
-File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+31.
+ (C:\Users\carlo\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-
-LaTeX Info: Redefining \. on input line 169.
-LaTeX Info: Redefining \% on input line 169.
-Package cleveref Info: loaded `spanish' language definitions on input line 169.
-
-[20]
-
-LaTeX Warning: Command \' invalid in math mode on input line 174.
-
-Missing character: There is no í in font pplr7t!
-
-LaTeX Warning: Command \' invalid in math mode on input line 183.
-
-Missing character: There is no í in font pplr7t!
-
-
-LaTeX Info: Redefining \. on input line 212.
-LaTeX Info: Redefining \% on input line 212.
-Package cleveref Info: loaded `spanish' language definitions on input line 212.
-
-[21]
-Overfull \hbox (56.60239pt too wide) in paragraph at lines 217--221
-\T1/ppl/m/n/12 pa-ran-do la ló-gi-ca de la si-mu-la-ción (\T1/lmtt/m/n/12 model
-o.py\T1/ppl/m/n/12 ), de la or-ques-ta-ción de es-ce-na-rios (\T1/lmtt/m/n/12 e
-xperimento.py\T1/ppl/m/n/12 )
+Overfull \hbox (14.20708pt too wide) in paragraph at lines 232--234
+[]\T1/lmtt/m/n/12 PlantaAlmacenamiento \T1/ppl/m/n/12 (con atri-bu-tos: ca-pa-c
+i-dad_max, ni-vel_inventario, ROP),
  []
 
 
 
-LaTeX Info: Redefining \. on input line 296.
-LaTeX Info: Redefining \% on input line 296.
-Package cleveref Info: loaded `spanish' language definitions on input line 296.
+[20]
+
+LaTeX Warning: Reference `fig:arquitectura-software' on page 21 undefined on in
+put line 253.
+
+(diagramas/01_arquitectura_modular.tex)
+
+[21]
+
+LaTeX Warning: Reference `fig:procesos-concurrentes' on page 22 undefined on in
+put line 263.
+
+(diagramas/05_procesos_concurrentes.tex
+
+! Package pgfkeys Error: The key '/tikz/step' requires a value. I am going to i
+gnore this key.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30         \node[step]
+                         at (0,3) {Calcular $D(t)$};
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
+
+! Package pgfkeys Error: The key '/tikz/step' requires a value. I am going to i
+gnore this key.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31         \node[step]
+                         at (0,2) {Despachar};
+(That was another \errmessage.)
+
+
+! Package pgfkeys Error: The key '/tikz/step' requires a value. I am going to i
+gnore this key.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.32         \node[step]
+                         at (0,1) {Registrar};
+(That was another \errmessage.)
+
+
+! Package pgfkeys Error: The key '/tikz/step' requires a value. I am going to i
+gnore this key.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33         \node[step]
+                         at (0,0) {Esperar 1 dÃ­a};
+(That was another \errmessage.)
+
+
+! Package pgfkeys Error: The key '/tikz/step' requires a value. I am going to i
+gnore this key.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34         \node[step]
+                         at (0,-1) {$\cdots$};
+(That was another \errmessage.)
+
+
+! Package pgfkeys Error: The key '/tikz/step' requires a value. I am going to i
+gnore this key.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42         \node[step]
+                         at (3.5,3) {Revisar $I$};
+(That was another \errmessage.)
+
+
+! Package pgfkeys Error: The key '/tikz/step' requires a value. I am going to i
+gnore this key.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.43         \node[step]
+                         at (3.5,2) {$I \leq R$?};
+(That was another \errmessage.)
+
+
+! Package pgfkeys Error: The key '/tikz/step' requires a value. I am going to i
+gnore this key.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.44         \node[step]
+                         at (3.5,1) {Crear Pedido};
+(That was another \errmessage.)
+
+
+! Package pgfkeys Error: The key '/tikz/step' requires a value. I am going to i
+gnore this key.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.45         \node[step]
+                         at (3.5,0) {Esperar 1 dÃ­a};
+(That was another \errmessage.)
+
+
+! Package pgfkeys Error: The key '/tikz/step' requires a value. I am going to i
+gnore this key.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.46         \node[step]
+                         at (3.5,-1) {$\cdots$};
+(That was another \errmessage.)
+
+
+! Package pgfkeys Error: The key '/tikz/step' requires a value. I am going to i
+gnore this key.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.54         \node[step]
+                         at (7,3) {Generar $T$};
+(That was another \errmessage.)
+
+
+! Package pgfkeys Error: The key '/tikz/step' requires a value. I am going to i
+gnore this key.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.55         \node[step]
+                         at (7,2) {Esperar $T$};
+(That was another \errmessage.)
+
+
+! Package pgfkeys Error: The key '/tikz/step' requires a value. I am going to i
+gnore this key.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.56         \node[step]
+                         at (7,1) {Bloquear Ruta};
+(That was another \errmessage.)
+
+
+! Package pgfkeys Error: The key '/tikz/step' requires a value. I am going to i
+gnore this key.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57         \node[step]
+                         at (7,0) {Esperar $D$};
+(That was another \errmessage.)
+
+
+! Package pgfkeys Error: The key '/tikz/step' requires a value. I am going to i
+gnore this key.
+
+See the pgfkeys package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58         \node[step]
+                         at (7,-1) {$\cdots$};
+(That was another \errmessage.)
+
+)
+
+LaTeX Warning: Reference `fig:flujo-reabastecimiento' on page 22 undefined on i
+nput line 269.
+
+(diagramas/02_flujo_reabastecimiento.tex)
+
+LaTeX Warning: Reference `fig:generacion-disrupciones' on page 22 undefined on 
+input line 273.
+
+(diagramas/03_generacion_disrupciones.tex)
+
+LaTeX Warning: Reference `fig:maquina-estados-ruta' on page 22 undefined on inp
+ut line 277.
+
+(diagramas/04_maquina_estados_ruta.tex
 
 [22])
+Overfull \hbox (22.32231pt too wide) in paragraph at lines 292--293
+[]\T1/ppl/m/n/12 donde $\OML/zplm/m/it/12 s[] \OT1/zplm/m/n/12 = \OT1/ppl/m/n/1
+2 42$\T1/ppl/m/n/12 , $\OML/zplm/m/it/12 c \OMS/zplm/m/n/12 2 f\OT1/ppl/m/n/12 
+1, [] , 6\OMS/zplm/m/n/12 g$ \T1/ppl/m/n/12 es el iden-ti-fi-ca-dor de con-fi-g
+u-ra-ción, y $\OML/zplm/m/it/12 r \OMS/zplm/m/n/12 2 f\OT1/ppl/m/n/12 1, [] , 1
+0[]000\OMS/zplm/m/n/12 g$
+ []
 
-LaTeX Info: Redefining \. on input line 108.
-LaTeX Info: Redefining \% on input line 108.
-Package cleveref Info: loaded `spanish' language definitions on input line 108.
+
 
 [23]
-\openout2 = `capitulos/09_resultados_montecarlo.aux'.
 
- (capitulos/09_resultados_montecarlo.tex
+[24]
 
-LaTeX Warning: Reference `tab:parametros-modelo' on page 1 undefined on input l
-ine 13.
+[25]
+Overfull \hbox (14.38286pt too wide) in paragraph at lines 303--304
+[]\T1/ppl/b/n/12 Tests de ba-lan-ce: \T1/ppl/m/n/12 In-va-rian-te $[] \OMS/zplm
+/m/n/12 ^^@ [] \OT1/zplm/m/n/12 = [] \OMS/zplm/m/n/12 ^^@
+ []
+
+)
+
+[26]
+\openout2 = `capitulos/06_estado_del_arte.aux'.
+
+ (capitulos/06_estado_del_arte.tex
+! Undefined control sequence.
+l.9 ...enas de suministro con disrupciones. \citet
+                                                  {Banks2010} documentan su ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.13 \citet
+           {Law2015} describen aplicaciones industriales donde DES evalÃºa c...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.23 \citet
+           {Chopra2004} establecen que DES permite cuantificar \textit{tiemp...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 
 
-[24
+[27
+
+
+
+
+]
+! Undefined control sequence.
+l.33 \citet
+           {Sheffi2005} analizan el terremoto de Taiwan que detuvo producciÃ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation 'Balcik2008' on page 28 undefined on input line 40.
+
+! Undefined control sequence.
+l.52 \citet
+           {Silver1998} formalizan la polÃ­tica $(Q,R)$: ordenar cantidad fi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+
+[28]
+! Undefined control sequence.
+l.64 \citet
+           {Axsater2015} comparan soluciones analÃ­ticas vs DES para polÃ­ti...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+
+[29]
+
+[30])
+
+[31]
+\openout2 = `capitulos/07_metodologia.aux'.
+
+ (capitulos/07_metodologia.tex
+
+LaTeX Warning: Reference `fig:conceptual-diagram-detailed' on page 32 undefined
+ on input line 31.
+
+
+
+[32
 
 
 
 
 ]
 
-LaTeX Warning: Reference `tab:estadisticas-configuraciones' on page 1 undefined
- on input line 71.
+[33]
+
+LaTeX Warning: Command \' invalid in math mode on input line 154.
+
+Missing character: There is no í in font pplr7t!
 
 
-LaTeX Warning: Reference `fig:distribuciones' on page 1 undefined on input line
- 92.
+[34]
+
+LaTeX Warning: Command \' invalid in math mode on input line 163.
+
+Missing character: There is no í in font pplr7t!
 
 
+[35]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 197.
 
-LaTeX Info: Redefining \. on input line 93.
-LaTeX Info: Redefining \% on input line 93.
-Package cleveref Info: loaded `spanish' language definitions on input line 93.
-[25]
-<figuras/distribuciones.pdf, id=520, 1063.60178pt x 661.4242pt>
-File: figuras/distribuciones.pdf Graphic file (type pdf)
-<use figuras/distribuciones.pdf>
-Package pdftex.def Info: figuras/distribuciones.pdf  used on input line 96.
-(pdftex.def)             Requested size: 457.0pt x 284.19492pt.
-
-
-LaTeX Info: Redefining \. on input line 111.
-LaTeX Info: Redefining \% on input line 111.
-Package cleveref Info: loaded `spanish' language definitions on input line 111.
-
-[26 <./figuras/distribuciones.pdf>]
-<figuras/kde_status_quo_corta.pdf, id=598, 713.26663pt x 424.55739pt>
-File: figuras/kde_status_quo_corta.pdf Graphic file (type pdf)
-<use figuras/kde_status_quo_corta.pdf>
-Package pdftex.def Info: figuras/kde_status_quo_corta.pdf  used on input line 1
-21.
-(pdftex.def)             Requested size: 434.1486pt x 258.4225pt.
-<figuras/kde_status_quo_media.pdf, id=599, 713.26663pt x 424.55739pt>
-File: figuras/kde_status_quo_media.pdf Graphic file (type pdf)
-<use figuras/kde_status_quo_media.pdf>
-Package pdftex.def Info: figuras/kde_status_quo_media.pdf  used on input line 1
-28.
-(pdftex.def)             Requested size: 434.1486pt x 258.4225pt.
-<figuras/kde_status_quo_larga.pdf, id=600, 713.26663pt x 424.55739pt>
-File: figuras/kde_status_quo_larga.pdf Graphic file (type pdf)
-<use figuras/kde_status_quo_larga.pdf>
-Package pdftex.def Info: figuras/kde_status_quo_larga.pdf  used on input line 1
-35.
-(pdftex.def)             Requested size: 434.1486pt x 258.4225pt.
-<figuras/kde_propuesta_corta.pdf, id=601, 713.2616pt x 424.54172pt>
-File: figuras/kde_propuesta_corta.pdf Graphic file (type pdf)
-<use figuras/kde_propuesta_corta.pdf>
-Package pdftex.def Info: figuras/kde_propuesta_corta.pdf  used on input line 14
-4.
-(pdftex.def)             Requested size: 434.1486pt x 258.41296pt.
-<figuras/kde_propuesta_media.pdf, id=602, 711.73325pt x 424.54172pt>
-File: figuras/kde_propuesta_media.pdf Graphic file (type pdf)
-<use figuras/kde_propuesta_media.pdf>
-Package pdftex.def Info: figuras/kde_propuesta_media.pdf  used on input line 15
-1.
-(pdftex.def)             Requested size: 434.1486pt x 258.9636pt.
-<figuras/kde_propuesta_larga.pdf, id=603, 713.26663pt x 424.54172pt>
-File: figuras/kde_propuesta_larga.pdf Graphic file (type pdf)
-<use figuras/kde_propuesta_larga.pdf>
-Package pdftex.def Info: figuras/kde_propuesta_larga.pdf  used on input line 15
-8.
-(pdftex.def)             Requested size: 434.1486pt x 258.41296pt.
-<figuras/qq_status_quo_corta.pdf, id=604, 568.71909pt x 568.8151pt>
-File: figuras/qq_status_quo_corta.pdf Graphic file (type pdf)
-<use figuras/qq_status_quo_corta.pdf>
-Package pdftex.def Info: figuras/qq_status_quo_corta.pdf  used on input line 17
-1.
-(pdftex.def)             Requested size: 388.45279pt x 388.5337pt.
+Overfull \hbox (5.23941pt too wide) in paragraph at lines 206--207
+\T1/lmtt/m/n/12 tiempoDesbloqueo \T1/ppl/m/n/12 (float). Mé-to-dos: \T1/lmtt/m/
+n/12 estaOperativa()\T1/ppl/m/n/12 , \T1/lmtt/m/n/12 bloquearPorDisrupcion()\T1
+/ppl/m/n/12 ,
+ []
 
 
-LaTeX Info: Redefining \. on input line 174.
-LaTeX Info: Redefining \% on input line 174.
-Package cleveref Info: loaded `spanish' language definitions on input line 174.
-
-[27 <./figuras/kde_status_quo_corta.pdf>]
-
-LaTeX Info: Redefining \. on input line 174.
-LaTeX Info: Redefining \% on input line 174.
-Package cleveref Info: loaded `spanish' language definitions on input line 174.
-
-[28 <./figuras/kde_status_quo_media.pdf> <./figuras/kde_status_quo_larga.pdf>]
-
-LaTeX Info: Redefining \. on input line 174.
-LaTeX Info: Redefining \% on input line 174.
-Package cleveref Info: loaded `spanish' language definitions on input line 174.
-
-[29 <./figuras/kde_propuesta_corta.pdf> <./figuras/kde_propuesta_media.pdf>]
-<figuras/qq_status_quo_media.pdf, id=836, 568.71909pt x 568.8151pt>
-File: figuras/qq_status_quo_media.pdf Graphic file (type pdf)
-<use figuras/qq_status_quo_media.pdf>
-Package pdftex.def Info: figuras/qq_status_quo_media.pdf  used on input line 17
-8.
-(pdftex.def)             Requested size: 388.45279pt x 388.5337pt.
-<figuras/qq_status_quo_larga.pdf, id=837, 568.71909pt x 568.8151pt>
-File: figuras/qq_status_quo_larga.pdf Graphic file (type pdf)
-<use figuras/qq_status_quo_larga.pdf>
-Package pdftex.def Info: figuras/qq_status_quo_larga.pdf  used on input line 18
-5.
-(pdftex.def)             Requested size: 388.45279pt x 388.5337pt.
-<figuras/qq_propuesta_corta.pdf, id=838, 568.7241pt x 568.79941pt>
-File: figuras/qq_propuesta_corta.pdf Graphic file (type pdf)
-<use figuras/qq_propuesta_corta.pdf>
-Package pdftex.def Info: figuras/qq_propuesta_corta.pdf  used on input line 194
-.
-(pdftex.def)             Requested size: 388.45279pt x 388.50563pt.
-<figuras/qq_propuesta_media.pdf, id=839, 568.73164pt x 568.62689pt>
-File: figuras/qq_propuesta_media.pdf Graphic file (type pdf)
-<use figuras/qq_propuesta_media.pdf>
-Package pdftex.def Info: figuras/qq_propuesta_media.pdf  used on input line 201
-.
-(pdftex.def)             Requested size: 388.45279pt x 388.3878pt.
-<figuras/qq_propuesta_larga.pdf, id=840, 568.7241pt x 568.62689pt>
-File: figuras/qq_propuesta_larga.pdf Graphic file (type pdf)
-<use figuras/qq_propuesta_larga.pdf>
-Package pdftex.def Info: figuras/qq_propuesta_larga.pdf  used on input line 208
-.
-(pdftex.def)             Requested size: 388.45279pt x 388.3878pt.
+Overfull \hbox (4.608pt too wide) in paragraph at lines 214--215
+[]\T1/lmtt/m/n/12 _procesoDemandaDiaria()\T1/ppl/m/n/12 : Ge-ne-ra de-man-da es
+-ta-cio-nal con rui-do es-to-cás-ti-co, des-
+ []
 
 
-! LaTeX Error: Unicode character Î· (U+03B7)
-               not set up for use with LaTeX.
+Overfull \hbox (16.47736pt too wide) in paragraph at lines 215--216
+[]\T1/lmtt/m/n/12 _procesoReabastecimiento()\T1/ppl/m/n/12 : Po-lí-ti-ca $\OT1/
+zplm/m/n/12 (\OML/zplm/m/it/12 Q\OT1/ppl/m/n/12 , \OML/zplm/m/it/12 R\OT1/zplm/
+m/n/12 )$ \T1/ppl/m/n/12 que crea pe-di-dos cuan-do $[] \OMS/zplm/m/n/12 ^^T
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.243 ...Â²) para cuantificar tamaÃ±o del efecto.}
-                                                  
-You may provide a definition with
-\DeclareUnicodeCharacter 
+
+Overfull \hbox (10.77449pt too wide) in paragraph at lines 216--217
+[]\T1/lmtt/m/n/12 _procesoDisrupciones()\T1/ppl/m/n/12 : Ge-ne-ra dis-rup-cio-n
+es con fre-cuen-cia Pois-son ($\OML/zplm/m/it/12 ^^U \OT1/zplm/m/n/12 = \OT1/pp
+l/m/n/12 4$\T1/ppl/m/n/12 /año)
+ []
 
 
 
-LaTeX Info: Redefining \. on input line 254.
-LaTeX Info: Redefining \% on input line 254.
-Package cleveref Info: loaded `spanish' language definitions on input line 254.
+[36]
 
-[30 <./figuras/kde_propuesta_larga.pdf>]
-
-LaTeX Info: Redefining \. on input line 254.
-LaTeX Info: Redefining \% on input line 254.
-Package cleveref Info: loaded `spanish' language definitions on input line 254.
-
-[31 <./figuras/qq_status_quo_corta.pdf>]
-
-LaTeX Warning: Reference `fig:efectos-principales' on page 1 undefined on input
- line 256.
-
-<figuras/efectos_principales.pdf, id=941, 1294.20575pt x 593.66747pt>
-File: figuras/efectos_principales.pdf Graphic file (type pdf)
-<use figuras/efectos_principales.pdf>
-Package pdftex.def Info: figuras/efectos_principales.pdf  used on input line 26
-0.
-(pdftex.def)             Requested size: 457.0pt x 209.62563pt.
-
-
-LaTeX Info: Redefining \. on input line 270.
-LaTeX Info: Redefining \% on input line 270.
-Package cleveref Info: loaded `spanish' language definitions on input line 270.
-
-[32 <./figuras/qq_status_quo_media.pdf>]
-
-LaTeX Warning: Reference `fig:heatmap' on page 1 undefined on input line 284.
+LaTeX Warning: Reference `fig:uml-clases' on page 37 undefined on input line 22
+7.
 
 
 
-LaTeX Info: Redefining \. on input line 285.
-LaTeX Info: Redefining \% on input line 285.
-Package cleveref Info: loaded `spanish' language definitions on input line 285.
-
-[33 <./figuras/qq_status_quo_larga.pdf>]
-<figuras/heatmap_interacciones.pdf, id=1042, 1006.21582pt x 715.2272pt>
-File: figuras/heatmap_interacciones.pdf Graphic file (type pdf)
-<use figuras/heatmap_interacciones.pdf>
-Package pdftex.def Info: figuras/heatmap_interacciones.pdf  used on input line 
-288.
-(pdftex.def)             Requested size: 388.45279pt x 276.12181pt.
+[37]
+Overfull \hbox (6.56104pt too wide) in paragraph at lines 310--311
+[]\T1/lmtt/m/n/12 HubCoyhaique\T1/ppl/m/n/12 : Ca-pa-ci-dad res-pe-ta-da, des-p
+a-cho co-n/-sin stock, reabas-te-ci-mien-
+ []
 
 
-LaTeX Info: Redefining \. on input line 299.
-LaTeX Info: Redefining \% on input line 299.
-Package cleveref Info: loaded `spanish' language definitions on input line 299.
+Overfull \hbox (7.34248pt too wide) in paragraph at lines 328--329
+[]\T1/ppl/b/n/12 Semillas con-tro-la-das: \T1/ppl/m/n/12 Ca-da ré-pli-ca usa se
+-mi-lla úni-ca $\OML/zplm/m/it/12 s[] \OT1/zplm/m/n/12 = \OT1/ppl/m/n/12 42 \OT
+1/zplm/m/n/12 + (\OML/zplm/m/it/12 c \OMS/zplm/m/n/12 ^^@ \OT1/ppl/m/n/12 1\OT1
+/zplm/m/n/12 ) \OMS/zplm/m/n/12 ^^B \OT1/ppl/m/n/12 100[]000 \OT1/zplm/m/n/12 +
 
-[34 <./figuras/qq_propuesta_corta.pdf>]
-
-LaTeX Info: Redefining \. on input line 312.
-LaTeX Info: Redefining \% on input line 312.
-Package cleveref Info: loaded `spanish' language definitions on input line 312.
-
-[35 <./figuras/qq_propuesta_media.pdf>]
-
-LaTeX Info: Redefining \. on input line 324.
-LaTeX Info: Redefining \% on input line 324.
-Package cleveref Info: loaded `spanish' language definitions on input line 324.
-
-[36 <./figuras/qq_propuesta_larga.pdf>]
-
-LaTeX Info: Redefining \. on input line 324.
-LaTeX Info: Redefining \% on input line 324.
-Package cleveref Info: loaded `spanish' language definitions on input line 324.
-
-[37 <./figuras/efectos_principales.pdf> <./figuras/heatmap_interacciones.pdf>]
-
-LaTeX Warning: Reference `fig:analisis-sensibilidad' on page 1 undefined on inp
-ut line 324.
-
-<figuras/analisis_sensibilidad.pdf, id=1362, 1148.88597pt x 643.72195pt>
-File: figuras/analisis_sensibilidad.pdf Graphic file (type pdf)
-<use figuras/analisis_sensibilidad.pdf>
-Package pdftex.def Info: figuras/analisis_sensibilidad.pdf  used on input line 
-328.
-(pdftex.def)             Requested size: 388.45279pt x 217.64459pt.
-
-LaTeX Warning: Reference `fig:boxplot' on page 1 undefined on input line 335.
-
-<figuras/boxplot_comparativo.pdf, id=1363, 1293.21964pt x 715.63393pt>
-File: figuras/boxplot_comparativo.pdf Graphic file (type pdf)
-<use figuras/boxplot_comparativo.pdf>
-Package pdftex.def Info: figuras/boxplot_comparativo.pdf  used on input line 33
-9.
-(pdftex.def)             Requested size: 457.0pt x 252.88887pt.
-
-
-LaTeX Info: Redefining \. on input line 352.
-LaTeX Info: Redefining \% on input line 352.
-Package cleveref Info: loaded `spanish' language definitions on input line 352.
-
-[38 <./figuras/analisis_sensibilidad.pdf>]
-
-LaTeX Warning: Reference `tab:estadisticas-configuraciones' on page 1 undefined
- on input line 352.
+ []
 
 
 
-LaTeX Info: Redefining \. on input line 362.
-LaTeX Info: Redefining \% on input line 362.
-Package cleveref Info: loaded `spanish' language definitions on input line 362.
+[38]
 
-[39 <./figuras/boxplot_comparativo.pdf>])
+[39
 
-LaTeX Info: Redefining \. on input line 109.
-LaTeX Info: Redefining \% on input line 109.
-Package cleveref Info: loaded `spanish' language definitions on input line 109.
+])
 
 [40]
-\openout2 = `capitulos/10_discusion_revisada.aux'.
+\openout2 = `capitulos/09_resultados_montecarlo.aux'.
 
- (capitulos/10_discusion_revisada.tex
+ (capitulos/09_resultados_montecarlo.tex
+
+LaTeX Warning: Reference `fig:caso01' on page 41 undefined on input line 13.
+
+
 
 [41
 
@@ -2358,102 +2471,287 @@ Package cleveref Info: loaded `spanish' language definitions on input line 109.
 
 
 ]
-Overfull \hbox (13.00063pt too wide) in paragraph at lines 23--24
-[]\T1/ppl/m/n/12 La di-fe-ren-cia en-tre los ni-ve-les de ser-vi-cio de Sta-tus
- Quo (81,20$ $%) y Pro-pues-ta (96,91$ $%)
- []
+<figuras/caso01_escenario_normal.pdf, id=765, 857.94588pt x 746.75423pt>
+File: figuras/caso01_escenario_normal.pdf Graphic file (type pdf)
+<use figuras/caso01_escenario_normal.pdf>
+Package pdftex.def Info: figuras/caso01_escenario_normal.pdf  used on input lin
+e 17.
+(pdftex.def)             Requested size: 457.0pt x 397.7719pt.
 
 
-LaTeX Warning: Reference `tab:estadisticas-configuraciones' on page 1 undefined
- on input line 27.
+[42 <./figuras/caso01_escenario_normal.pdf>]
+
+LaTeX Warning: Reference `fig:caso02' on page 43 undefined on input line 36.
+
+<figuras/caso02_escenario_critico.pdf, id=858, 857.94588pt x 746.75423pt>
+File: figuras/caso02_escenario_critico.pdf Graphic file (type pdf)
+<use figuras/caso02_escenario_critico.pdf>
+Package pdftex.def Info: figuras/caso02_escenario_critico.pdf  used on input li
+ne 40.
+(pdftex.def)             Requested size: 457.0pt x 397.7719pt.
 
 
-
-LaTeX Info: Redefining \. on input line 37.
-LaTeX Info: Redefining \% on input line 37.
-Package cleveref Info: loaded `spanish' language definitions on input line 37.
-[42]
-
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
-Package cleveref Info: loaded `spanish' language definitions on input line 65.
 [43]
-Overfull \hbox (11.63084pt too wide) in paragraph at lines 81--82
-[]\T1/ppl/b/n/12 Inversión es-ti-ma-da: \T1/ppl/m/n/12 Apro-xi-ma-da-men-te USD
- 1,5 mi-llo-nes (250 TM \TS1/ppl/m/n/12 Ö \T1/ppl/m/n/12 USD 6.000/TM
- []
 
+[44 <./figuras/caso02_escenario_critico.pdf>]
 
+LaTeX Warning: Reference `fig:caso03' on page 45 undefined on input line 61.
 
-LaTeX Info: Redefining \. on input line 105.
-LaTeX Info: Redefining \% on input line 105.
-Package cleveref Info: loaded `spanish' language definitions on input line 105.
+<figuras/caso03_comparacion_capacidades.pdf, id=958, 1004.218pt x 714.54214pt>
+File: figuras/caso03_comparacion_capacidades.pdf Graphic file (type pdf)
+<use figuras/caso03_comparacion_capacidades.pdf>
+Package pdftex.def Info: figuras/caso03_comparacion_capacidades.pdf  used on in
+put line 65.
+(pdftex.def)             Requested size: 457.0pt x 325.1826pt.
 
-[44]
-
-LaTeX Info: Redefining \. on input line 138.
-LaTeX Info: Redefining \% on input line 138.
-Package cleveref Info: loaded `spanish' language definitions on input line 138.
 
 [45]
 
-LaTeX Info: Redefining \. on input line 165.
-LaTeX Info: Redefining \% on input line 165.
-Package cleveref Info: loaded `spanish' language definitions on input line 165.
-
-[46]
-Overfull \hbox (0.245pt too wide) in paragraph at lines 194--195
-[]\T1/ppl/b/n/12 Modelo multi-agente: \T1/ppl/m/n/12 Re-pre-sen-tar a ca-da dis
--tri-bui-dor in-di-vi-dual-men-te pa-ra ana-
- []
-
-
-
-LaTeX Info: Redefining \. on input line 201.
-LaTeX Info: Redefining \% on input line 201.
-Package cleveref Info: loaded `spanish' language definitions on input line 201.
+[46 <./figuras/caso03_comparacion_capacidades.pdf>]
 
 [47]
 
-LaTeX Info: Redefining \. on input line 234.
-LaTeX Info: Redefining \% on input line 234.
-Package cleveref Info: loaded `spanish' language definitions on input line 234.
+LaTeX Warning: Reference `tab:parametros-modelo' on page 1 undefined on input l
+ine 105.
 
-[48])
 
-LaTeX Info: Redefining \. on input line 110.
-LaTeX Info: Redefining \% on input line 110.
-Package cleveref Info: loaded `spanish' language definitions on input line 110.
+
+[48]
+
+LaTeX Warning: Reference `tab:estadisticas-configuraciones' on page 1 undefined
+ on input line 162.
+
+
+LaTeX Warning: Reference `fig:distribuciones' on page 1 undefined on input line
+ 183.
+
+<figuras/distribuciones.pdf, id=1066, 859.73822pt x 425.67308pt>
+File: figuras/distribuciones.pdf Graphic file (type pdf)
+<use figuras/distribuciones.pdf>
+Package pdftex.def Info: figuras/distribuciones.pdf  used on input line 187.
+(pdftex.def)             Requested size: 457.0pt x 226.26817pt.
+
 
 [49]
+<figuras/kde_status_quo_corta.pdf, id=1073, 713.26663pt x 424.55739pt>
+File: figuras/kde_status_quo_corta.pdf Graphic file (type pdf)
+<use figuras/kde_status_quo_corta.pdf>
+Package pdftex.def Info: figuras/kde_status_quo_corta.pdf  used on input line 2
+12.
+(pdftex.def)             Requested size: 434.1486pt x 258.4225pt.
+<figuras/kde_status_quo_media.pdf, id=1074, 713.26663pt x 424.55739pt>
+File: figuras/kde_status_quo_media.pdf Graphic file (type pdf)
+<use figuras/kde_status_quo_media.pdf>
+Package pdftex.def Info: figuras/kde_status_quo_media.pdf  used on input line 2
+19.
+(pdftex.def)             Requested size: 434.1486pt x 258.4225pt.
+<figuras/kde_status_quo_larga.pdf, id=1075, 713.26663pt x 424.55739pt>
+File: figuras/kde_status_quo_larga.pdf Graphic file (type pdf)
+<use figuras/kde_status_quo_larga.pdf>
+Package pdftex.def Info: figuras/kde_status_quo_larga.pdf  used on input line 2
+26.
+(pdftex.def)             Requested size: 434.1486pt x 258.4225pt.
+<figuras/kde_propuesta_corta.pdf, id=1076, 713.2616pt x 424.54172pt>
+File: figuras/kde_propuesta_corta.pdf Graphic file (type pdf)
+<use figuras/kde_propuesta_corta.pdf>
+Package pdftex.def Info: figuras/kde_propuesta_corta.pdf  used on input line 23
+5.
+(pdftex.def)             Requested size: 434.1486pt x 258.41296pt.
+<figuras/kde_propuesta_media.pdf, id=1077, 711.73325pt x 424.54172pt>
+File: figuras/kde_propuesta_media.pdf Graphic file (type pdf)
+<use figuras/kde_propuesta_media.pdf>
+Package pdftex.def Info: figuras/kde_propuesta_media.pdf  used on input line 24
+2.
+(pdftex.def)             Requested size: 434.1486pt x 258.9636pt.
+<figuras/kde_propuesta_larga.pdf, id=1078, 713.26663pt x 424.54172pt>
+File: figuras/kde_propuesta_larga.pdf Graphic file (type pdf)
+<use figuras/kde_propuesta_larga.pdf>
+Package pdftex.def Info: figuras/kde_propuesta_larga.pdf  used on input line 24
+9.
+(pdftex.def)             Requested size: 434.1486pt x 258.41296pt.
+
+
+[50 <./figuras/distribuciones.pdf>]
+
+[51 <./figuras/kde_status_quo_corta.pdf> <./figuras/kde_status_quo_media.pdf>]
+
+[52 <./figuras/kde_status_quo_larga.pdf> <./figuras/kde_propuesta_corta.pdf>]
+
+[53 <./figuras/kde_propuesta_media.pdf> <./figuras/kde_propuesta_larga.pdf>]
+<figuras/qq_status_quo_corta.pdf, id=1428, 568.71909pt x 568.8151pt>
+File: figuras/qq_status_quo_corta.pdf Graphic file (type pdf)
+<use figuras/qq_status_quo_corta.pdf>
+Package pdftex.def Info: figuras/qq_status_quo_corta.pdf  used on input line 26
+2.
+(pdftex.def)             Requested size: 388.45279pt x 388.5337pt.
+<figuras/qq_status_quo_media.pdf, id=1429, 568.71909pt x 568.8151pt>
+File: figuras/qq_status_quo_media.pdf Graphic file (type pdf)
+<use figuras/qq_status_quo_media.pdf>
+Package pdftex.def Info: figuras/qq_status_quo_media.pdf  used on input line 26
+9.
+(pdftex.def)             Requested size: 388.45279pt x 388.5337pt.
+
+
+[54 <./figuras/qq_status_quo_corta.pdf>]
+<figuras/qq_status_quo_larga.pdf, id=1481, 568.71909pt x 568.8151pt>
+File: figuras/qq_status_quo_larga.pdf Graphic file (type pdf)
+<use figuras/qq_status_quo_larga.pdf>
+Package pdftex.def Info: figuras/qq_status_quo_larga.pdf  used on input line 27
+6.
+(pdftex.def)             Requested size: 388.45279pt x 388.5337pt.
+<figuras/qq_propuesta_corta.pdf, id=1482, 568.7241pt x 568.79941pt>
+File: figuras/qq_propuesta_corta.pdf Graphic file (type pdf)
+<use figuras/qq_propuesta_corta.pdf>
+Package pdftex.def Info: figuras/qq_propuesta_corta.pdf  used on input line 285
+.
+(pdftex.def)             Requested size: 388.45279pt x 388.50563pt.
+<figuras/qq_propuesta_media.pdf, id=1483, 568.73164pt x 568.62689pt>
+File: figuras/qq_propuesta_media.pdf Graphic file (type pdf)
+<use figuras/qq_propuesta_media.pdf>
+Package pdftex.def Info: figuras/qq_propuesta_media.pdf  used on input line 292
+.
+(pdftex.def)             Requested size: 388.45279pt x 388.3878pt.
+<figuras/qq_propuesta_larga.pdf, id=1484, 568.7241pt x 568.62689pt>
+File: figuras/qq_propuesta_larga.pdf Graphic file (type pdf)
+<use figuras/qq_propuesta_larga.pdf>
+Package pdftex.def Info: figuras/qq_propuesta_larga.pdf  used on input line 299
+.
+(pdftex.def)             Requested size: 388.45279pt x 388.3878pt.
+
+
+LaTeX Warning: Reference `fig:efectos-principales' on page 1 undefined on input
+ line 345.
+
+
+
+[55 <./figuras/qq_status_quo_media.pdf>]
+
+[56 <./figuras/qq_status_quo_larga.pdf>]
+
+[57 <./figuras/qq_propuesta_corta.pdf>]
+<figuras/efectos_principales.pdf, id=1634, 1004.24814pt x 353.24097pt>
+File: figuras/efectos_principales.pdf Graphic file (type pdf)
+<use figuras/efectos_principales.pdf>
+Package pdftex.def Info: figuras/efectos_principales.pdf  used on input line 34
+9.
+(pdftex.def)             Requested size: 457.0pt x 160.75183pt.
+
+
+[58 <./figuras/qq_propuesta_media.pdf>]
+
+[59 <./figuras/qq_propuesta_larga.pdf> <./figuras/efectos_principales.pdf>]
+
+LaTeX Warning: Reference `fig:heatmap' on page 1 undefined on input line 373.
+
+<figuras/heatmap_interacciones.pdf, id=1814, 715.59857pt x 497.9847pt>
+File: figuras/heatmap_interacciones.pdf Graphic file (type pdf)
+<use figuras/heatmap_interacciones.pdf>
+Package pdftex.def Info: figuras/heatmap_interacciones.pdf  used on input line 
+377.
+(pdftex.def)             Requested size: 388.45279pt x 270.32108pt.
+
+
+[60 <./figuras/heatmap_interacciones.pdf>]
+
+LaTeX Warning: Reference `fig:analisis-sensibilidad' on page 1 undefined on inp
+ut line 413.
+
+<figuras/analisis_sensibilidad.pdf, id=1903, 715.73085pt x 425.5265pt>
+File: figuras/analisis_sensibilidad.pdf Graphic file (type pdf)
+<use figuras/analisis_sensibilidad.pdf>
+Package pdftex.def Info: figuras/analisis_sensibilidad.pdf  used on input line 
+417.
+(pdftex.def)             Requested size: 388.45279pt x 230.94963pt.
+
+LaTeX Warning: Reference `fig:boxplot' on page 1 undefined on input line 424.
+
+
+
+[61]
+<figuras/boxplot_comparativo.pdf, id=1913, 1004.49466pt x 497.65097pt>
+File: figuras/boxplot_comparativo.pdf Graphic file (type pdf)
+<use figuras/boxplot_comparativo.pdf>
+Package pdftex.def Info: figuras/boxplot_comparativo.pdf  used on input line 42
+8.
+(pdftex.def)             Requested size: 457.0pt x 226.40875pt.
+
+
+[62 <./figuras/analisis_sensibilidad.pdf>]
+
+LaTeX Warning: Reference `tab:estadisticas-configuraciones' on page 1 undefined
+ on input line 441.
+
+
+
+[63 <./figuras/boxplot_comparativo.pdf>]
+
+[64])
+
+[65]
+\openout2 = `capitulos/10_discusion_revisada.aux'.
+
+ (capitulos/10_discusion_revisada.tex
+
+[66
+
+
+
+
+]
+
+[67]
+
+[68]
+
+[69])
+
+[70]
 \openout2 = `capitulos/08_contribuciones_plan.aux'.
 
  (capitulos/08_contribuciones_plan.tex
 
-[50
+[71
 
 
 
 
 ]
 
-LaTeX Info: Redefining \. on input line 76.
-LaTeX Info: Redefining \% on input line 76.
-Package cleveref Info: loaded `spanish' language definitions on input line 76.
-[51])
+[72])
 
-LaTeX Info: Redefining \. on input line 113.
-LaTeX Info: Redefining \% on input line 113.
-Package cleveref Info: loaded `spanish' language definitions on input line 113.
+[73]
 
-[52]
-
-[53
+[74
 
 
 
 
 ]
+
+[75]
+\openout2 = `capitulos/apendice_a_codigo.aux'.
+
+ (capitulos/apendice_a_codigo.tex
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 11.
+
+
+[76
+
+
+]
+
+[77]
+
+[78]
+
+[79]
+
+[80]
+
+[81])
+
+[82]
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
@@ -2473,7 +2771,7 @@ _problema.aux) (capitulos/03_hipotesis.aux)
 (capitulos/04_objetivos.aux) (capitulos/05_marco_teorico.aux)
 (capitulos/06_estado_del_arte.aux) (capitulos/07_metodologia.aux)
 (capitulos/09_resultados_montecarlo.aux) (capitulos/10_discusion_revisada.aux)
-(capitulos/08_contribuciones_plan.aux))
+(capitulos/08_contribuciones_plan.aux) (capitulos/apendice_a_codigo.aux))
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2020/03/25>
@@ -2486,23 +2784,22 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 209DECA4413CAEA1B8D74A007634A068;10061.
+(rerunfilecheck)             Checksum: EE79131C014AA1B95F9003D0D074DD17;11626.
 
 Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43342 strings out of 468224
- 871807 string characters out of 5432953
- 1800338 words of memory out of 5000000
- 70979 multiletter control sequences out of 15000+600000
- 700002 words of font info for 183 fonts, out of 8000000 for 9000
+ 44057 strings out of 468224
+ 881975 string characters out of 5432953
+ 1986990 words of memory out of 5000000
+ 71345 multiletter control sequences out of 15000+600000
+ 707808 words of font info for 191 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,13n,93p,1199b,3468s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 85i,12n,93p,1199b,3555s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmex10.pfb><C:/Users/carlo/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmmi10.pfb><C:/Users/carlo/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -2511,13 +2808,16 @@ ublic/amsfonts/cm/cmr10.pfb><C:/Users/carlo/AppData/Local/Programs/MiKTeX/fonts
 TeX/fonts/type1/public/mathpazo/fplmr.pfb><C:/Users/carlo/AppData/Local/Program
 s/MiKTeX/fonts/type1/public/mathpazo/fplmri.pfb><C:/Users/carlo/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/carlo/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/carlo/AppData/Local/P
-rograms/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/carlo/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/carlo/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (61 pages, 888929 bytes).
+rograms/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/carlo/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/carlo/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/carlo/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/carlo/AppData/Local
+/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/carlo/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/carlo/AppData
+/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on main.pdf (93 pages, 1288461 bytes).
 PDF statistics:
- 1715 PDF objects out of 1728 (max. 8388607)
- 218 named destinations out of 1000 (max. 500000)
- 463 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2578 PDF objects out of 2984 (max. 8388607)
+ 545 named destinations out of 1000 (max. 500000)
+ 574 words of extra memory for PDF output out of 10000 (max. 10000000)
 

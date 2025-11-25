@@ -1,14 +1,7 @@
 \chapter{Planteamiento del Problema}
 \label{chap:planteamiento-problema}
 
-El suministro de recursos energéticos en regiones aisladas constituye un
-problema complejo de alta relevancia. La Región de Aysén, en la Patagonia
-chilena, ilustra esta problemática en su sistema de suministro de Gas Licuado
-de Petróleo (GLP). Este capítulo formaliza los elementos que configuran un
-escenario de riesgo sistémico. Se argumenta que la interacción de tres
-factores ---alta dependencia energética, topología logística frágil y vacíos
-en la planificación estratégica--- demanda un nuevo enfoque analítico que los
-métodos estáticos actuales no pueden proveer.
+La Región de Aysén enfrenta un riesgo sistémico en su suministro de GLP. Este capítulo caracteriza el sistema (demanda, infraestructura, actores), identifica sus vulnerabilidades (exógenas y endógenas), y argumenta por qué los métodos de análisis actuales (matrices de riesgo estáticas) son insuficientes para evaluar la resiliencia dinámica del sistema.
 
 \section{Caracterización del Sistema}
 \label{sec:caracterizacion-sistema}
@@ -18,7 +11,7 @@ definen como un sistema complejo y crítico. Su criticidad se deriva de la
 confluencia de una demanda energética elevada, una estructura de mercado
 oligopólica y una infraestructura precaria.
 
-\subsection{La Dimensión de la Demanda: Criticidad y Crecimiento Sostenido}
+\subsection{Demanda energética y crecimiento proyectado}
 
 La demanda energética de la región es un factor distintivo a nivel nacional. 
 Con un consumo per cápita de \SI{27.25}{Gcal}, que excede en un 65\% la 
@@ -38,7 +31,7 @@ consumirá \SI{14.4}{ton/día} de GLP. Este crecimiento y cambio estructural
 implican que la presión sobre la ya frágil cadena de suministro se 
 intensificará de manera no lineal en los próximos años.
 
-\subsection{La Dimensión del Suministro: Topología Lineal y Soberanía Comprometida}
+\subsection{Estructura de la cadena de suministro}
 
 % --- SECCIÓN PROFUNDIZADA CON ANÁLISIS DE LA RUTA ---
 La estructura de la cadena de suministro, detallada en el informe de 
@@ -57,15 +50,12 @@ transcurre por territorio argentino, lo que implica que la soberanía
 logística y la seguridad del suministro regional están estructuralmente 
 comprometidas por la dinámica de un país vecino.
 
-\section{Análisis de Vulnerabilidades: La Disonancia Crítica del Sistema}
+\section{Análisis de vulnerabilidades}
 \label{sec:analisis-vulnerabilidades}
 
-Las vulnerabilidades del sistema no son meramente teóricas, sino que se 
-manifiestan en una disonancia crítica: la magnitud de las amenazas exógenas 
-supera con creces la capacidad de absorción de la fragilidad endógena del 
-sistema.
+El sistema presenta vulnerabilidades tanto exógenas (amenazas externas) como endógenas (limitaciones de capacidad interna).
 
-\subsection{Vulnerabilidades Exógenas: Amenazas Recurrentes y de Larga Duración}
+\subsection{Vulnerabilidades exógenas}
 
 % --- SECCIÓN PROFUNDIZADA CON CUANTIFICACIÓN DEL RIESGO ---
 El principal vector de riesgo es la incertidumbre estocástica en el 
@@ -83,60 +73,39 @@ en Argentina como la principal amenaza para la continuidad del suministro
 enfrenta amenazas recurrentes y de duración prolongada que introducen una 
 alta variabilidad en el tiempo de entrega (\textit{lead time}).
 
-\subsection{Vulnerabilidades Endógenas: Un Buffer Insuficiente y Estratégicamente Degradado}
+\subsection{Vulnerabilidades endógenas}
 
-% --- SECCIÓN PROFUNDIZADA CON ANÁLISIS DE LA DINÁMICA DE MERCADO ---
-Frente a una amenaza documentada de 21 días, la capacidad de respuesta del
-sistema es alarmantemente limitada. La infraestructura de almacenamiento
-primario en Coyhaique posee una capacidad nominal total de solo
-\textbf{\SI{431}{ton}}, distribuidas entre Abastible (\SI{150}{ton}), Lipigas (\SI{240}{ton}) y Gasco (\SI{41}{ton})~\cite{CIEP2025}. Esta capacidad se traduce en una autonomía teórica de apenas \textbf{\SI{8.2}{días}} para el mes de mayor venta.
+La capacidad de almacenamiento en Coyhaique es de 431 TM (Abastible 150, Lipigas 240, Gasco 41)~\cite{CIEP2025}, proporcionando 8,2 días de autonomía vs. disrupciones documentadas de hasta 21 días.
 
-Esta fragilidad no es solo una limitación física, sino el resultado de una 
-dinámica de mercado adversa. El informe evidencia que ``por empresas los 
-números son mucho más ajustados para Gasco que tiene una capacidad demasiado 
-reducida para su nivel de ventas''~\cite{CIEP2025}. Este hecho es la 
-manifestación práctica de un ``Dilema del Prisionero'': en un mercado 
-oligopólico, la estrategia individualmente racional de minimizar costos de 
-capital (manteniendo un inventario bajo) es adoptada por al menos un actor, 
-lo que degrada la resiliencia colectiva y deja al sistema entero expuesto.
+El informe CIEP 2025 identifica que "Gasco tiene una capacidad demasiado reducida para su nivel de ventas" (41 TM = 0,78 días de autonomía). Esta situación refleja un Dilema del Prisionero en el mercado oligopólico: minimizar costos de inventario individualmente (estrategia racional) degrada la resiliencia colectiva.
 
-\section{Insuficiencia de los Marcos de Análisis y la Brecha Metodológica}
+\textbf{Propuesta 10.4 (Gasco):} El informe documenta que Gasco está desarrollando un proyecto de expansión para incrementar su capacidad en 250 TM (de 41 a 291 TM), elevando la capacidad total del sistema de 431 TM a 681 TM. La inversión estimada es \$1,5 millones USD. Esta expansión aumentaría la autonomía teórica del sistema de 8,2 a 13 días.
+
+El presente trabajo evalúa cuantitativamente el retorno en resiliencia de esta inversión bajo diferentes escenarios de disrupciones.
+
+\section{Limitaciones del diagnóstico actual}
 \label{sec:insuficiencia-marcos}
 
-El marco de planificación regional y las herramientas de análisis existentes 
-son inadecuados para gestionar la compleja interacción de las 
-vulnerabilidades descritas.
+\subsection{Vacío en la planificación energética regional}
 
-Primero, existe un documentado vacío estratégico. La `Política Energética 
-2050 Región de Aysén' centra sus esfuerzos de seguridad energética 
-exclusivamente en el sector eléctrico, omitiendo un tratamiento formal para 
-la cadena de suministro de combustibles.
+La 'Política Energética 2050 Región de Aysén' se enfoca exclusivamente en el sector eléctrico, omitiendo la cadena de suministro de combustibles.
 
-Segundo, el diagnóstico técnico disponible~\cite{CIEP2025}, si bien es 
-exhaustivo, es de naturaleza estática. Propone un portafolio de soluciones, 
-como el aumento de la capacidad de almacenamiento en \SI{250}{ton} con una 
-inversión estimada de \SI{1.5}{millones~de~USD}, pero no provee un método 
-para evaluar su retorno en resiliencia. La matriz de riesgos evalúa 
-probabilidad e impacto de forma aislada, pero no puede capturar los efectos 
-en cascada de una disrupción a lo largo del tiempo.
+\subsection{Análisis estático vs. dinámico}
 
-% --- SECCIÓN PROFUNDIZADA CON EVIDENCIA OPERATIVA DE LA ENTREVISTA ---
-Esta insuficiencia se materializa en la práctica operativa de la gestión de 
-crisis regional. Como lo confirma la autoridad regional, dicha gestión se 
-basa en protocolos reactivos y manuales, donde el proceso implica ``llamar a 
-todas las empresas, construir un Excel y, más o menos, sacar una foto de 
-cuánta disponibilidad de combustible hay'' (Laibe, T., comunicación personal, 
-11 de junio, 2025). Este enfoque, calificado como ``rudimentario'', es la 
-prueba fehaciente de la ausencia de una plataforma de análisis dinámico.
+El informe CIEP 2025 es exhaustivo pero estático: identifica riesgos mediante una matriz de probabilidad × impacto, pero no puede cuantificar:
 
-La brecha metodológica es, por tanto, clara: se carece de una herramienta 
-que permita un análisis dinámico y cuantitativo para responder preguntas de 
-ingeniería y gestión de inversiones, tales como:
+\begin{itemize}
+    \item ¿Cuánto tiempo puede operar el sistema bajo disrupciones largas?
+    \item ¿Qué tan frecuentemente fallará el sistema (quiebres de stock)?
+    \item ¿Cuál es el retorno en resiliencia de la inversión de \$1,5M USD (Propuesta 10.4)?
+\end{itemize}
 
-\begin{quote}
-    \textit{¿Cuál es la reducción porcentual en la probabilidad de quiebre 
-    de stock que se obtiene de una inversión de \$\SI{1.5}{M}, bajo un 
-    escenario de disrupciones con una frecuencia de Nivel 4 y una duración 
-    estocástica, considerando además la demanda adicional de la nueva 
-    central térmica?}
-\end{quote}
+\subsection{Gestión reactiva de crisis}
+
+La gestión operativa de crisis se basa en protocolos manuales: "llamar a todas las empresas, construir un Excel y sacar una foto de cuánta disponibilidad de combustible hay" (Laibe, T., comunicación personal, 11 de junio, 2025). No existe una herramienta de análisis dinámico.
+
+\subsection{Pregunta que el diagnóstico actual no puede responder}
+
+\textit{¿Cuál es la reducción en probabilidad de quiebre de stock que genera la inversión de \$1,5M USD (Propuesta 10.4 de Gasco), bajo un escenario de disrupciones con frecuencia 4 eventos/año y duración estocástica de hasta 21 días?}
+
+Esta tesis desarrolla el modelo para responder esta pregunta.

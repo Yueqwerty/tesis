@@ -10,9 +10,9 @@
 \usepackage[spanish,es-noshorthands]{babel}
 \usepackage{csquotes}
 % --- Tipografía Profesional ---
-\usepackage{lmodern} 
-\usepackage{mathpazo} 
-\linespread{1.3}
+\usepackage{lmodern}
+\usepackage{mathpazo}
+\linespread{1.5}  % Interlineado 1.5 para formato institucional
 
 % --- Paquetes Esenciales y de Ingeniería ---
 \usepackage{graphicx}
@@ -37,8 +37,7 @@
 \usetikzlibrary{arrows.meta, chains, positioning, shapes.geometric}
 
 % --- Configuración de Bibliografía (biblatex) ---
-% --- Configuración de Bibliografía (biblatex) ---
-\usepackage[backend=biber, style=apa, sorting=nyt]{biblatex}
+\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
 \addbibresource{bibliografia.bib} % Nombre de tu archivo .bib
 
 % --- Configuración de Hipervínculos y Referencias Inteligentes ---
@@ -65,19 +64,38 @@
 % ==============================================================================
 % DISEÑO DEL DOCUMENTO (Controlado por memoir)
 % ==============================================================================
-\chapterstyle{veelo}
+
+% --- Estilo de Capítulo Sobrio (sin decoraciones) ---
+\makechapterstyle{sobrio}{%
+  \renewcommand{\chapterheadstart}{\vspace*{40pt}}
+  \renewcommand{\printchaptername}{\centering\Large\bfseries\sffamily CAPÍTULO}
+  \renewcommand{\chapternamenum}{ }
+  \renewcommand{\printchapternum}{\centering\Large\bfseries\sffamily\thechapter}
+  \renewcommand{\afterchapternum}{\par\nobreak\vskip 15pt}
+  \renewcommand{\printchaptertitle}[1]{\centering\Large\bfseries\sffamily\MakeUppercase{##1}}
+  \renewcommand{\afterchaptertitle}{\par\nobreak\vskip 30pt}
+}
+\chapterstyle{sobrio}
 \setstocksize{11in}{8.5in}
 \settrimmedsize{\stockheight}{\stockwidth}{*}
 \setlrmarginsandblock{3cm}{2.5cm}{*}
 \setulmarginsandblock{2.5cm}{2.5cm}{*}
 \setheadfoot{16pt}{12pt}
 \checkandfixthelayout
+
+% --- Headers y Footers Limpios ---
 \makepagestyle{main}
-\makeevenhead{main}{\thepage}{}{\leftmark}
-\makeoddhead{main}{\rightmark}{}{\thepage}
+\makeevenhead{main}{}{}{}  % Header vacío
+\makeoddhead{main}{}{}{}   % Header vacío
+\makeevenfoot{main}{}{\thepage}{}  % Número de página centrado abajo
+\makeoddfoot{main}{}{\thepage}{}   % Número de página centrado abajo
+
 \makepagestyle{plain}
-\makeevenhead{plain}{\thepage}{}{}
-\makeoddhead{plain}{}{}{\thepage}
+\makeevenhead{plain}{}{}{}
+\makeoddhead{plain}{}{}{}
+\makeevenfoot{plain}{}{\thepage}{}
+\makeoddfoot{plain}{}{\thepage}{}
+
 \pagestyle{main}
 \aliaspagestyle{chapter}{plain}
 \firmlists
@@ -115,9 +133,10 @@
 \backmatter
 \printbibliography[title={Referencias}]
 
-% TODO: PENDIENTE - Considerar agregar:
-% - Anexos (código fuente, tablas adicionales, validaciones)
-% - Glosario de términos técnicos
-% - Lista de abreviaturas
+% ==============================================================================
+% APÉNDICES
+% ==============================================================================
+\appendix
+\include{capitulos/apendice_a_codigo}
 
 \end{document}

@@ -6,10 +6,12 @@
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {table}{\numberline {7.1}{\ignorespaces Diseño Experimental Monte Carlo para Evaluación de Resiliencia.}}{23}{table.7.1}%
+\contentsline {table}{\numberline {7.1}{\ignorespaces Diseño Experimental Monte Carlo para Evaluación de Resiliencia.}}{40}{table.7.1}%
 \addvspace {10pt}
-\contentsline {table}{\numberline {8.1}{\ignorespaces Parámetros de entrada del modelo de simulación.}}{25}{table.8.1}%
-\contentsline {table}{\numberline {8.2}{\ignorespaces Estadísticas descriptivas del nivel de servicio (\%) por configuración.}}{25}{table.8.2}%
-\contentsline {table}{\numberline {8.3}{\ignorespaces Análisis de Varianza (ANOVA) de dos vías para el nivel de servicio.}}{31}{table.8.3}%
+\contentsline {table}{\numberline {8.1}{\ignorespaces Parámetros de entrada del modelo de simulación.}}{48}{table.8.1}%
+\contentsline {table}{\numberline {8.2}{\ignorespaces Estadísticas descriptivas del nivel de servicio (\%) por configuración.}}{49}{table.8.2}%
+\contentsline {table}{\numberline {8.3}{\ignorespaces Análisis de Varianza (ANOVA) de dos vías para el nivel de servicio.}}{56}{table.8.3}%
+\contentsline {table}{\numberline {8.4}{\ignorespaces Métricas de rendimiento del experimento Monte Carlo.}}{64}{table.8.4}%
+\addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

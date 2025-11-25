@@ -1,0 +1,60 @@
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[
+        font=\small,
+        node distance=1.2cm,
+        process/.style={
+            rectangle, draw=black, line width=1pt,
+            minimum height=1cm, minimum width=3.5cm,
+            text centered, font=\small, align=center
+        },
+        stochastic/.style={
+            rectangle, draw=black, line width=1pt,
+            minimum height=1.2cm, minimum width=3.5cm,
+            fill=gray!15, text centered, font=\small, align=center
+        },
+        arrow/.style={->, >=stealth, line width=1pt},
+        label/.style={font=\footnotesize, fill=white, inner sep=1pt}
+    ]
+
+        % Nodo inicial
+        \node[process] (inicio) at (0,0) {Día 0};
+
+        % Generar tiempo entre eventos
+        \node[stochastic, below=of inicio] (tiempo) {
+            Generar $T$\\
+            $T \sim \text{Exp}(\lambda = 4/\text{año})$
+        };
+
+        % Espera
+        \node[process, below=of tiempo] (espera) {Esperar $T$ días};
+
+        % Generar duración
+        \node[stochastic, below=of espera] (duracion) {
+            Generar $D$\\
+            $D \sim \text{Tri}(a, b, c)$
+        };
+
+        % Bloquear ruta
+        \node[process, below=of duracion] (bloquear) {
+            Bloquear Ruta\\
+            $D$ días
+        };
+
+        % Registro
+        \node[process, below=of bloquear] (registro) {Registrar disrupción};
+
+        % Flechas
+        \draw[arrow] (inicio) -- (tiempo);
+        \draw[arrow] (tiempo) -- (espera);
+        \draw[arrow] (espera) -- (duracion);
+        \draw[arrow] (duracion) -- (bloquear);
+        \draw[arrow] (bloquear) -- (registro);
+
+        % Loop de regreso
+        \draw[arrow] (registro.east) -- ++(1.2,0) node[label, right] {Repetir} |- (tiempo.east);
+
+    \end{tikzpicture}
+    \caption{Diagrama de flujo del proceso de generación de disrupciones.}
+    \label{fig:generacion-disrupciones}
+\end{figure}

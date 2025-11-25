@@ -1,0 +1,73 @@
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[
+        font=\small,
+        node distance=1.5cm and 2.5cm,
+        start/.style={
+            ellipse, draw=black, line width=1pt,
+            minimum height=0.8cm, minimum width=2cm,
+            fill=gray!10, text centered, font=\small
+        },
+        process/.style={
+            rectangle, draw=black, line width=1pt,
+            minimum height=1cm, minimum width=3cm,
+            text centered, font=\small, align=center
+        },
+        decision/.style={
+            diamond, draw=black, line width=1pt,
+            minimum height=1.8cm, minimum width=1.8cm,
+            fill=gray!15, text centered, font=\footnotesize, align=center,
+            aspect=2
+        },
+        arrow/.style={->, >=stealth, line width=1pt},
+        label/.style={font=\footnotesize, fill=white, inner sep=1pt}
+    ]
+
+        % Inicio
+        \node[start] (inicio) {Revisar Inventario};
+
+        % Decisión 1
+        \node[decision, below=of inicio] (dec1) {$I \leq R$?};
+
+        % Decisión 2
+        \node[decision, below=of dec1] (dec2) {Ruta\\libre?};
+
+        % Decisión 3
+        \node[decision, right=2.5cm of dec2] (dec3) {Pedidos\\$<$ 2?};
+
+        % Proceso: Crear pedido
+        \node[process, below=of dec2] (crear) {Crear Pedido ($Q$ TM)};
+
+        % Proceso: Calcular LT
+        \node[process, below=of crear] (lt) {Lead Time: 6 días};
+
+        % Espera
+        \node[process, below=of lt] (espera) {Esperar $LT$ días};
+
+        % Recibir
+        \node[process, below=of espera] (recibir) {Recibir y actualizar $I$};
+
+        % Siguiente día
+        \node[process, right=3.5cm of inicio] (siguiente) {Esperar 1 día};
+
+        % Flechas
+        \draw[arrow] (inicio) -- (dec1);
+        \draw[arrow] (dec1) -- node[label, right] {Sí} (dec2);
+        \draw[arrow] (dec1.east) -- node[label, above] {No} ++(1.5,0) |- (siguiente);
+
+        \draw[arrow] (dec2) -- node[label, right] {Sí} (dec3);
+        \draw[arrow] (dec2.west) -- node[label, above] {No} ++(-1.5,0) |- (siguiente);
+
+        \draw[arrow] (dec3) -- node[label, above] {Sí} ++(0,-1.2) -| (crear);
+        \draw[arrow] (dec3.north) -- node[label, right] {No} ++(0,0.8) -| (siguiente);
+
+        \draw[arrow] (crear) -- (lt);
+        \draw[arrow] (lt) -- (espera);
+        \draw[arrow] (espera) -- (recibir);
+        \draw[arrow] (recibir.east) -- ++(1.2,0) |- (siguiente);
+        \draw[arrow] (siguiente.north) -- ++(0,1.2) -| (inicio);
+
+    \end{tikzpicture}
+    \caption{Diagrama de flujo del proceso de reabastecimiento basado en política $(Q,R)$.}
+    \label{fig:flujo-reabastecimiento}
+\end{figure}

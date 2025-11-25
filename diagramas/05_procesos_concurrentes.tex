@@ -1,0 +1,87 @@
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[
+        font=\footnotesize,
+        process/.style={
+            rectangle, draw=black, line width=1pt,
+            minimum height=8cm, minimum width=2.5cm,
+            text centered, font=\small, align=center
+        },
+        step/.style={
+            rectangle, draw=black!40, line width=0.5pt,
+            minimum height=0.7cm, minimum width=2cm,
+            text centered, font=\scriptsize, align=center
+        },
+        resource/.style={
+            rectangle, draw=black, line width=1pt,
+            minimum height=2.5cm, minimum width=2.2cm,
+            text centered, font=\small, align=center,
+            fill=gray!15
+        },
+        dashed_arrow/.style={->, >=stealth, line width=0.8pt, dashed}
+    ]
+
+        % Proceso 1
+        \node[process, fill=gray!5] (p1) at (0,0) {
+            \textbf{Proceso 1}\\
+            \textbf{Demanda}
+        };
+
+        \node[step] at (0,3) {Calcular $D(t)$};
+        \node[step] at (0,2) {Despachar};
+        \node[step] at (0,1) {Registrar};
+        \node[step] at (0,0) {Esperar 1 día};
+        \node[step] at (0,-1) {$\cdots$};
+
+        % Proceso 2
+        \node[process, fill=gray!5] (p2) at (3.5,0) {
+            \textbf{Proceso 2}\\
+            \textbf{Reabastecimiento}
+        };
+
+        \node[step] at (3.5,3) {Revisar $I$};
+        \node[step] at (3.5,2) {$I \leq R$?};
+        \node[step] at (3.5,1) {Crear Pedido};
+        \node[step] at (3.5,0) {Esperar 1 día};
+        \node[step] at (3.5,-1) {$\cdots$};
+
+        % Proceso 3
+        \node[process, fill=gray!5] (p3) at (7,0) {
+            \textbf{Proceso 3}\\
+            \textbf{Disrupciones}
+        };
+
+        \node[step] at (7,3) {Generar $T$};
+        \node[step] at (7,2) {Esperar $T$};
+        \node[step] at (7,1) {Bloquear Ruta};
+        \node[step] at (7,0) {Esperar $D$};
+        \node[step] at (7,-1) {$\cdots$};
+
+        % Recursos compartidos
+        \node[resource] (hub) at (3.5,-5.5) {
+            \textbf{Hub}\\[0.15cm]
+            Inventario $I$
+        };
+
+        \node[resource] (ruta) at (7,-5.5) {
+            \textbf{Ruta}\\[0.15cm]
+            Estado
+        };
+
+        % Interacciones
+        \draw[dashed_arrow] (0,-2) -- (hub.north west)
+            node[midway, above, sloped, font=\tiny] {consume};
+
+        \draw[dashed_arrow] (3.5,-2) -- (hub.north)
+            node[midway, right, font=\tiny] {lee/escribe};
+
+        \draw[dashed_arrow] (4,-2) -- (ruta.north west)
+            node[midway, above, sloped, font=\tiny] {consulta};
+
+        \draw[dashed_arrow] (7,-2) -- (ruta.north)
+            node[midway, right, font=\tiny] {modifica};
+
+    \end{tikzpicture}
+    \caption{Diagrama de interacción de los tres procesos concurrentes del simulador.}
+    \label{fig:procesos-concurrentes}
+\end{figure}

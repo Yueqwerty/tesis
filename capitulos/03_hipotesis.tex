@@ -1,56 +1,72 @@
-\chapter{Pregunta de Investigación e Hipótesis}
-\label{chap:hipotesis}
+\chapter{Marco Conceptual y Matemático}
+\label{chap:marco-teorico}
 
-El Capítulo \ref{chap:planteamiento-problema} identificó que el sistema de suministro de GLP en Aysén opera con dos tipos de vulnerabilidades:
+La construcción de un simulador para sistemas logísticos complejos no es un ejercicio trivial de programación, sino una aplicación sistemática de principios de la teoría de la computación, la estadística matemática y la investigación de operaciones. Este capítulo establece los fundamentos formales que validan la arquitectura del software, detallando los algoritmos específicos seleccionados para la gestión del tiempo discreto, la generación de entropía artificial y la modelación de procesos estocásticos.
 
+\section{Teoría de Simulación de Eventos Discretos (DES)}
+
+La Simulación de Eventos Discretos se distingue fundamentalmente de la simulación continua por su tratamiento del tiempo y del estado del sistema.
+
+\subsection{Definición Formal del Sistema}
+Según \textcite{Banks2010}, un sistema de eventos discretos se modela mediante una tupla de variables de estado $S(t)$ cuya trayectoria es constante a tramos (\textit{piecewise constant}). Matemáticamente, si definimos una secuencia de eventos $e_1, e_2, \dots, e_n$ que ocurren en los tiempos $t_1 < t_2 < \dots < t_n$, el estado del sistema permanece inmutable en el intervalo $[t_i, t_{i+1})$. Esta propiedad es la que permite al algoritmo de simulación ``saltar'' en el tiempo, avanzando el reloj global ($CLOCK$) directamente de $t_i$ a $t_{i+1}$ sin incurrir en el costo computacional de integrar los pasos intermedios \cite{Law2015}.
+
+\subsection{Mecanismo de Avance de Tiempo}
+El motor de simulación implementa el mecanismo de \textit{Next-Event Time Advance}. A diferencia de los enfoques de incremento fijo ($\Delta t$), este algoritmo garantiza que el reloj de simulación se actualice exactamente al instante en que ocurre el cambio de estado más próximo, eliminando errores de discretización temporal y optimizando el uso de ciclos de CPU durante periodos de inactividad del sistema.
+
+\section{Algoritmos Computacionales del Motor}
+
+La eficiencia del simulador reside en su capacidad para gestionar la Lista de Eventos Futuros (FEL, por sus siglas en inglés). Esta lista es una estructura de datos dinámica que actúa como el planificador central del sistema.
+
+\subsection{Estructura de Datos: Montículo Binario}
+Dado que el motor debe recuperar repetidamente el evento con el tiempo mínimo ($t_{min}$) para avanzar el reloj, la elección de la estructura de datos es crítica para la complejidad asintótica del software. Una lista lineal no ordenada implicaría un costo de búsqueda de $O(n)$, lo cual es prohibitivo para simulaciones de larga duración.
+
+Para este proyecto, se utiliza una estructura de cola de prioridad implementada como un \textit{Min-Heap} binario. Según \textcite{Knuth1997}, esta estructura garantiza que el elemento de menor valor (el próximo evento) siempre se encuentre en la raíz del árbol.
+
+\subsection{Complejidad Algorítmica}
+El uso de un montículo binario permite realizar las operaciones críticas con alta eficiencia:
 \begin{itemize}
-    \item \textbf{Vulnerabilidad exógena:} Disrupciones de la Ruta 7 (frecuencia: 4 eventos/año, duración: hasta 21 días).
-    \item \textbf{Vulnerabilidad endógena:} Capacidad de almacenamiento limitada (431 TM = 8,2 días de autonomía).
+    \item \textbf{Extracción del Mínimo:} La recuperación del próximo evento tiene un costo de $O(1)$, mientras que la reestructuración del árbol tras la eliminación es $O(\log n)$.
+    \item \textbf{Inserción de Eventos:} La programación de nuevos eventos futuros se realiza con una complejidad de $O(\log n)$.
 \end{itemize}
+Esto asegura que el simulador mantenga su rendimiento incluso cuando el número de eventos pendientes crece considerablemente, permitiendo la ejecución de 100.000 iteraciones en tiempos razonables.
 
-Este capítulo plantea la pregunta de investigación y la hipótesis central que guían el diseño del modelo de simulación y el experimento Monte Carlo.
+\section{Teoría de Generación de Números Pseudoaleatorios}
 
-\section{Pregunta de Investigación}
-\label{sec:pregunta-investigacion}
+La simulación estocástica depende de la capacidad del computador para generar secuencias numéricas que emulen el azar con propiedades estadísticas rigurosas.
 
-¿Cuál de los dos factores (duración de disrupciones vs. capacidad de almacenamiento) tiene mayor impacto en la resiliencia del sistema?
+\subsection{Algoritmo Mersenne Twister}
+El núcleo generador seleccionado para este estudio es el \textbf{Mersenne Twister} (MT19937), desarrollado por \textcite{Matsumoto1998}. Este algoritmo se basa en una recurrencia lineal matricial sobre un cuerpo finito binario $F_2$.
 
-Específicamente: ¿Cómo diseñar un modelo de simulación para cuantificar la sensibilidad relativa del nivel de servicio a estos dos factores?
-
-\section{Hipótesis Central}
-\label{sec:hipotesis}
-
-\textbf{Hipótesis:} La resiliencia del sistema de suministro de GLP de Aysén es significativamente más sensible a la duración de las disrupciones (factor exógeno) que a la capacidad de almacenamiento (factor endógeno).
-
-\subsection{Justificación de la hipótesis}
-
-Esta hipótesis se basa en dos observaciones del sistema actual:
-
+La elección de este generador específico se justifica por dos propiedades fundamentales:
 \begin{enumerate}
-    \item \textbf{Disrupciones largas superan la autonomía del sistema:} La capacidad actual (431 TM) proporciona 8,2 días de autonomía. Disrupciones documentadas de hasta 21 días (conflicto Argentina 2021) exceden esta capacidad por un factor de 2,5×.
-
-    \item \textbf{Expansión de capacidad tiene retornos decrecientes:} La Propuesta 10.4 de Gasco incrementa capacidad en 58\% (de 431 a 681 TM), pero la autonomía solo aumenta a 13 días. Disrupciones de 21 días seguirían generando quiebres de stock.
+    \item \textbf{Periodo Colosal:} Tiene un periodo de $2^{19937}-1$. Como explica \textcite{Knuth1997}, un periodo largo es esencial para evitar que la simulación entre en ciclos repetitivos que invaliden los resultados estadísticos en experimentos masivos.
+    \item \textbf{Equidistribución k-dimensional:} El MT19937 posee la propiedad de k-distribución para $k=623$, lo que significa que la secuencia de números es estadísticamente equidistribuida en 623 dimensiones, asegurando una ``calidad'' de aleatoriedad muy superior a los generadores congruenciales lineales.
 \end{enumerate}
 
-\subsection{Operacionalización de la hipótesis}
+\section{Modelado Probabilístico de Procesos Logísticos}
 
-La hipótesis se prueba mediante un experimento factorial $2 \times 3$ que compara:
+Para representar los fenómenos físicos del mundo real dentro del computador, se utilizan distribuciones de probabilidad teóricas que capturan la naturaleza de cada proceso.
 
-\textbf{Factor endógeno (capacidad):}
-\begin{itemize}
-    \item Status Quo: 431 TM
-    \item Propuesta: 681 TM (+58\%)
-\end{itemize}
+\subsection{Procesos de Llegada de Fallas}
+La ocurrencia de fallas en la ruta se modela como un Proceso de Poisson. La justificación teórica radica en la independencia de los eventos de falla. Según \textcite{Ross2014}, si el número de eventos en un intervalo sigue una distribución de Poisson, los tiempos entre eventos consecutivos siguen una distribución Exponencial.
 
-\textbf{Factor exógeno (duración de disrupciones):}
-\begin{itemize}
-    \item Corta: Triangular(3, 3.5, 7) días
-    \item Media: Triangular(3, 7, 14) días
-    \item Larga: Triangular(3, 10.5, 21) días
-\end{itemize}
+\subsection{Propiedad de Falta de Memoria}
+La distribución Exponencial es única por poseer la propiedad de \textit{falta de memoria} (memorylessness):
+\begin{equation}
+    P(X > s + t \mid X > s) = P(X > t)
+\end{equation}
+Esta propiedad interpreta correctamente la realidad física de la ruta: el hecho de que no haya habido un derrumbe en los últimos 10 días no aumenta la probabilidad condicional de que ocurra uno mañana; el riesgo es constante e independiente de la historia acumulada.
 
-La hipótesis se confirma si el ratio de sensibilidad $\frac{\text{Efecto exógeno}}{\text{Efecto endógeno}} > 1$.
+\section{Gestión de Inventarios: La Lógica $(Q,R)$}
 
-\subsection{Implicaciones para política pública}
+Finalmente, el comportamiento ``inteligente'' del sistema logístico se modela utilizando la Teoría de Inventarios. Se implementa una política de revisión continua $(Q,R)$ \cite{Silver2017}.
 
-Si la hipótesis se confirma, las inversiones en mitigación de disrupciones (rutas alternativas, protocolos con Argentina, mejora de Ruta 7) tendrían mayor retorno en resiliencia que la inversión de \$1,5M USD en expansión de capacidad (Propuesta 10.4).
+\subsection{Punto de Reorden (R)}
+El parámetro $R$ define el nivel de inventario que gatilla una reposición. Se calcula teóricamente para cubrir la demanda esperada durante el tiempo de entrega (\textit{lead time}) más un stock de seguridad que amortigua la variabilidad de la demanda y del propio tiempo de entrega.
+
+\subsection{Cantidad de Pedido (Q)}
+El parámetro $Q$ define el tamaño del lote de reposición. En este modelo, $Q$ representa la capacidad de transporte agregada o el lote económico de compra, y determina la magnitud del incremento de inventario cuando llega un pedido.
+
+\section{Validación y Verificación (V&V)}
+
+Para asegurar la fiabilidad del artefacto de software, se sigue el marco de validación propuesto por \textcite{Sargent2013}. La \textbf{Verificación} se enfoca en la corrección del código (``¿Construimos el modelo correctamente?''), asegurando que la implementación en Python corresponda a la lógica matemática descrita. La \textbf{Validación}, por su parte, se enfoca en la precisión del modelo (``¿Construimos el modelo correcto?''), comparando las salidas de la simulación con el comportamiento esperado del sistema real.

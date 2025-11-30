@@ -2,153 +2,85 @@
 \contentsline {chapter}{Agradecimientos}{\es@scroman {i}}{chapter*.1}%
 \contentsline {chapter}{Resumen}{\es@scroman {ii}}{chapter*.2}%
 \contentsline {chapter}{\'{I}ndice general}{\es@scroman {iv}}{section*.3}%
-\contentsline {chapter}{\'{I}ndice de figuras}{\es@scroman {vii}}{section*.4}%
-\contentsline {chapter}{\'{I}ndice de cuadros}{\es@scroman {ix}}{section*.5}%
+\contentsline {chapter}{\'{I}ndice de figuras}{\es@scroman {v}}{section*.4}%
+\contentsline {chapter}{\'{I}ndice de cuadros}{\es@scroman {vi}}{section*.5}%
 \contentsline {chapter}{\chapternumberline {1}Introducción}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Contexto: Vulnerabilidad Energética en Zonas Remotas}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}El Caso de la Región de Aysén: Un Sistema en el Límite}{2}{section.1.2}%
-\contentsline {subsection}{Anatomía de una Vulnerabilidad Crítica}{3}{section*.6}%
-\contentsline {subsection}{El Gap Estructural: 8.2 Días vs. 21 Días}{4}{section*.7}%
-\contentsline {subsection}{Impacto Humano y Social}{4}{section*.8}%
-\contentsline {section}{\numberline {1.3}Pregunta de Investigación y Contribución}{5}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Objetivos y Alcance}{6}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Estructura del Documento}{6}{section.1.5}%
-\contentsline {chapter}{\chapternumberline {2}Planteamiento del Problema}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Caracterización del Sistema}{7}{section.2.1}%
-\contentsline {subsection}{Demanda energética y crecimiento proyectado}{7}{section*.9}%
-\contentsline {subsection}{Estructura de la cadena de suministro}{8}{section*.10}%
-\contentsline {section}{\numberline {2.2}Análisis de vulnerabilidades}{8}{section.2.2}%
-\contentsline {subsection}{Vulnerabilidades exógenas}{8}{section*.11}%
-\contentsline {subsection}{Vulnerabilidades endógenas}{9}{section*.12}%
-\contentsline {section}{\numberline {2.3}Limitaciones del diagnóstico actual}{9}{section.2.3}%
-\contentsline {subsection}{Vacío en la planificación energética regional}{9}{section*.13}%
-\contentsline {subsection}{Análisis estático vs. dinámico}{10}{section*.14}%
-\contentsline {subsection}{Gestión reactiva de crisis}{10}{section*.15}%
-\contentsline {subsection}{Pregunta que el diagnóstico actual no puede responder}{10}{section*.16}%
-\contentsline {chapter}{\chapternumberline {3}Pregunta de Investigación e Hipótesis}{11}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Pregunta de Investigación}{11}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Hipótesis Central}{11}{section.3.2}%
-\contentsline {subsection}{Justificación de la hipótesis}{12}{section*.17}%
-\contentsline {subsection}{Operacionalización de la hipótesis}{12}{section*.18}%
-\contentsline {subsection}{Implicaciones para política pública}{12}{section*.19}%
-\contentsline {chapter}{\chapternumberline {4}Objetivos}{13}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Objetivo General}{13}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Objetivos Específicos}{13}{section.4.2}%
-\contentsline {chapter}{\chapternumberline {5}Marco Teórico}{15}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Gestión de Inventarios en Cadenas de Suministro}{15}{section.5.1}%
-\contentsline {subsection}{Política de inventario $(Q,R)$}{15}{section*.20}%
-\contentsline {subsection}{Aplicación Numérica al Sistema GLP Aysén}{17}{section*.21}%
-\contentsline {subsubsection}{Cálculo del Punto de Reorden}{17}{section*.22}%
-\contentsline {subsubsection}{Autonomía del Sistema}{17}{section*.23}%
-\contentsline {subsubsection}{Modelación de la Demanda Estocástica}{18}{section*.24}%
-\contentsline {subsubsection}{Modelación de Disrupciones}{18}{section*.25}%
-\contentsline {subsubsection}{Implicación del Análisis Numérico}{19}{section*.26}%
-\contentsline {subsection}{Resiliencia en Cadenas de Suministro}{19}{section*.27}%
-\contentsline {subsection}{Dilema del Prisionero en mercados oligopólicos}{19}{section*.28}%
-\contentsline {section}{\numberline {5.2}Simulación de Eventos Discretos}{20}{section.5.2}%
-\contentsline {subsection}{Componentes del modelo DES}{20}{section*.29}%
-\contentsline {subsection}{Verificación y Validación}{21}{section*.30}%
-\contentsline {subsection}{Diseño de Experimentos}{21}{section*.31}%
-\contentsline {subsection}{Arquitectura del Sistema de Simulación}{21}{section*.32}%
-\contentsline {subsubsection}{Lógica del Sistema: Tres Procesos Concurrentes}{22}{section*.33}%
-\contentsline {subsubsection}{Reproducibilidad Computacional}{23}{section*.34}%
-\contentsline {subsubsection}{Verificación y Testing}{26}{section*.35}%
-\contentsline {chapter}{\chapternumberline {6}Estado del Arte}{27}{chapter.6}%
-\contentsline {section}{\numberline {6.1}DES en Cadenas de Suministro: Aplicaciones Consolidadas}{27}{section.6.1}%
-\contentsline {subsection}{Diseño de Redes de Distribución}{27}{section*.36}%
-\contentsline {subsection}{Análisis de Riesgos y Continuidad}{28}{section*.37}%
-\contentsline {subsection}{Logística Humanitaria}{28}{section*.38}%
-\contentsline {section}{\numberline {6.2}Modelos DES de Políticas de Inventario bajo Incertidumbre}{28}{section.6.2}%
-\contentsline {subsection}{Política $(Q,R)$ Clásica}{29}{section*.39}%
-\contentsline {subsection}{DES vs Modelos Analíticos}{29}{section*.40}%
-\contentsline {section}{\numberline {6.3}Diagnóstico del Sistema GLP Aysén}{29}{section.6.3}%
-\contentsline {subsection}{Informe CIEP 2025: Caracterización Estática}{29}{section*.41}%
-\contentsline {subsection}{Propuesta 10.4: Expansión de Capacidad}{30}{section*.42}%
-\contentsline {subsection}{Iniciativa 11.11: Simulación de Emergencias}{30}{section*.43}%
-\contentsline {section}{\numberline {6.4}Vacío Metodológico}{30}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Contribución de esta Tesis}{31}{section.6.5}%
-\contentsline {chapter}{\chapternumberline {7}Diseño Metodológico}{32}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Fase 1: Modelo Conceptual}{32}{section.7.1}%
-\contentsline {subsection}{Límites del modelo (system boundary)}{32}{section*.44}%
-\contentsline {subsection}{Diagrama conceptual del sistema}{33}{section*.45}%
-\contentsline {subsection}{Parametrización y Modelado Estocástico}{33}{section*.46}%
-\contentsline {subsubsection}{Parámetros Deterministas}{33}{section*.47}%
-\contentsline {subsubsection}{Variables Estocásticas y Distribuciones}{34}{section*.48}%
-\contentsline {subsubsection}{Generación de Números Aleatorios}{35}{section*.49}%
-\contentsline {section}{\numberline {7.2}Fase 2: Implementación del Prototipo (Objetivo 2)}{35}{section.7.2}%
-\contentsline {subsection}{Stack Tecnológico}{35}{section*.50}%
-\contentsline {subsection}{Arquitectura de Software}{36}{section*.51}%
-\contentsline {subsubsection}{Módulo de Configuración (\texttt {configuracion.py})}{36}{section*.52}%
-\contentsline {subsubsection}{Módulo de Entidades (\texttt {entidades.py})}{36}{section*.53}%
-\contentsline {subsubsection}{Módulo de Simulación (\texttt {simulacion.py})}{36}{section*.54}%
-\contentsline {subsubsection}{Módulo de Métricas (\texttt {metricas.py})}{37}{section*.55}%
-\contentsline {subsection}{Diagrama de Clases (UML)}{37}{section*.56}%
-\contentsline {subsection}{Ingeniería de Software: Testing y Validación}{38}{section*.57}%
-\contentsline {subsubsection}{Suite de Tests Unitarios}{38}{section*.58}%
-\contentsline {subsubsection}{Control de Versiones y Reproducibilidad}{38}{section*.59}%
-\contentsline {section}{\numberline {7.3}Fase 3: Evaluación y Experimentación (Objetivo 3)}{39}{section.7.3}%
-\contentsline {subsection}{Protocolo de Verificación y Validación (V\&V)}{39}{section*.60}%
-\contentsline {subsection}{Diseño de Experimentos (DoE)}{39}{section*.61}%
-\contentsline {subsection}{Análisis Estadístico}{39}{section*.62}%
-\contentsline {chapter}{\chapternumberline {8}Resultados}{41}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Casos de Prueba: Comportamiento Dinámico del Sistema}{41}{section.8.1}%
-\contentsline {subsection}{Caso 1: Escenario Normal (Disrupciones Cortas)}{41}{section*.63}%
-\contentsline {subsection}{Caso 2: Escenario Crítico (Disrupción Prolongada)}{43}{section*.64}%
-\contentsline {subsection}{Caso 3: Comparación de Capacidades (Mismo Escenario)}{45}{section*.65}%
-\contentsline {subsection}{Síntesis: Lecciones de los Casos de Prueba}{47}{section*.66}%
-\contentsline {section}{\numberline {8.2}Validación del Modelo de Simulación}{48}{section.8.2}%
-\contentsline {subsection}{Parametrización del Modelo}{48}{section*.67}%
-\contentsline {subsection}{Validación de Reproducibilidad}{48}{section*.68}%
-\contentsline {subsection}{Validación contra Datos Reales}{49}{section*.69}%
-\contentsline {section}{\numberline {8.3}Análisis Descriptivo del Rendimiento}{49}{section.8.3}%
-\contentsline {subsection}{Nivel de Servicio por Configuración}{49}{section*.70}%
-\contentsline {subsection}{Análisis de Distribuciones de Probabilidad}{50}{section*.71}%
-\contentsline {subsubsection}{Configuraciones Status Quo}{54}{section*.72}%
-\contentsline {subsubsection}{Configuraciones Propuesta}{54}{section*.73}%
-\contentsline {subsection}{Validación de Supuestos de Normalidad}{54}{section*.74}%
-\contentsline {subsubsection}{Q-Q Plots: Status Quo}{54}{section*.75}%
-\contentsline {subsubsection}{Q-Q Plots: Propuesta}{55}{section*.76}%
-\contentsline {section}{\numberline {8.4}Análisis Estadístico Inferencial}{57}{section.8.4}%
-\contentsline {subsection}{Análisis de Varianza (ANOVA)}{57}{section*.77}%
-\contentsline {subsection}{Tests Post-hoc: Comparaciones Múltiples}{57}{section*.78}%
-\contentsline {subsection}{Efectos Principales de los Factores}{57}{section*.79}%
-\contentsline {subsection}{Interacciones entre Factores}{60}{section*.80}%
-\contentsline {section}{\numberline {8.5}Prueba de Hipótesis: Análisis de Sensibilidad}{61}{section.8.5}%
-\contentsline {subsection}{Cuantificación de Sensibilidades}{61}{section*.81}%
-\contentsline {subsection}{Ratio de Sensibilidad}{61}{section*.82}%
-\contentsline {subsection}{Comparación con Boxplots}{62}{section*.83}%
-\contentsline {subsection}{Conclusión de la Prueba de Hipótesis}{62}{section*.84}%
-\contentsline {section}{\numberline {8.6}Rendimiento Computacional del Experimento}{63}{section.8.6}%
-\contentsline {subsection}{Infraestructura de ejecución}{63}{section*.85}%
-\contentsline {subsection}{Métricas de ejecución}{64}{section*.86}%
-\contentsline {subsection}{Análisis de complejidad}{64}{section*.87}%
-\contentsline {subsection}{Potencial de optimización}{64}{section*.88}%
-\contentsline {section}{\numberline {8.7}Resumen del Capítulo}{65}{section.8.7}%
-\contentsline {chapter}{\chapternumberline {9}Discusión}{66}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Interpretación de los Hallazgos}{66}{section.9.1}%
-\contentsline {subsection}{Dominancia del factor endógeno: resultado contraintuitivo}{66}{section*.89}%
-\contentsline {subsection}{Nivel de servicio del sistema actual: subcapacidad crónica}{67}{section*.90}%
-\contentsline {subsection}{Explicación del comportamiento: umbral crítico de capacidad}{67}{section*.91}%
-\contentsline {section}{\numberline {9.2}Alcance y rango de validez del modelo}{67}{section.9.2}%
-\contentsline {subsection}{Parámetros del modelo}{68}{section*.92}%
-\contentsline {subsection}{Limitaciones de la demanda base}{68}{section*.93}%
-\contentsline {section}{\numberline {9.3}Limitaciones del Estudio}{68}{section.9.3}%
-\contentsline {subsection}{Simplificaciones del modelo}{68}{section*.94}%
-\contentsline {subsection}{Horizonte temporal de 1 año}{69}{section*.95}%
-\contentsline {subsection}{Datos de entrada}{69}{section*.96}%
-\contentsline {section}{\numberline {9.4}Trabajo futuro}{70}{section.9.4}%
-\contentsline {subsection}{Modelo multi-agente por distribuidor}{70}{section*.97}%
-\contentsline {subsection}{Optimización de política $(Q,R)$}{70}{section*.98}%
-\contentsline {subsection}{Rutas alternativas y mitigación de disrupciones}{70}{section*.99}%
-\contentsline {subsection}{Validación con datos históricos}{70}{section*.100}%
-\contentsline {subsection}{Proyecciones de largo plazo (5-10 años)}{70}{section*.101}%
-\contentsline {chapter}{\chapternumberline {10}Conclusiones y Proyección del Trabajo}{71}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Síntesis del Problema y la Solución Propuesta}{71}{section.10.1}%
-\contentsline {section}{\numberline {10.2}Contribuciones Esperadas}{72}{section.10.2}%
-\contentsline {section}{\numberline {10.3}Limitaciones y Líneas de Trabajo Futuro}{72}{section.10.3}%
-\contentsline {chapter}{Referencias}{74}{section*.103}%
-\contentsline {chapter}{Código Fuente del Simulador}{76}{appendix*.104}%
-\contentsline {section}{Módulo de Configuración}{76}{section*.105}%
-\contentsline {section}{Módulo de Entidades}{78}{section*.106}%
-\contentsline {section}{Módulo de Simulación}{80}{section*.107}%
-\contentsline {section}{Repositorio Completo}{82}{section*.108}%
+\contentsline {section}{\numberline {1.1}Contexto General}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Contexto Regional}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Problemática}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Brecha Detectada}{2}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Requerimientos de la Solución}{3}{section.1.5}%
+\contentsline {chapter}{\chapternumberline {2}Objetivos del Proyecto}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Justificación Técnica}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Objetivo General}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Objetivos Específicos}{4}{section.2.3}%
+\contentsline {subsection}{1. Formalización del Modelo}{5}{section*.6}%
+\contentsline {subsection}{2. Construcción del Software}{5}{section*.7}%
+\contentsline {subsection}{3. Ejecución Experimental}{5}{section*.8}%
+\contentsline {chapter}{\chapternumberline {3}Marco Conceptual y Matemático}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Teoría de Simulación de Eventos Discretos (DES)}{7}{section.3.1}%
+\contentsline {subsection}{Definición Formal del Sistema}{7}{section*.9}%
+\contentsline {subsection}{Mecanismo de Avance de Tiempo}{8}{section*.10}%
+\contentsline {section}{\numberline {3.2}Algoritmos Computacionales del Motor}{8}{section.3.2}%
+\contentsline {subsection}{Estructura de Datos: Montículo Binario}{8}{section*.11}%
+\contentsline {subsection}{Complejidad Algorítmica}{8}{section*.12}%
+\contentsline {section}{\numberline {3.3}Teoría de Generación de Números Pseudoaleatorios}{9}{section.3.3}%
+\contentsline {subsection}{Algoritmo Mersenne Twister}{9}{section*.13}%
+\contentsline {section}{\numberline {3.4}Modelado Probabilístico de Procesos Logísticos}{9}{section.3.4}%
+\contentsline {subsection}{Procesos de Llegada de Fallas}{10}{section*.14}%
+\contentsline {subsection}{Propiedad de Falta de Memoria}{10}{section*.15}%
+\contentsline {section}{\numberline {3.5}Gestión de Inventarios: La Lógica (Q, R)}{10}{section.3.5}%
+\contentsline {subsection}{Punto de Reorden (R)}{10}{section*.16}%
+\contentsline {subsection}{Cantidad de Pedido (Q)}{11}{section*.17}%
+\contentsline {section}{\numberline {3.6}Validación y Verificación (VV)}{11}{section.3.6}%
+\contentsline {chapter}{\chapternumberline {4}Modelado de Componentes del Sistema}{12}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Modelo del Hub de Almacenamiento}{12}{section.4.1}%
+\contentsline {subsection}{Capacidad y Restricciones Físicas}{12}{section*.18}%
+\contentsline {subsection}{Dinámica de Flujos}{13}{section*.19}%
+\contentsline {section}{\numberline {4.2}Caracterización Estocástica de la Demanda}{13}{section.4.2}%
+\contentsline {subsection}{Parámetros de Consumo}{13}{section*.20}%
+\contentsline {subsection}{Justificación de la Distribución Normal}{13}{section*.21}%
+\contentsline {section}{\numberline {4.3}Modelo de la Ruta Logística}{14}{section.4.3}%
+\contentsline {subsection}{Tiempos de Tránsito y Latencia}{14}{section*.22}%
+\contentsline {subsection}{Generación de Disrupciones}{14}{section*.23}%
+\contentsline {chapter}{\chapternumberline {5}Diseño e Implementación de la Solución}{15}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Fundamentación del Stack Tecnológico}{15}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Arquitectura de Procesos y Corutinas}{15}{section.5.2}%
+\contentsline {subsection}{Algoritmo de Sincronización}{16}{section*.24}%
+\contentsline {section}{\numberline {5.3}Complejidad Computacional}{16}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Aseguramiento de Calidad (QA)}{17}{section.5.4}%
+\contentsline {chapter}{\chapternumberline {6}Resultados del Experimento Computacional}{18}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Casos de Prueba: Comportamiento Dinámico del Sistema}{18}{section.6.1}%
+\contentsline {subsection}{Caso 1: Escenario Normal (Disrupciones Cortas)}{18}{section*.25}%
+\contentsline {subsection}{Caso 2: Escenario Crítico (Disrupción Prolongada)}{20}{section*.26}%
+\contentsline {subsection}{Caso 3: Comparación de Capacidades (Mismo Escenario)}{22}{section*.27}%
+\contentsline {subsection}{Síntesis: Lecciones de los Casos de Prueba}{24}{section*.28}%
+\contentsline {section}{\numberline {6.2}Validación del Modelo de Simulación}{25}{section.6.2}%
+\contentsline {subsection}{Parametrización del Modelo}{25}{section*.29}%
+\contentsline {subsection}{Validación de Reproducibilidad}{25}{section*.30}%
+\contentsline {subsection}{Validación contra Datos Reales}{26}{section*.31}%
+\contentsline {section}{\numberline {6.3}Análisis Descriptivo del Rendimiento}{26}{section.6.3}%
+\contentsline {subsection}{Nivel de Servicio por Configuración}{26}{section*.32}%
+\contentsline {subsection}{Análisis de Distribuciones de Probabilidad}{28}{section*.33}%
+\contentsline {subsubsection}{Configuraciones Status Quo}{28}{section*.34}%
+\contentsline {subsubsection}{Configuraciones Propuesta}{28}{section*.35}%
+\contentsline {subsection}{Validación de Supuestos de Normalidad}{28}{section*.36}%
+\contentsline {subsubsection}{Q-Q Plots: Status Quo}{31}{section*.37}%
+\contentsline {subsubsection}{Q-Q Plots: Propuesta}{31}{section*.38}%
+\contentsline {section}{\numberline {6.4}Análisis Estadístico Inferencial}{31}{section.6.4}%
+\contentsline {subsection}{Análisis de Varianza (ANOVA)}{31}{section*.39}%
+\contentsline {subsection}{Tests Post-hoc: Comparaciones Múltiples}{31}{section*.40}%
+\contentsline {subsection}{Efectos Principales de los Factores}{31}{section*.41}%
+\contentsline {subsection}{Interacciones entre Factores}{35}{section*.42}%
+\contentsline {section}{\numberline {6.5}Prueba de Hipótesis: Análisis de Sensibilidad}{36}{section.6.5}%
+\contentsline {subsection}{Cuantificación de Sensibilidades}{36}{section*.43}%
+\contentsline {subsection}{Ratio de Sensibilidad}{38}{section*.44}%
+\contentsline {subsection}{Comparación con Boxplots}{39}{section*.45}%
+\contentsline {subsection}{Conclusión de la Prueba de Hipótesis}{39}{section*.46}%
+\contentsline {section}{\numberline {6.6}Rendimiento Computacional del Experimento}{41}{section.6.6}%
+\contentsline {subsection}{Infraestructura de ejecución}{41}{section*.47}%
+\contentsline {subsection}{Métricas de ejecución}{41}{section*.48}%
+\contentsline {subsection}{Análisis de complejidad}{41}{section*.49}%
+\contentsline {subsection}{Potencial de optimización}{42}{section*.50}%
+\contentsline {section}{\numberline {6.7}Resumen del Capítulo}{42}{section.6.7}%
+\contentsline {chapter}{Referencias Bibliográficas}{44}{section*.52}%

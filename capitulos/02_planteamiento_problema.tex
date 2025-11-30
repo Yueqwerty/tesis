@@ -1,111 +1,38 @@
-\chapter{Planteamiento del Problema}
-\label{chap:planteamiento-problema}
+\chapter{Objetivos del Proyecto}
+\label{chap:objetivos}
 
-La Región de Aysén enfrenta un riesgo sistémico en su suministro de GLP. Este capítulo caracteriza el sistema (demanda, infraestructura, actores), identifica sus vulnerabilidades (exógenas y endógenas), y argumenta por qué los métodos de análisis actuales (matrices de riesgo estáticas) son insuficientes para evaluar la resiliencia dinámica del sistema.
+\section{Justificación Técnica}
 
-\section{Caracterización del Sistema}
-\label{sec:caracterizacion-sistema}
+El problema de abastecimiento en Aysén presenta características intrínsecas de concurrencia y variabilidad estocástica que dificultan su análisis mediante métodos deterministas. Las herramientas de cálculo estático tradicionales no permiten modelar adecuadamente la interacción temporal compleja entre un consumo variable, un transporte sujeto a retardos y las interrupciones aleatorias de la infraestructura vial. Por consiguiente, se requiere el desarrollo de una solución basada en el paradigma de Simulación de Eventos Discretos (DES), la cual permite representar los estados del sistema y evaluar su desempeño bajo condiciones de incertidumbre.
 
-El sistema de suministro de GLP en Aysén opera bajo condiciones que lo
-definen como un sistema complejo y crítico. Su criticidad se deriva de la
-confluencia de una demanda energética elevada, una estructura de mercado
-oligopólica y una infraestructura precaria.
+\section{Objetivo General}
 
-\subsection{Demanda energética y crecimiento proyectado}
+Diseñar e implementar un simulador de eventos discretos para cuantificar el desempeño logístico y la resiliencia de la cadena de suministro de GLP en la Región de Aysén, evaluando el impacto de diferentes escenarios de infraestructura y gestión operativa.
 
-La demanda energética de la región es un factor distintivo a nivel nacional. 
-Con un consumo per cápita de \SI{27.25}{Gcal}, que excede en un 65\% la 
-media de Chile, la población depende intensivamente de un flujo energético 
-constante para sostener funciones básicas. El GLP satisface nichos de 
-consumo ---cocción de alimentos y agua caliente sanitaria--- para los cuales 
-no existen sustitutos inmediatos a gran escala. Esta inelasticidad 
-fundamental de la demanda convierte al GLP en un recurso de alta prioridad 
-social, cuya interrupción tiene consecuencias directas e inmediatas sobre 
-el bienestar de la población.
+\section{Objetivos Específicos}
 
-Adicionalmente, la demanda no es estática. El sistema enfrenta un 
-crecimiento sostenido del \SI{3.8}{\percent} anual, impulsado por el 
-desarrollo demográfico y económico de la región. A esto se suma un factor 
-disruptivo futuro: la proyectada incorporación de una central térmica que 
-consumirá \SI{14.4}{ton/día} de GLP. Este crecimiento y cambio estructural 
-implican que la presión sobre la ya frágil cadena de suministro se 
-intensificará de manera no lineal en los próximos años.
+El proyecto se estructura en torno a tres metas operativas secuenciales:
 
-\subsection{Estructura de la cadena de suministro}
-
-% --- SECCIÓN PROFUNDIZADA CON ANÁLISIS DE LA RUTA ---
-La estructura de la cadena de suministro, detallada en el informe de 
-referencia~\cite{CIEP2025}\footnote{El informe, encargado por la Seremía de 
-Energía de Aysén, fue finalizado y presentado en 2025. A la fecha de esta 
-publicación, se encuentra en proceso de difusión pública.}, se caracteriza
-por una topología logística 
-lineal con una dependencia absoluta de fuentes exógenas. El informe es 
-categórico al afirmar que ``La totalidad del gas licuado que llega a la 
-región, lo hace vía camiones que transitan por el paso Huemules desde 
-Argentina''. Este diseño, carente de redundancia, convierte a la ruta 
-terrestre en un punto único de falla (\textit{Single Point of Failure}) de 
-manual. La magnitud de esta dependencia se cuantifica en el hecho de que el 
-86\% del recorrido terrestre desde la planta de Cabo Negro hasta Coyhaique 
-transcurre por territorio argentino, lo que implica que la soberanía 
-logística y la seguridad del suministro regional están estructuralmente 
-comprometidas por la dinámica de un país vecino.
-
-\section{Análisis de vulnerabilidades}
-\label{sec:analisis-vulnerabilidades}
-
-El sistema presenta vulnerabilidades tanto exógenas (amenazas externas) como endógenas (limitaciones de capacidad interna).
-
-\subsection{Vulnerabilidades exógenas}
-
-% --- SECCIÓN PROFUNDIZADA CON CUANTIFICACIÓN DEL RIESGO ---
-El principal vector de riesgo es la incertidumbre estocástica en el 
-aprovisionamiento. El informe de riesgos~\cite{CIEP2025} identifica dos 
-amenazas dominantes. Primero, el evento de ``Nevadas / Cierre cruce 
-fronterizo'' (Tag \#57), clasificado con una probabilidad de Nivel 4 (``Casi 
-Seguro''), lo que implica una frecuencia de ocurrencia de ``al menos una vez 
-cada tres meses''. Segundo, el riesgo de ``Conflicto social en Argentina'' 
-(Tag \#45), que, aunque menos frecuente, ha demostrado la capacidad de 
-paralizar el suministro por períodos de hasta tres semanas. Esta 
-realidad es corroborada por la autoridad energética regional, quien 
-identifica la ``conflictividad social'' y la ``mantención de los caminos'' 
-en Argentina como la principal amenaza para la continuidad del suministro 
-(Laibe, T., comunicación personal, 11 de junio, 2025). El sistema, por tanto, 
-enfrenta amenazas recurrentes y de duración prolongada que introducen una 
-alta variabilidad en el tiempo de entrega (\textit{lead time}).
-
-\subsection{Vulnerabilidades endógenas}
-
-La capacidad de almacenamiento en Coyhaique es de 431 TM (Abastible 150, Lipigas 240, Gasco 41)~\cite{CIEP2025}, proporcionando 8,2 días de autonomía vs. disrupciones documentadas de hasta 21 días.
-
-El informe CIEP 2025 identifica que "Gasco tiene una capacidad demasiado reducida para su nivel de ventas" (41 TM = 0,78 días de autonomía). Esta situación refleja un Dilema del Prisionero en el mercado oligopólico: minimizar costos de inventario individualmente (estrategia racional) degrada la resiliencia colectiva.
-
-\textbf{Propuesta 10.4 (Gasco):} El informe documenta que Gasco está desarrollando un proyecto de expansión para incrementar su capacidad en 250 TM (de 41 a 291 TM), elevando la capacidad total del sistema de 431 TM a 681 TM. La inversión estimada es \$1,5 millones USD. Esta expansión aumentaría la autonomía teórica del sistema de 8,2 a 13 días.
-
-El presente trabajo evalúa cuantitativamente el retorno en resiliencia de esta inversión bajo diferentes escenarios de disrupciones.
-
-\section{Limitaciones del diagnóstico actual}
-\label{sec:insuficiencia-marcos}
-
-\subsection{Vacío en la planificación energética regional}
-
-La 'Política Energética 2050 Región de Aysén' se enfoca exclusivamente en el sector eléctrico, omitiendo la cadena de suministro de combustibles.
-
-\subsection{Análisis estático vs. dinámico}
-
-El informe CIEP 2025 es exhaustivo pero estático: identifica riesgos mediante una matriz de probabilidad × impacto, pero no puede cuantificar:
-
+\subsection{1. Formalización del Modelo}
+Definir con precisión las reglas lógicas y los parámetros cuantitativos que rigen el comportamiento del sistema real.
 \begin{itemize}
-    \item ¿Cuánto tiempo puede operar el sistema bajo disrupciones largas?
-    \item ¿Qué tan frecuentemente fallará el sistema (quiebres de stock)?
-    \item ¿Cuál es el retorno en resiliencia de la inversión de \$1,5M USD (Propuesta 10.4)?
+    \item Identificar y caracterizar las entidades del sistema (tanques de almacenamiento, flota de camiones) y sus atributos de estado.
+    \item Establecer las distribuciones de probabilidad teóricas que mejor ajustan el comportamiento de la demanda y las fallas de ruta.
+    \item Definir el algoritmo de decisión para la gestión del reabastecimiento de inventario.
 \end{itemize}
 
-\subsection{Gestión reactiva de crisis}
+\subsection{2. Construcción del Software}
+Traducir el modelo conceptual a un artefacto de software funcional.
+\begin{itemize}
+    \item Programar el motor de simulación utilizando librerías especializadas en eventos discretos.
+    \item Implementar los módulos de generación de números aleatorios y control de transición de estados.
+    \item Verificar la corrección lógica del código mediante la ejecución de pruebas unitarias exhaustivas.
+\end{itemize}
 
-La gestión operativa de crisis se basa en protocolos manuales: "llamar a todas las empresas, construir un Excel y sacar una foto de cuánta disponibilidad de combustible hay" (Laibe, T., comunicación personal, 11 de junio, 2025). No existe una herramienta de análisis dinámico.
-
-\subsection{Pregunta que el diagnóstico actual no puede responder}
-
-\textit{¿Cuál es la reducción en probabilidad de quiebre de stock que genera la inversión de \$1,5M USD (Propuesta 10.4 de Gasco), bajo un escenario de disrupciones con frecuencia 4 eventos/año y duración estocástica de hasta 21 días?}
-
-Esta tesis desarrolla el modelo para responder esta pregunta.
+\subsection{3. Ejecución Experimental}
+Generar datos sintéticos para el análisis de desempeño del sistema.
+\begin{itemize}
+    \item Configurar escenarios de prueba controlados, variando parámetros críticos como la capacidad de almacenamiento y la duración de los cortes.
+    \item Ejecutar simulaciones masivas mediante el método de Monte Carlo para obtener resultados estadísticamente significativos.
+    \item Calcular y analizar los indicadores de Nivel de Servicio resultantes para cada escenario evaluado.
+\end{itemize}

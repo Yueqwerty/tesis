@@ -1,42 +1,27 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10pt}
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Ubicación geográfica de la Región de Aysén y la Ruta 7. Fuente: Elaboración propia con datos de~\blx@tocontentsinit {0}\cite {CIEP2025}.}}{2}{figure.1.1}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Modelo de inventario $(Q,R)$ con Punto de Reorden (ROP) y Stock de Seguridad (SS).}}{16}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Frontera eficiente entre eficiencia y resiliencia en cadenas de suministro.}}{20}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Arquitectura modular del sistema de simulación en tres capas.}}{21}{figure.5.3}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Diagrama de interacción de los tres procesos concurrentes del simulador.}}{23}{figure.5.4}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama de flujo del proceso de reabastecimiento basado en política $(Q,R)$.}}{24}{figure.5.5}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Diagrama de flujo del proceso de generación de disrupciones.}}{25}{figure.5.6}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Máquina de estados de la Ruta 7 (operativa/bloqueada).}}{25}{figure.5.7}%
 \addvspace {10pt}
-\addvspace {10pt}
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Modelo conceptual del sistema de distribución de GLP en Aysén.}}{33}{figure.7.1}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Diagrama de clases UML del simulador.}}{37}{figure.7.2}%
-\addvspace {10pt}
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Caso 1: Escenario normal con disrupciones cortas (máximo 7 días).}}{42}{figure.8.1}%
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Caso 2: Escenario crítico con disrupciones prolongadas (21 días).}}{44}{figure.8.2}%
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Caso 3: Comparación de capacidades bajo mismo escenario de disrupciones.}}{46}{figure.8.3}%
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Distribuciones del nivel de servicio por configuración experimental (violin plots).}}{50}{figure.8.4}%
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Distribución KDE: Status Quo con disrupciones cortas (7 días). Media: 84.32\%, DE: 3.49\%.}}{51}{figure.8.5}%
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Distribución KDE: Status Quo con disrupciones medias (14 días). Media: 81.14\%, DE: 3.76\%.}}{51}{figure.8.6}%
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Distribución KDE: Status Quo con disrupciones largas (21 días). Media: 78.13\%, DE: 4.48\%.}}{52}{figure.8.7}%
-\contentsline {figure}{\numberline {8.8}{\ignorespaces Distribución KDE: Propuesta con disrupciones cortas (7 días). Media: 98.82\%, DE: 1.15\%.}}{52}{figure.8.8}%
-\contentsline {figure}{\numberline {8.9}{\ignorespaces Distribución KDE: Propuesta con disrupciones medias (14 días). Media: 97.22\%, DE: 2.30\%.}}{53}{figure.8.9}%
-\contentsline {figure}{\numberline {8.10}{\ignorespaces Distribución KDE: Propuesta con disrupciones largas (21 días). Media: 94.70\%, DE: 3.97\%.}}{53}{figure.8.10}%
-\contentsline {figure}{\numberline {8.11}{\ignorespaces Q-Q Plot: Status Quo - Disrupciones cortas. El test de Shapiro-Wilk evalúa la hipótesis de normalidad.}}{54}{figure.8.11}%
-\contentsline {figure}{\numberline {8.12}{\ignorespaces Q-Q Plot: Status Quo - Disrupciones medias.}}{55}{figure.8.12}%
-\contentsline {figure}{\numberline {8.13}{\ignorespaces Q-Q Plot: Status Quo - Disrupciones largas.}}{56}{figure.8.13}%
-\contentsline {figure}{\numberline {8.14}{\ignorespaces Q-Q Plot: Propuesta - Disrupciones cortas.}}{57}{figure.8.14}%
-\contentsline {figure}{\numberline {8.15}{\ignorespaces Q-Q Plot: Propuesta - Disrupciones medias.}}{58}{figure.8.15}%
-\contentsline {figure}{\numberline {8.16}{\ignorespaces Q-Q Plot: Propuesta - Disrupciones largas.}}{59}{figure.8.16}%
-\contentsline {figure}{\numberline {8.17}{\ignorespaces Efectos principales de los factores experimentales sobre el nivel de servicio.}}{59}{figure.8.17}%
-\contentsline {figure}{\numberline {8.18}{\ignorespaces Nivel de servicio promedio por combinación de factores. Los valores más bajos (rojos) indican menor resiliencia del sistema.}}{60}{figure.8.18}%
-\contentsline {figure}{\numberline {8.19}{\ignorespaces Análisis de sensibilidad comparativo (tornado diagram).}}{62}{figure.8.19}%
-\contentsline {figure}{\numberline {8.20}{\ignorespaces Comparación de configuraciones experimentales (boxplots).}}{63}{figure.8.20}%
-\addvspace {10pt}
-\addvspace {10pt}
-\addvspace {10pt}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Caso 1: Escenario normal con disrupciones cortas (máximo 7 días).}}{19}{figure.6.1}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Caso 2: Escenario crítico con disrupciones prolongadas (21 días).}}{21}{figure.6.2}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Caso 3: Comparación de capacidades bajo mismo escenario de disrupciones.}}{23}{figure.6.3}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Distribuciones del nivel de servicio por configuración experimental (violin plots).}}{27}{figure.6.4}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Distribución KDE: Status Quo con disrupciones cortas (7 días). Media: 84.32\%, DE: 3.49\%.}}{28}{figure.6.5}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Distribución KDE: Status Quo con disrupciones medias (14 días). Media: 81.14\%, DE: 3.76\%.}}{29}{figure.6.6}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Distribución KDE: Status Quo con disrupciones largas (21 días). Media: 78.13\%, DE: 4.48\%.}}{29}{figure.6.7}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Distribución KDE: Propuesta con disrupciones cortas (7 días). Media: 98.82\%, DE: 1.15\%.}}{30}{figure.6.8}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Distribución KDE: Propuesta con disrupciones medias (14 días). Media: 97.22\%, DE: 2.30\%.}}{30}{figure.6.9}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Distribución KDE: Propuesta con disrupciones largas (21 días). Media: 94.70\%, DE: 3.97\%.}}{31}{figure.6.10}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Q-Q Plot: Status Quo - Disrupciones cortas. El test de Shapiro-Wilk evalúa la hipótesis de normalidad.}}{32}{figure.6.11}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Q-Q Plot: Status Quo - Disrupciones medias.}}{33}{figure.6.12}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Q-Q Plot: Status Quo - Disrupciones largas.}}{34}{figure.6.13}%
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Q-Q Plot: Propuesta - Disrupciones cortas.}}{35}{figure.6.14}%
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Q-Q Plot: Propuesta - Disrupciones medias.}}{36}{figure.6.15}%
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Q-Q Plot: Propuesta - Disrupciones largas.}}{37}{figure.6.16}%
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Efectos principales de los factores experimentales sobre el nivel de servicio.}}{37}{figure.6.17}%
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Nivel de servicio promedio por combinación de factores. Los valores más bajos (rojos) indican menor resiliencia del sistema.}}{38}{figure.6.18}%
+\contentsline {figure}{\numberline {6.19}{\ignorespaces Análisis de sensibilidad comparativo (tornado diagram).}}{39}{figure.6.19}%
+\contentsline {figure}{\numberline {6.20}{\ignorespaces Comparación de configuraciones experimentales (boxplots).}}{40}{figure.6.20}%

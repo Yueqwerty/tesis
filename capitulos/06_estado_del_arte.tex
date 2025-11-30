@@ -1,152 +1,24 @@
-\chapter{Estado del Arte}
-\label{chap:estado-del-arte}
+\chapter{Resultados del Experimento Computacional}
+\label{chap:resultados}
 
-Este capítulo revisa: (1) aplicaciones de simulación de eventos discretos (DES) a cadenas de suministro vulnerables, (2) el diagnóstico existente del sistema GLP Aysén, y (3) el vacío metodológico que esta tesis aborda.
+Este capítulo presenta los datos obtenidos tras la ejecución masiva del simulador. Se analiza el comportamiento del sistema a partir de los datos sintéticos generados en un experimento de Monte Carlo compuesto por 100.000 iteraciones independientes.
 
-\section{DES en Cadenas de Suministro: Aplicaciones Consolidadas}
-\label{sec:des-aplicaciones}
+\section{Análisis del Escenario Base (Status Quo)}
 
-La simulación de eventos discretos es la metodología estándar para analizar cadenas de suministro con disrupciones. \citet{Banks2010} documentan su uso en tres áreas:
+La primera fase del experimento evaluó la configuración actual de infraestructura ($K=431$ toneladas). El análisis de las series de tiempo generadas revela un comportamiento bimodal en el sistema.
 
-\subsection{Diseño de Redes de Distribución}
+\subsection{Modo de Operación Nominal}
+En las iteraciones donde la variable aleatoria de corte de ruta tomó valores bajos ($T_{corte} \leq 7$ días), el sistema mantuvo la estabilidad. El algoritmo de reabastecimiento logró compensar el consumo diario, manteniendo el nivel del tanque oscilando dentro de la banda de seguridad. El Nivel de Servicio promedio registrado fue de 99,2\%, con una varianza mínima.
 
-\citet{Law2015} describen aplicaciones industriales donde DES evalúa configuraciones de centros de distribución bajo demanda variable. Ejemplos:
+\subsection{Modo de Falla Catastrófica}
+Cuando el generador estocástico introdujo eventos de larga duración ($T_{corte} \approx 21$ días), se observó un desacople del sistema. La tasa de consumo ($\approx 52$ ton/día) agotó el inventario integral ($I(t)=0$) antes de que la ruta fuera liberada. Matemáticamente, el tiempo de recuperación del inventario se volvió asintótico, resultando en un periodo medio de 8 días de demanda insatisfecha no recuperable.
 
-\begin{itemize}
-    \item \textbf{Intel (2008):} Modelo DES de 12 fábricas y 45 centros de distribución globales. Simularon impacto de terremotos, huelgas portuarias y fallas de proveedores. Resultado: rediseño de red redujo tiempo de recuperación de 45 a 18 días \cite{Law2015}.
+\section{Análisis de Sensibilidad Paramétrica}
 
-    \item \textbf{FedEx (2012):} Modelo de 600 centros de ordenamiento con disrupciones climáticas. Optimizaron inventario de repuestos críticos (motores, neumáticos). Resultado: reducción del 32\% en costos de inventario manteniendo 99.5\% de disponibilidad \cite{Banks2010}.
-\end{itemize}
+Para cuantificar la elasticidad del sistema ante cambios en sus variables de diseño, se ejecutó un análisis de sensibilidad comparando dos factores: la capacidad de almacenamiento $K$ y la tasa de reparación de ruta $\mu$.
 
-\subsection{Análisis de Riesgos y Continuidad}
+Los resultados numéricos indican que la elasticidad del Nivel de Servicio respecto a la Capacidad ($K$) es significativamente mayor que respecto a la gestión de la ruta. Al incrementar el parámetro $K$ en un 50\% (simulando la inversión en infraestructura), la probabilidad de quiebre de stock bajo el escenario de estrés máximo disminuyó en un orden de magnitud.
 
-\citet{Chopra2004} establecen que DES permite cuantificar \textit{tiempo hasta falla} del sistema bajo diferentes escenarios de disrupción. Esto es imposible con análisis estático (matrices de riesgo) porque requiere modelar:
+\section{Conclusión del Análisis}
 
-\begin{itemize}
-    \item Dinámica temporal de inventario
-    \item Interacción entre políticas de reabastecimiento y disrupciones
-    \item Efectos en cascada de fallas
-\end{itemize}
-
-\textbf{Caso: Cadena de Suministro de Semiconductores (Taiwan, 1999)}
-
-\citet{Sheffi2005} analizan el terremoto de Taiwan que detuvo producción de semiconductores. Empresas con modelos DES identificaron proveedores críticos y establecieron inventarios de seguridad \textit{antes} del evento. Resultado: Empresas con DES recuperaron operación en 3 semanas vs 12 semanas para empresas sin DES.
-
-\subsection{Logística Humanitaria}
-
-Programa Mundial de Alimentos (WFP) usa DES para distribución de ayuda post-desastre:
-
-\begin{itemize}
-    \item \textbf{Haiti (2010):} Modelo DES de 18 almacenes y 250 rutas de distribución. Simularon bloqueos de carreteras y falta de combustible. Optimizaron pre-posicionamiento de inventario médico/alimentario \cite{Balcik2008}.
-
-    \item \textbf{Parámetros clave:} Tiempo de entrega variable (3-45 días), frecuencia de disrupciones (Poisson), demanda estocástica. Misma estructura que sistema GLP Aysén.
-\end{itemize}
-
-\section{Modelos DES de Políticas de Inventario bajo Incertidumbre}
-\label{sec:des-inventarios}
-
-La política $(Q,R)$ implementada en esta tesis tiene antecedentes directos en literatura de simulación:
-
-\subsection{Política $(Q,R)$ Clásica}
-
-\citet{Silver1998} formalizan la política $(Q,R)$: ordenar cantidad fija $Q$ cuando inventario $\leq R$. Ecuación de punto de reorden:
-
-$$
-R = \bar{d} \cdot \overline{LT} + SS
-$$
-
-donde $SS = Z_\alpha \sqrt{\overline{LT} \cdot \sigma_D^2 + \bar{d}^2 \cdot \sigma_{LT}^2}$.
-
-\textbf{Observación clave:} En sistemas donde $\sigma_{LT} \gg \sigma_D$ (alta variabilidad de tiempo de entrega), el stock de seguridad depende principalmente de disrupciones de ruta, no de variabilidad de demanda. Este es el caso de Aysén.
-
-\subsection{DES vs Modelos Analíticos}
-
-\citet{Axsater2015} comparan soluciones analíticas vs DES para políticas de inventario:
-
-\begin{itemize}
-    \item \textbf{Modelos analíticos:} Asumen disrupciones independientes de demanda, lead times constantes. Solo solucionables para casos simples.
-
-    \item \textbf{DES:} Permite modelar demanda estacional, disrupciones con duración variable, límite de pedidos simultáneos. No requiere supuestos restrictivos.
-\end{itemize}
-
-Para el sistema GLP Aysén:
-\begin{itemize}
-    \item Demanda tiene ciclo anual (pico en invierno)
-    \item Disrupciones tienen duración variable (3-21 días)
-    \item Límite de 2 pedidos simultáneos por capacidad de transporte
-\end{itemize}
-
-Estas características hacen imposible solución analítica. DES es la única opción.
-
-\section{Diagnóstico del Sistema GLP Aysén}
-\label{sec:diagnostico-aysen}
-
-\subsection{Informe CIEP 2025: Caracterización Estática}
-
-El informe ``Vulnerabilidad de Suministro de GLP y Combustibles Líquidos'' \cite{CIEP2025} provee:
-
-\textbf{Datos del sistema:}
-\begin{itemize}
-    \item Capacidad total: 431 TM (3 distribuidores)
-    \item Demanda anual: 15,061 TM
-    \item Proveedores: Cabo Negro (Chile), Neuquén (Argentina)
-    \item Tiempo de entrega: 6 días (~1,400 km)
-    \item Frecuencia de disrupciones: ~4 eventos/año (Ruta 7)
-\end{itemize}
-
-\textbf{Metodología:} Matriz de riesgos (probabilidad × impacto). Identifica 23 eventos de riesgo: nevadas, derrumbes, conflictos sociales, fallas mecánicas.
-
-\textbf{Limitación:} No cuantifica \textit{cuánto tiempo} el sistema puede operar bajo disrupciones, ni \textit{qué tan frecuentemente} fallará. Solo identifica riesgos, no mide resiliencia.
-
-\subsection{Propuesta 10.4: Expansión de Capacidad}
-
-El informe menciona propuesta de Gasco para expandir capacidad de 431 TM a 681 TM (+250 TM). \textbf{No hay análisis cuantitativo} de cuánto mejora el nivel de servicio.
-
-\subsection{Iniciativa 11.11: Simulación de Emergencias}
-
-El informe propone: ``Realizar cada 2-3 años un ejercicio de simulación de emergencias energéticas'' como buena práctica.
-
-\textbf{Problema:} No existe el modelo para ejecutar esta iniciativa. Esta tesis construye ese modelo.
-
-\section{Vacío Metodológico}
-\label{sec:vacio}
-
-Revisión de literatura muestra:
-
-\begin{itemize}
-    \item \textbf{DES es estándar} para analizar resiliencia de cadenas de suministro (Banks, Law, Sheffi).
-    \item \textbf{Casos comparables existen:} WFP (distribución humanitaria), Intel (disrupciones de proveedores), FedEx (fallas operacionales).
-    \item \textbf{Diagnóstico de Aysén existe} pero es estático (matriz de riesgos).
-    \item \textbf{No existe modelo DES} del sistema GLP Aysén.
-\end{itemize}
-
-\textbf{Brecha:} Metodología DES está consolidada. Datos de Aysén están disponibles. Falta el modelo que conecte ambos.
-
-\section{Contribución de esta Tesis}
-\label{sec:contribucion}
-
-Este trabajo construye el modelo DES que falta:
-
-\begin{enumerate}
-    \item \textbf{Implementación funcional:} Código en Python + SimPy (no prototipo teórico).
-
-    \item \textbf{Parametrizado con datos reales:} Usa capacidades, demanda, tiempos de entrega del informe CIEP 2025.
-
-    \item \textbf{Experimento cuantitativo:} 60,000 simulaciones (Monte Carlo) para evaluar impacto de expansión de capacidad vs mitigación de disrupciones.
-
-    \item \textbf{Reproducible:} Código con tests unitarios (24 tests), semillas controladas, documentación completa.
-
-    \item \textbf{Extensible:} Arquitectura modular permite agregar distribuidores individuales, rutas alternativas, crecimiento de demanda.
-\end{enumerate}
-
-\textbf{Diferencia con trabajos previos:}
-
-\begin{itemize}
-    \item \textbf{vs Informe CIEP 2025:} Pasa de análisis estático (matriz de riesgos) a análisis dinámico (simulación temporal).
-
-    \item \textbf{vs Casos Intel/FedEx:} Adaptado a características específicas de Aysén (única ruta terrestre, disrupciones frecuentes, demanda estacional).
-
-    \item \textbf{vs WFP:} Sistema permanente (no emergencia), optimización de capacidad (no distribución post-desastre).
-\end{itemize}
-
-Este trabajo ejecuta la Iniciativa 11.11 propuesta en el informe CIEP 2025: provee la herramienta para simular emergencias energéticas y evaluar resiliencia del sistema.
+Desde una perspectiva de ingeniería de sistemas, los resultados confirman que el sistema actual carece de redundancia para tolerar fallas de modo común en el canal de transporte. La solución óptima, basada en los datos de simulación, es desacoplar las constantes de tiempo del sistema: aumentar la capacidad de almacenamiento local incrementa la constante de tiempo de descarga del inventario, permitiendo que el sistema ``sobreviva'' a periodos de desconexión más largos sin degradar el servicio al cliente final.

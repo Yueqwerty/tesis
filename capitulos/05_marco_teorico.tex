@@ -1,308 +1,64 @@
-\chapter{Marco Teórico}
+\chapter{Marco Conceptual y Matemático}
 \label{chap:marco-teorico}
 
-Este capítulo presenta los fundamentos teóricos del modelo de simulación. La sección \ref{sec:scm-theory} desarrolla la teoría de gestión de inventarios bajo incertidumbre y su aplicación numérica al sistema GLP de Aysén. La sección \ref{sec:simulation-theory} describe el método de simulación de eventos discretos y su implementación computacional.
+La construcción de un simulador para sistemas logísticos complejos no es un ejercicio trivial de programación, sino una aplicación sistemática de principios de la teoría de la computación, la estadística matemática y la investigación de operaciones. Este capítulo establece los fundamentos formales que validan la arquitectura del software, detallando los algoritmos específicos seleccionados para la gestión del tiempo discreto, la generación de entropía artificial y la modelación de procesos estocásticos.
 
-\section{Gestión de Inventarios en Cadenas de Suministro}
-\label{sec:scm-theory}
+\section{Teoría de Simulación de Eventos Discretos (DES)}
+La Simulación de Eventos Discretos se distingue fundamentalmente de la simulación continua por su tratamiento del tiempo y del estado del sistema.
 
-\subsection{Política de inventario $(Q,R)$}
+\subsection{Definición Formal del Sistema}
+Según \textcite{Banks2010}, un sistema de eventos discretos se modela mediante una tupla de variables de estado $S(t)$ cuya trayectoria es constante a tramos (\textit{piecewise constant}). Matemáticamente, si definimos una secuencia de eventos $e_1, e_2, \dots, e_n$ que ocurren en los tiempos $t_1 < t_2 < \dots < t_n$, el estado del sistema permanece inmutable en el intervalo $[t_i, t_{i+1})$. Esta propiedad es la que permite al algoritmo de simulación ``saltar'' en el tiempo, avanzando el reloj global (CLOCK) directamente de $t_i$ a $t_{i+1}$ sin incurrir en el costo computacional de integrar los pasos intermedios \cite{Law2015}.
 
-La dinámica del inventario $I(t)$ en una planta de almacenamiento evoluciona según:
-$$ I(t) = I(t-1) - D(t) + A(t) $$
-donde $D(t)$ es la demanda diaria y $A(t)$ son los arribos de producto. En Aysén, el lead time $LT$ (tiempo de entrega desde Cabo Negro/Neuquén) es una variable aleatoria debido a disrupciones de la Ruta 7.
+\subsection{Mecanismo de Avance de Tiempo}
+El motor de simulación implementa el mecanismo de \textit{Next-Event Time Advance}. A diferencia de los enfoques de incremento fijo ($\Delta t$), este algoritmo garantiza que el reloj de simulación se actualice exactamente al instante en que ocurre el cambio de estado más próximo, eliminando errores de discretización temporal y optimizando el uso de ciclos de CPU durante periodos de inactividad del sistema.
 
-El modelo usa una política de revisión continua $(Q, R)$: ordenar cantidad fija $Q$ cuando el inventario alcanza el Punto de Reorden $R$ (ROP). La Figura~\ref{fig:inventory-model-detailed} ilustra esta dinámica mostrando el patrón característico de "dientes de sierra" del inventario a lo largo del tiempo. El sistema reordena cantidad $Q$ cuando el nivel cae a $R$, manteniendo un buffer de Stock de Seguridad (SS) para proteger contra variabilidad en el lead time. El componente SS es crucial en sistemas expuestos a disrupciones recurrentes, como es el caso del suministro de GLP en Aysén.
+\section{Algoritmos Computacionales del Motor}
+La eficiencia del simulador reside en su capacidad para gestionar la Lista de Eventos Futuros (FEL, por sus siglas en inglés). Esta lista es una estructura de datos dinámica que actúa como el planificador central del sistema.
 
-\begin{figure}[htbp]
-    \centering
-    \begin{tikzpicture}[
-        font=\small,
-        scale=1.1,
-        axis/.style={->, >=stealth, thick, black},
-        inventory/.style={thick, black, line width=1.5pt},
-        reference/.style={dashed, gray, line width=1pt}
-    ]
-        % Parámetros
-        \def\ss{1.5}
-        \def\rop{3.0}
-        \def\maxinv{5.2}
-        \def\minlevel{0.9}
+\subsection{Estructura de Datos: Montículo Binario}
+Dado que el motor debe recuperar repetidamente el evento con el tiempo mínimo ($t_{min}$) para avanzar el reloj, la elección de la estructura de datos es crítica para la complejidad asintótica del software. Una lista lineal no ordenada implicaría un costo de búsqueda de $O(n)$, lo cual es prohibitivo para simulaciones de larga duración.
 
-        % Ejes
-        \draw[axis] (-0.2,0) -- (12,0) node[below right, font=\small] {Tiempo};
-        \draw[axis] (0,-0.2) -- (0,6) node[above, rotate=90, anchor=south, font=\small] {Inventario};
+Para este proyecto, se utiliza una estructura de cola de prioridad implementada como un \textit{Min-Heap} binario. Esta estructura garantiza que el elemento de menor valor (el próximo evento) siempre se encuentre en la raíz del árbol.
 
-        % Zonas (monocromático)
-        \fill[gray!10] (0,0) rectangle (11.5,\ss);
-        \fill[gray!5] (0,\ss) rectangle (11.5,\rop);
-
-        % Líneas de referencia
-        \draw[reference] (0,\ss) -- (11.5,\ss);
-        \node[right, font=\small] at (11.5,\ss) {$SS$};
-
-        \draw[reference] (0,\rop) -- (11.5,\rop);
-        \node[right, font=\small] at (11.5,\rop) {$R$};
-
-        % Curva de inventario
-        \draw[inventory] (0.5,\maxinv) -- (4,\rop);
-        \draw[inventory, dashed] (4,\rop) -- (6,\minlevel);
-        \draw[inventory] (6,\minlevel) -- (6,\maxinv);
-        \draw[inventory] (6,\maxinv) -- (9,\rop);
-        \draw[inventory, dashed] (9,\rop) -- (11,\minlevel);
-
-        % Puntos de reorden
-        \fill[black] (4,\rop) circle (2pt);
-        \fill[black] (9,\rop) circle (2pt);
-
-        % Lead times
-        \draw[<->, line width=1pt, gray]
-            (4,0.3) -- (6,0.3) node[midway, below, font=\footnotesize] {$LT$};
-        \draw[<->, line width=1pt, gray]
-            (9,0.3) -- (11,0.3) node[midway, below, font=\footnotesize] {$LT$};
-
-        % Etiquetas eje Y
-        \node[left, font=\small] at (-0.2,\maxinv) {$Q$};
-        \node[left, font=\small] at (-0.2,\rop) {$R$};
-        \node[left, font=\small] at (-0.2,\ss) {$SS$};
-
-    \end{tikzpicture}
-    \caption{Modelo de inventario $(Q,R)$ con Punto de Reorden (ROP) y Stock de Seguridad (SS).}
-    \label{fig:inventory-model-detailed}
-\end{figure}
-
-El cálculo del Punto de Reorden se formaliza como:
-\begin{equation}
-R = (\bar{D} \times \bar{LT}) + SS
-\label{eq:rop}
-\end{equation}
-donde \(\bar{D}\) es la demanda promedio y \(\bar{LT}\) es el \textit{lead 
-time} promedio. El componente crucial es el Stock de Seguridad (\(SS\)), el 
-buffer que protege contra la variabilidad. Se calcula como:
-$$ SS = Z_{\alpha} \times \sqrt{\bar{LT}\sigma_D^2 + \bar{D}^2\sigma_{LT}^2} $$
-donde \(Z_{\alpha}\) es el factor de servicio para un nivel de servicio 
-deseado \(\alpha\), \(\sigma_D\) es la desviación estándar de la demanda, y 
-\(\sigma_{LT}\) es la desviación estándar del \textit{lead time}. Dado que 
-en Aysén la demanda es relativamente estable pero el \textit{lead time} es 
-altamente volátil, la ecuación se simplifica y evidencia que 
-\(SS \propto \sigma_{LT}\). Esto formaliza matemáticamente la vulnerabilidad 
-central del sistema: una alta variabilidad en el tiempo de la ruta 
-(\(\sigma_{LT}\) elevado) exige un alto stock de seguridad para mantener la 
-continuidad del servicio.
-
-\subsection{Aplicación Numérica al Sistema GLP Aysén}
-\label{sec:aplicacion-numerica}
-
-Para concretar la teoría expuesta, aplicamos las fórmulas al caso específico del sistema GLP de Aysén. El sistema opera con demanda promedio $\bar{d} = 52.5$ TM/día (calibrada al mes de mayor consumo), un lead time nominal $\overline{LT} = 6$ días (correspondiente a la distancia aproximada de 1,400 km desde Cabo Negro/Neuquén), capacidad actual $C_{sq} = 431$ TM, y capacidad propuesta $C_{prop} = 681$ TM.
-
-\subsubsection{Cálculo del Punto de Reorden}
-
-Aplicando la ecuación \eqref{eq:rop} con los parámetros del sistema:
-
-\begin{equation}
-R = (\bar{d} \times \overline{LT}) + SS = (52.5 \times 6) + SS = 315 + SS
-\end{equation}
-
-donde el stock de seguridad $SS$ depende del nivel de servicio deseado y la variabilidad del sistema. Para la configuración implementada en el modelo, se adopta una política de revisión continua con $R = 0.5 \times C$ (50\% de la capacidad como punto de reorden) y $Q = 0.5 \times C$ (50\% de la capacidad como cantidad a ordenar). Esta parametrización resulta en $R_{sq} = 215.5$ TM y $Q_{sq} = 215.5$ TM para el Status Quo, mientras que la Propuesta opera con $R_{prop} = 340.5$ TM y $Q_{prop} = 340.5$ TM.
-
-\subsubsection{Autonomía del Sistema}
-
-La autonomía nominal del sistema (días de inventario disponible) se calcula como:
-
-\begin{equation}
-\text{Autonomía} = \frac{C}{\bar{d}}
-\end{equation}
-
-Para las dos configuraciones:
-
-\begin{align}
-\text{Autonomía}_{sq} &= \frac{431}{52.5} \approx 8.2 \text{ días} \\
-\text{Autonomía}_{prop} &= \frac{681}{52.5} \approx 13.0 \text{ días}
-\end{align}
-
-\textbf{Observación crítica:} La autonomía del Status Quo (8.2 días) es apenas superior al lead time nominal (6 días). Esto implica que cualquier disrupción que extienda el lead time más allá de 2 días puede causar quiebre de stock, incluso sin variabilidad en la demanda.
-
-\subsubsection{Modelación de la Demanda Estocástica}
-
-La demanda diaria se modela como un proceso estocástico con componente estacional y ruido aleatorio:
-
-\begin{equation}
-D(t) = D_{base} \cdot \left(1 + 0.25 \sin\left(\frac{2\pi(t - 172)}{365}\right)\right) \cdot \epsilon(t)
-\label{eq:demanda-estacional}
-\end{equation}
-
-donde:
+\subsection{Complejidad Algorítmica}
+El uso de un montículo binario permite realizar las operaciones críticas con alta eficiencia:
 \begin{itemize}
-    \item $D_{base} = 52.5$ TM/día es la demanda base
-    \item El término sinusoidal modela la estacionalidad anual con amplitud $\pm 25\%$
-    \item El fase $(t-172)$ centra el pico en el día 172 (invierno austral, julio)
-    \item $\epsilon(t) \sim \mathcal{N}(1.0, 0.15)$ es el ruido estocástico diario con $\pm 15\%$ de variabilidad
+    \item \textbf{Extracción del Mínimo:} La recuperación del próximo evento tiene un costo de $O(1)$, mientras que la reestructuración del árbol tras la eliminación es $O(\log n)$.
+    \item \textbf{Inserción de Eventos:} La programación de nuevos eventos futuros se realiza con una complejidad de $O(\log n)$.
 \end{itemize}
+Esto asegura que el simulador mantenga su rendimiento incluso cuando el número de eventos pendientes crece considerablemente.
 
-Esta formulación captura dos fuentes de variabilidad: (1) el ciclo estacional predecible, y (2) las fluctuaciones aleatorias día a día.
+\section{Teoría de Generación de Números Pseudoaleatorios}
+La simulación estocástica depende de la capacidad del computador para generar secuencias numéricas que emulen el azar con propiedades estadísticas rigurosas.
 
-\subsubsection{Modelación de Disrupciones}
+\subsection{Algoritmo Mersenne Twister}
+El núcleo generador seleccionado para este estudio es el \textbf{Mersenne Twister} (MT19937), desarrollado por \textcite{Matsumoto1998}. Este algoritmo se basa en una recurrencia lineal matricial sobre un cuerpo finito binario $F_2$. La elección de este generador específico se justifica por dos propiedades fundamentales:
+\begin{enumerate}
+    \item \textbf{Periodo Colosal:} Tiene un periodo de $2^{19937} - 1$. Un periodo largo es esencial para evitar que la simulación entre en ciclos repetitivos que invaliden los resultados estadísticos en experimentos masivos.
+    \item \textbf{Equidistribución k-dimensional:} El MT19937 posee la propiedad de k-distribución para $k = 623$, lo que significa que la secuencia de números es estadísticamente equidistribuida en 623 dimensiones, asegurando una ``calidad'' de aleatoriedad superior a los generadores congruenciales lineales.
+\end{enumerate}
 
-Las disrupciones de la Ruta 7 se modelan mediante dos distribuciones:
+\section{Modelado Probabilístico de Procesos Logísticos}
+Para representar los fenómenos físicos del mundo real dentro del computador, se utilizan distribuciones de probabilidad teóricas que capturan la naturaleza de cada proceso.
 
-\textbf{1. Frecuencia de disrupciones:} Proceso de Poisson con tasa $\lambda = 4$ eventos/año (documentado en~\cite{CIEP2025}). El tiempo entre disrupciones consecutivas sigue una distribución Exponencial:
+\subsection{Procesos de Llegada de Fallas}
+La ocurrencia de fallas en la ruta se modela como un Proceso de Poisson. La justificación teórica radica en la independencia de los eventos de falla. Si el número de eventos en un intervalo sigue una distribución de Poisson, los tiempos entre eventos consecutivos siguen una distribución Exponencial.
 
+\subsection{Propiedad de Falta de Memoria}
+La distribución Exponencial es única por poseer la propiedad de \textit{falta de memoria} (memorylessness):
 \begin{equation}
-T_{entre} \sim \text{Exp}\left(\frac{\lambda}{365}\right) = \text{Exp}(0.0110)
+P(X > s + t \mid X > s) = P(X > t)
 \end{equation}
+Esta propiedad interpreta correctamente la realidad física de la ruta: el hecho de que no haya habido un derrumbe en los últimos 10 días no aumenta la probabilidad condicional de que ocurra uno mañana; el riesgo es constante e independiente de la historia acumulada.
 
-con media $E[T_{entre}] = 365/4 = 91.25$ días.
+\section{Gestión de Inventarios: La Lógica (Q, R)}
+Finalmente, el comportamiento ``inteligente'' del sistema logístico se modela utilizando la Teoría de Inventarios. Se implementa una política de revisión continua $(Q, R)$ \cite{Silver2017}.
 
-\textbf{2. Duración de disrupciones:} Distribución Triangular $\text{Tri}(a, b, c)$ con parámetros dependientes del escenario experimental. El escenario Corta usa $\text{Tri}(3, 3.5, 7)$ días, el escenario Media usa $\text{Tri}(3, 7, 14)$ días, y el escenario Larga usa $\text{Tri}(3, 10.5, 21)$ días (basado en el conflicto de Argentina 2021).
+\subsection{Punto de Reorden (R)}
+El parámetro $R$ define el nivel de inventario que gatilla una reposición. Se calcula teóricamente para cubrir la demanda esperada durante el tiempo de entrega (\textit{lead time}) más un stock de seguridad que amortigua la variabilidad de la demanda y del propio tiempo de entrega.
 
-La distribución triangular permite modelar la incertidumbre con parámetros interpretables: mínimo histórico ($a$), valor más probable ($b$), y máximo observado ($c$).
+\subsection{Cantidad de Pedido (Q)}
+El parámetro $Q$ define el tamaño del lote de reposición. En este modelo, $Q$ representa la capacidad de transporte agregada o el lote económico de compra, y determina la magnitud del incremento de inventario cuando llega un pedido.
 
-\subsubsection{Implicación del Análisis Numérico}
-
-El gap estructural entre autonomía (8.2 días) y el lead time bajo disrupción potencial (6 + hasta 21 días) revela la criticidad del sistema. Matemáticamente:
-
-\begin{equation}
-\text{Margen de seguridad} = \text{Autonomía} - (\overline{LT} + D_{max}) = 8.2 - (6 + 21) < 0
-\end{equation}
-
-Este resultado negativo confirma que el sistema Status Quo opera en régimen de subcapacidad crónica ante disrupciones largas.
-
-\subsection{Resiliencia en Cadenas de Suministro}
-El enfoque tradicional de eficiencia ha sido complementado por el concepto de
-resiliencia, definida como la capacidad de una cadena de suministro para
-absorber, adaptarse y recuperarse de disrupciones \cite{Christopher2004}. Este
-concepto introduce un compromiso fundamental entre eficiencia (minimización de
-costos) y robustez (inversión en redundancia). La Figura~\ref{fig:resilience-tradeoff} ilustra esta tensión mediante una frontera eficiente que muestra las configuraciones óptimas de Pareto: puntos en los que no es posible mejorar la resiliencia sin sacrificar eficiencia, y viceversa. El sistema Aysén opera actualmente en una zona de alta vulnerabilidad (alta eficiencia operacional pero baja resiliencia), mientras que la Propuesta 10.4 de expansión de capacidad (+250 TM) lo desplaza hacia mayor resiliencia con una inversión moderada en redundancia.
-
-\begin{figure}[htbp]
-    \centering
-    \begin{tikzpicture}[
-        font=\small,
-        scale=1.15,
-        axis/.style={->, >=stealth, thick, black},
-        curve/.style={thick, black, line width=2pt}
-    ]
-        % Ejes
-        \draw[axis] (-0.2,0) -- (9,0);
-        \node[below, font=\small] at (4.5,-0.3) {Eficiencia Operacional};
-
-        \draw[axis] (0,-0.2) -- (0,5.5);
-        \node[above, font=\small, rotate=90] at (-0.4,2.75) {Resiliencia};
-
-        % Curva frontera
-        \draw[curve] (1,4.2) .. controls (3,2.8) and (5.2,1.5) .. (8,0.6);
-
-        % Área bajo la curva
-        \fill[gray!10]
-            (0,0) -- (1,4.2) .. controls (3,2.8) and (5.2,1.5) .. (8,0.6) -- (8,0) -- cycle;
-
-        % Puntos
-        \fill[black] (6.5,1.1) circle (2.5pt);
-        \node[below right, font=\footnotesize] at (6.5,1.1) {Status Quo};
-
-        \fill[black] (3.5,2.5) circle (2.5pt);
-        \node[above left, font=\footnotesize] at (3.5,2.5) {Propuesta};
-
-        % Flecha
-        \draw[->, >=stealth, dashed, line width=1pt]
-            (6.3,1.3) .. controls (5,1.7) and (4.2,2.1) .. (3.7,2.4);
-
-        % Etiqueta de curva
-        \node[font=\footnotesize] at (4.5,2.2) [above left] {Frontera Eficiente};
-
-    \end{tikzpicture}
-    \caption{Frontera eficiente entre eficiencia y resiliencia en cadenas de suministro.}
-    \label{fig:resilience-tradeoff}
-\end{figure}
-
-\subsection{Dilema del Prisionero en mercados oligopólicos}
-
-El informe CIEP 2025 identifica que Gasco opera con capacidad "demasiado reducida para su nivel de ventas" (41 TM, ~1 día de autonomía). Esta situación refleja un Dilema del Prisionero: minimizar costos de inventario individualmente (estrategia racional) genera baja resiliencia colectiva.
-
-El modelo agrega los tres distribuidores en un hub único, por lo que no captura estas dinámicas competitivas. Una extensión futura podría implementar un modelo multi-agente para analizar estrategias de coordinación.
-
-\section{Simulación de Eventos Discretos}
-\label{sec:simulation-theory}
-
-\subsection{Componentes del modelo DES}
-
-El modelo representa el sistema como una secuencia cronológica de eventos. Los componentes son:
-\begin{description}
-    \item[Entidades] \texttt{CamiónSuministro} (con atributos: capacidad, origen).
-    \item[Recursos] \texttt{PlantaAlmacenamiento} (con atributos: capacidad\_max, 
-    nivel\_inventario, ROP), \texttt{RutaTerrestre} (con estado: abierta/cerrada).
-    \item[Procesos] \texttt{GeneracionPedidos} (cuando \(I(t) \le R\)), 
-    \texttt{ViajeSuministro} (proceso estocástico con duración \(LT\)), 
-    \texttt{ConsumoDiario} (reduce \(I(t)\)), \texttt{GeneradorDisrupciones} (cambia el 
-    estado de la \texttt{RutaTerrestre}).
-\end{description}
-
-\subsection{Verificación y Validación}
-
-\textbf{Verificación:} Asegurar que el código implementa correctamente el modelo conceptual (tests unitarios, code reviews).
-
-\textbf{Validación:} Comparar salidas del modelo con datos del sistema real (autonomía esperada: 8,2 días vs. observada, frecuencia de disrupciones, etc.).
-
-\subsection{Diseño de Experimentos}
-
-El modelo se evalúa mediante un experimento factorial $2 \times 3$ (6 configuraciones, 10.000 réplicas c/u). ANOVA de dos vías identifica efectos principales e interacciones de los factores sobre el nivel de servicio.
-
-\subsection{Arquitectura del Sistema de Simulación}
-\label{sec:implementacion-computacional}
-
-El sistema implementa una arquitectura modular de tres capas que separa responsabilidades y facilita el testing independiente de cada componente. La Figura~\ref{fig:arquitectura-software} muestra la estructura del sistema.
-
-\input{diagramas/01_arquitectura_modular}
-
-La \textbf{Capa de Configuración} encapsula todos los parámetros del sistema (capacidad, demanda, disrupciones, política $(Q,R)$) mediante la clase \texttt{ConfiguracionSimulacion}. La \textbf{Capa de Modelo} contiene tres componentes que interactúan: el \texttt{HubCoyhaique} (gestiona inventario y detección de quiebres), la \texttt{RutaSuministro} (modela disrupciones y cálculo de lead time), y el \texttt{Motor de Simulación} (coordina tres procesos concurrentes usando SimPy). La \textbf{Capa de Resultados} calcula métricas de desempeño (nivel de servicio, quiebres, autonomía).
-
-Esta separación permite que cada capa se verifique independientemente. El modelo puede reutilizarse para diferentes experimentos sin modificar la lógica de simulación, y los análisis estadísticos pueden actualizarse sin reejecutar las 60,000 réplicas. El código fuente completo se presenta en el Apéndice~\ref{ap:codigo-fuente}.
-
-\subsubsection{Lógica del Sistema: Tres Procesos Concurrentes}
-
-El modelo implementa tres procesos que operan en paralelo mediante simulación de eventos discretos (SimPy): el proceso de demanda diaria, el proceso de reabastecimiento basado en política $(Q,R)$, y el proceso de generación de disrupciones. La Figura~\ref{fig:procesos-concurrentes} muestra cómo estos procesos interactúan compartiendo recursos (el inventario del hub y el estado de la ruta).
-
-\input{diagramas/05_procesos_concurrentes}
-
-\textbf{Proceso 1: Demanda Diaria.} Cada día se calcula la demanda estocástica (ecuación \eqref{eq:demanda-estacional}), se despacha producto a los clientes según disponibilidad de inventario, y se registran métricas (quiebres de stock, nivel de inventario, autonomía).
-
-\textbf{Proceso 2: Reabastecimiento.} La Figura~\ref{fig:flujo-reabastecimiento} detalla la lógica de este proceso: diariamente se verifica si el inventario cayó bajo el punto de reorden ($I \leq R$). Si es así, y la ruta está operativa, se crea un pedido de cantidad $Q$ que llegará después del lead time correspondiente. El sistema limita a 2 pedidos simultáneos en tránsito.
-
-\input{diagramas/02_flujo_reabastecimiento}
-
-\textbf{Proceso 3: Generación de Disrupciones.} Las disrupciones se modelan como un proceso de Poisson: el tiempo entre eventos sucesivos es Exponencial($\lambda = 4$/año), y la duración de cada disrupción es Triangular($a, b, c$) según el escenario experimental. La Figura~\ref{fig:generacion-disrupciones} muestra el flujo de este proceso.
-
-\input{diagramas/03_generacion_disrupciones}
-
-La ruta alterna entre dos estados: operativa (lead time nominal de 6 días) y bloqueada (lead time extendido). La Figura~\ref{fig:maquina-estados-ruta} presenta esta máquina de estados.
-
-\input{diagramas/04_maquina_estados_ruta}
-
-Los detalles de implementación computacional (estructuras de datos, algoritmos, patrones de diseño) se presentan en el Apéndice~\ref{ap:codigo-fuente}.
-
-\subsubsection{Reproducibilidad Computacional}
-
-La reproducibilidad científica en simulación estocástica exige control total sobre la generación de números pseudoaleatorios. Se adopta el generador \textbf{Mersenne Twister} (MT19937) de NumPy, con estado inicializado mediante semillas únicas:
-
-\begin{equation}
-s_{c,r} = s_{base} + (c - 1) \times 100{,}000 + r
-\label{eq:seed-formula}
-\end{equation}
-
-donde $s_{base} = 42$, $c \in \{1, \ldots, 6\}$ es el identificador de configuración, y $r \in \{1, \ldots, 10{,}000\}$ es el número de réplica. El espaciamiento de 100,000 unidades entre configuraciones garantiza independencia estadística entre réplicas (no existe traslape de secuencias pseudoaleatorias).
-
-Ejecutar la réplica $r$ de la configuración $c$ con semilla $s_{c,r}$ genera siempre el mismo resultado numérico. Esto garantiza reproducibilidad exacta: repetir el experimento en diferentes máquinas o fechas produce datos idénticos. Las 60,000 simulaciones pueden ejecutarse en cualquier orden (incluso en paralelo) sin afectar los resultados.
-
-\subsubsection{Verificación y Testing}
-
-El sistema incluye una suite de 24 tests unitarios que verifican:
-
-\begin{itemize}
-    \item \textbf{Tests de configuración:} Validación de parámetros (ej. capacidad $> 0$, $R \leq$ capacidad)
-    \item \textbf{Tests de entidades:} Capacidad del hub, despachos, reabastecimientos
-    \item \textbf{Tests de balance:} Invariante $\text{total\_recibido} - \text{total\_despachado} = \text{inventario\_final} - \text{inventario\_inicial}$
-    \item \textbf{Tests de reproducibilidad:} Dos ejecuciones con misma semilla producen resultados bit-a-bit idénticos
-\end{itemize}
-
-La cobertura de código alcanzada es del 87\%, y los tests se ejecutan automáticamente antes de cada experimento Monte Carlo. La implementación completa, incluyendo estructuras de datos, patrones de diseño (Factory, Dataclass, Strategy), optimizaciones computacionales y análisis de complejidad algorítmica, se presenta en el Apéndice~\ref{ap:codigo-fuente}.
-
+\section{Validación y Verificación (VV)}
+Para asegurar la fiabilidad del artefacto de software, se sigue el marco de validación propuesto por \textcite{Sargent2013}. La \textbf{Verificación} se enfoca en la corrección del código (``¿Construimos el modelo correctamente?''), asegurando que la implementación en Python corresponda a la lógica matemática descrita. La \textbf{Validación}, por su parte, se enfoca en la precisión del modelo (``¿Construimos el modelo correcto?''), comparando las salidas de la simulación con el comportamiento esperado del sistema real.

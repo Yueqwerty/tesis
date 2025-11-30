@@ -1,39 +1,35 @@
-% --- SIN CAMBIOS, YA ES CORRECTO ---
-\chapter{Objetivos}
+\chapter{Objetivos del Proyecto}
 \label{chap:objetivos}
 
-Para abordar la brecha metodológica identificada en el \cref{chap:planteamiento-problema}
-y responder a la pregunta de investigación formulada, el presente proyecto se
-estructura en torno a un conjunto de objetivos jerárquicos. Estos objetivos
-guían el proceso de diseño, desarrollo y validación del modelo de simulación
-propuesto, asegurando un enfoque sistemático para el análisis de la resiliencia
-del sistema de suministro de GLP.
+\section{Justificación Técnica}
+El problema de abastecimiento en Aysén presenta características intrínsecas de concurrencia y variabilidad estocástica que dificultan su análisis mediante métodos deterministas. Las herramientas de cálculo estático tradicionales no permiten modelar adecuadamente la interacción temporal compleja entre un consumo variable, un transporte sujeto a retardos y las interrupciones aleatorias de la infraestructura vial. Por consiguiente, se requiere el desarrollo de una solución basada en el paradigma de Simulación de Eventos Discretos (DES), la cual permite representar los estados del sistema y evaluar su desempeño bajo condiciones de incertidumbre.
 
 \section{Objetivo General}
-\label{sec:objetivo-general}
-
-Diseñar un modelo de simulación de eventos discretos para
-cuantificar el impacto de parámetros logísticos críticos sobre la resiliencia
-del sistema de suministro de GLP en el nodo Coyhaique.
+Diseñar e implementar un simulador de eventos discretos para cuantificar el desempeño logístico y la resiliencia de la cadena de suministro de GLP en la Región de Aysén, evaluando el impacto de diferentes escenarios de infraestructura y gestión operativa.
 
 \section{Objetivos Específicos}
-\label{sec:objetivos-especificos}
+El proyecto se estructura en torno a tres metas operativas secuenciales:
 
-La consecución del objetivo general se desglosa en tres fases metodológicas 
-secuenciales, cada una representada por un objetivo específico que define 
-una etapa clave del proceso de investigación y desarrollo:
+\subsection{1. Formalización del Modelo}
+Definir con precisión las reglas lógicas y los parámetros cuantitativos que rigen el comportamiento del sistema real.
+\begin{itemize}
+    \item Identificar y caracterizar las entidades del sistema (tanques de almacenamiento, flota de camiones) y sus atributos de estado.
+    \item Establecer las distribuciones de probabilidad teóricas que mejor ajustan el comportamiento de la demanda y las fallas de ruta.
+    \item Definir el algoritmo de decisión para la gestión del reabastecimiento de inventario.
+\end{itemize}
 
-\begin{enumerate}
-    \item \textbf{Modelar} la dinámica conceptual de la cadena de suministro 
-    de GLP en Coyhaique, realizando una abstracción formal de sus 
-    componentes, procesos y parámetros clave a partir de la información 
-    técnica disponible.
-    
-    \item \textbf{Implementar} el modelo de simulación mediante una
-    arquitectura de software parametrizable que traduzca el modelo conceptual
-    en un programa funcional.
-    
-    \item \textbf{Evaluar} la resiliencia del sistema mediante un diseño
-    experimental sobre el modelo validado, generando evidencia empírica para
-    confirmar o refutar la hipótesis de trabajo.
-\end{enumerate}
+\subsection{2. Construcción del Software}
+Traducir el modelo conceptual a un artefacto de software funcional.
+\begin{itemize}
+    \item Programar el motor de simulación utilizando librerías especializadas en eventos discretos.
+    \item Implementar los módulos de generación de números aleatorios y control de transición de estados.
+    \item Verificar la corrección lógica del código mediante la ejecución de pruebas unitarias exhaustivas.
+\end{itemize}
+
+\subsection{3. Ejecución Experimental}
+Generar datos sintéticos para el análisis de desempeño del sistema.
+\begin{itemize}
+    \item Configurar escenarios de prueba controlados, variando parámetros críticos como la capacidad de almacenamiento y la duración de los cortes.
+    \item Ejecutar simulaciones masivas mediante el método de Monte Carlo para obtener resultados estadísticamente significativos.
+    \item Calcular y analizar los indicadores de Nivel de Servicio resultantes para cada escenario evaluado.
+\end{itemize}

@@ -9,10 +9,11 @@
 \usepackage[T1]{fontenc}
 \usepackage[spanish,es-noshorthands]{babel}
 \usepackage{csquotes}
+
 % --- Tipografía Profesional ---
 \usepackage{lmodern}
 \usepackage{mathpazo}
-\linespread{1.5}  % Interlineado 1.5 para formato institucional
+\linespread{1.5}
 
 % --- Paquetes Esenciales y de Ingeniería ---
 \usepackage{graphicx}
@@ -21,122 +22,112 @@
 \usepackage{multirow}
 \usepackage{siunitx}
 \usepackage{numprint}
+\usepackage{multicol}
+\usepackage{float}
+
+% --- Configuración Numérica ---
 \npthousandsep{.}
 \npdecimalsign{,}
 \sisetup{
   output-decimal-marker = {,},
-  group-separator = {.},
+  group-separator = {.}%,
   group-minimum-digits = 4,
-  per-mode = symbol,
-  detect-all = true,
-  parse-numbers = false
+  detect-all
 }
 
-% --- Paquetes para Diagramas (TikZ) ---
+% --- Paquetes para Diagramas y Código ---
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, chains, positioning, shapes.geometric}
-
-% --- Configuración de Bibliografía (biblatex) ---
-\usepackage[backend=biber, style=numeric, sorting=none]{biblatex}
-\addbibresource{bibliografia.bib} % Nombre de tu archivo .bib
-
-% --- Configuración de Hipervínculos y Referencias Inteligentes ---
-\usepackage[hidelinks]{hyperref}
-\usepackage[spanish,nameinlink]{cleveref}
-
-% --- Configuración para Listados de Código ---
 \usepackage{listings}
 \usepackage{xcolor}
+
+% --- Configuración de Código (Python) ---
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.97,0.97,0.95}
 \lstdefinestyle{pythonstyle}{
-    backgroundcolor=\color{backcolour}, commentstyle=\color{codegreen},
-    keywordstyle=\color{magenta}, numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple}, basicstyle=\footnotesize\ttfamily,
-    breakatwhitespace=false, breaklines=true, captionpos=b, keepspaces=true,
-    numbers=left, numbersep=5pt, showspaces=false, showstringspaces=false,
-    showtabs=false, tabsize=2, language=Python
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{red},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    tabsize=4
 }
 \lstset{style=pythonstyle}
 
-% ==============================================================================
-% DISEÑO DEL DOCUMENTO (Controlado por memoir)
-% ==============================================================================
+% --- Bibliografía ---
+\usepackage[backend=biber, style=ieee, sorting=none]{biblatex}
+\addbibresource{bibliografia.bib}
 
-% --- Estilo de Capítulo Sobrio (sin decoraciones) ---
-\makechapterstyle{sobrio}{%
-  \renewcommand{\chapterheadstart}{\vspace*{40pt}}
-  \renewcommand{\printchaptername}{\centering\Large\bfseries\sffamily CAPÍTULO}
+% --- Hipervínculos ---
+\usepackage[hidelinks]{hyperref}
+\usepackage[spanish,nameinlink]{cleveref}
+
+% --- Estilo de Capítulo (Sobrio/Técnico) ---
+\makechapterstyle{tecnico}{
+  \renewcommand{\chapterheadstart}{\vspace*{20pt}}
+  \renewcommand{\printchaptername}{\Large\bfseries\sffamily CAPÍTULO}
   \renewcommand{\chapternamenum}{ }
-  \renewcommand{\printchapternum}{\centering\Large\bfseries\sffamily\thechapter}
-  \renewcommand{\afterchapternum}{\par\nobreak\vskip 15pt}
-  \renewcommand{\printchaptertitle}[1]{\centering\Large\bfseries\sffamily\MakeUppercase{##1}}
-  \renewcommand{\afterchaptertitle}{\par\nobreak\vskip 30pt}
+  \renewcommand{\printchapternum}{\Large\bfseries\sffamily\thechapter}
+  \renewcommand{\afterchapternum}{\par\nobreak\vskip 10pt}
+  \renewcommand{\printchaptertitle}[1]{\Huge\bfseries\sffamily #1}
+  \renewcommand{\afterchaptertitle}{\par\nobreak\vskip 40pt \hrule\vskip 20pt}
 }
-\chapterstyle{sobrio}
-\setstocksize{11in}{8.5in}
-\settrimmedsize{\stockheight}{\stockwidth}{*}
+\chapterstyle{tecnico}
+
+% --- Layout ---
 \setlrmarginsandblock{3cm}{2.5cm}{*}
 \setulmarginsandblock{2.5cm}{2.5cm}{*}
-\setheadfoot{16pt}{12pt}
 \checkandfixthelayout
 
-% --- Headers y Footers Limpios ---
-\makepagestyle{main}
-\makeevenhead{main}{}{}{}  % Header vacío
-\makeoddhead{main}{}{}{}   % Header vacío
-\makeevenfoot{main}{}{\thepage}{}  % Número de página centrado abajo
-\makeoddfoot{main}{}{\thepage}{}   % Número de página centrado abajo
-
-\makepagestyle{plain}
-\makeevenhead{plain}{}{}{}
-\makeoddhead{plain}{}{}{}
-\makeevenfoot{plain}{}{\thepage}{}
-\makeoddfoot{plain}{}{\thepage}{}
-
-\pagestyle{main}
-\aliaspagestyle{chapter}{plain}
-\firmlists
-\renewcommand{\listtablename}{Índice de Cuadros}
 % ==============================================================================
-% INICIO DEL DOCUMENTO
+% DOCUMENTO
 % ==============================================================================
 \begin{document}
 
 \frontmatter
 \include{portada}
-\include{preliminares}
+\include{preliminares} % Resumen, Abstract, Agradecimientos
+
+% Índices
 \tableofcontents
 \clearpage
 \listoffigures
 \clearpage
 \listoftables
-
-
+\clearpage
 
 \mainmatter
-\include{capitulos/01_introduccion}
-\include{capitulos/02_planteamiento_problema}
-\include{capitulos/03_hipotesis}
+
+% CAPÍTULO 1: INTRODUCCIÓN
+\include{capitulos/01_introduccion} 
+
+% CAPÍTULO 2: OBJETIVOS
 \include{capitulos/04_objetivos}
-\include{capitulos/05_marco_teorico}
-\include{capitulos/06_estado_del_arte}
+
+% CAPÍTULO 3: MARCO CONCEPTUAL Y MATEMÁTICO
+\include{capitulos/05_marco_teorico} 
+
+% CAPÍTULO 4: MODELADO DE COMPONENTES
+\include{capitulos/06_modelado_componentes}
+
+% CAPÍTULO 5: DISEÑO E IMPLEMENTACIÓN
 \include{capitulos/07_metodologia}
+
+% CAPÍTULO 6: RESULTADOS
 \include{capitulos/09_resultados_montecarlo}
-\include{capitulos/10_discusion_revisada}
-% TODO: PENDIENTE - Agregar capítulo de Conclusiones
-% \include{capitulos/11_conclusiones}
-\include{capitulos/08_contribuciones_plan}
 
 \backmatter
-\printbibliography[title={Referencias}]
-
-% ==============================================================================
-% APÉNDICES
-% ==============================================================================
-\appendix
-\include{capitulos/apendice_a_codigo}
+% Bibliografía
+\printbibliography[heading=bibintoc, title={Referencias Bibliográficas}]
 
 \end{document}

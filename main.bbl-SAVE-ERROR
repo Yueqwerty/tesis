@@ -18,131 +18,62 @@
 
 
 \refsection{0}
-  \datalist[entry]{nyt/apasortcite//global/global/global}
+  \datalist[entry]{none/global//global/global/global}
     \entry{Banks2010}{book}{}{}
       \name{author}{4}{}{%
-        {{un=0,uniquepart=base,hash=24c2083632d8a30faec38e9f8c4f0a61}{%
+        {{hash=24c2083632d8a30faec38e9f8c4f0a61}{%
            family={Banks},
            familyi={B\bibinitperiod},
            given={Jerry},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=0c6f38ec2a8e52c1856783215d7fe28a}{%
+           giveni={J\bibinitperiod}}}%
+        {{hash=0c6f38ec2a8e52c1856783215d7fe28a}{%
            family={Carson},
            familyi={C\bibinitperiod},
            given={John\bibnamedelima S.},
-           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=80ded430e28b637f5c767ad0945d40c6}{%
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=80ded430e28b637f5c767ad0945d40c6}{%
            family={Nelson},
            familyi={N\bibinitperiod},
            given={Barry\bibnamedelima L.},
-           giveni={B\bibinitperiod\bibinitdelim L\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=77daa4b13c9ccf1c493d8d3c91cdf84e}{%
+           giveni={B\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=77daa4b13c9ccf1c493d8d3c91cdf84e}{%
            family={Nicol},
            familyi={N\bibinitperiod},
            given={David\bibnamedelima M.},
-           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
-           givenun=0}}%
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Upper Saddle River, NJ}%
       }
       \list{publisher}{1}{%
-        {Prentice Hall}%
+        {Pearson}%
       }
       \strng{namehash}{e10ae59209845c7127763fb07b9f1d7d}
       \strng{fullhash}{aa460b3c7e6b1f6978f3074f407e41b6}
       \strng{fullhashraw}{aa460b3c7e6b1f6978f3074f407e41b6}
-      \strng{bibnamehash}{aa460b3c7e6b1f6978f3074f407e41b6}
-      \strng{authorbibnamehash}{aa460b3c7e6b1f6978f3074f407e41b6}
+      \strng{bibnamehash}{e10ae59209845c7127763fb07b9f1d7d}
+      \strng{authorbibnamehash}{e10ae59209845c7127763fb07b9f1d7d}
       \strng{authornamehash}{e10ae59209845c7127763fb07b9f1d7d}
       \strng{authorfullhash}{aa460b3c7e6b1f6978f3074f407e41b6}
       \strng{authorfullhashraw}{aa460b3c7e6b1f6978f3074f407e41b6}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{5th}
       \field{title}{Discrete-Event System Simulation}
       \field{year}{2010}
     \endentry
-    \entry{CIEP2025}{report}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=e22f6ffd788035399ef7ce4a183b413d}{%
-           family={{Centro de Investigación en Ecosistemas de la Patagonia (CIEP) y Quark SpA}},
-           familyi={C\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Ministerio de Energía, Gobierno de Chile}%
-      }
-      \strng{namehash}{e22f6ffd788035399ef7ce4a183b413d}
-      \strng{fullhash}{e22f6ffd788035399ef7ce4a183b413d}
-      \strng{fullhashraw}{e22f6ffd788035399ef7ce4a183b413d}
-      \strng{bibnamehash}{e22f6ffd788035399ef7ce4a183b413d}
-      \strng{authorbibnamehash}{e22f6ffd788035399ef7ce4a183b413d}
-      \strng{authornamehash}{e22f6ffd788035399ef7ce4a183b413d}
-      \strng{authorfullhash}{e22f6ffd788035399ef7ce4a183b413d}
-      \strng{authorfullhashraw}{e22f6ffd788035399ef7ce4a183b413d}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Informe final preparado para la Seremía de Energía de la Región de Aysén. Documento público pendiente de publicación oficial a la fecha de esta tesis.}
-      \field{title}{Investigación Vulnerabilidad de Suministro de GLP y Combustibles Líquidos}
-      \field{type}{techreport}
-      \field{year}{2024}
-    \endentry
-    \entry{Christopher2004}{article}{}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=5e77c55ba647ff97e4ace612b69749ae}{%
-           family={Christopher},
-           familyi={C\bibinitperiod},
-           given={Martin},
-           giveni={M\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=58256c3f37002fcf4e4ebf1b7f91ead0}{%
-           family={Peck},
-           familyi={P\bibinitperiod},
-           given={Helen},
-           giveni={H\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{e45045d6f1093a02b55ded166a7a74ef}
-      \strng{fullhash}{e45045d6f1093a02b55ded166a7a74ef}
-      \strng{fullhashraw}{e45045d6f1093a02b55ded166a7a74ef}
-      \strng{bibnamehash}{e45045d6f1093a02b55ded166a7a74ef}
-      \strng{authorbibnamehash}{e45045d6f1093a02b55ded166a7a74ef}
-      \strng{authornamehash}{e45045d6f1093a02b55ded166a7a74ef}
-      \strng{authorfullhash}{e45045d6f1093a02b55ded166a7a74ef}
-      \strng{authorfullhashraw}{e45045d6f1093a02b55ded166a7a74ef}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{The International Journal of Logistics Management}
-      \field{number}{2}
-      \field{title}{Building the Resilient Supply Chain}
-      \field{volume}{15}
-      \field{year}{2004}
-      \field{pages}{1\bibrangedash 14}
-      \range{pages}{14}
-    \endentry
     \entry{Law2015}{book}{}{}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=8af2cbe47677348f03ee288fd9edec35}{%
+        {{hash=8af2cbe47677348f03ee288fd9edec35}{%
            family={Law},
            familyi={L\bibinitperiod},
            given={Averill\bibnamedelima M.},
-           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
-           givenun=0}}%
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY}%
       }
       \list{publisher}{1}{%
         {McGraw-Hill Education}%
@@ -155,167 +86,122 @@
       \strng{authornamehash}{8af2cbe47677348f03ee288fd9edec35}
       \strng{authorfullhash}{8af2cbe47677348f03ee288fd9edec35}
       \strng{authorfullhashraw}{8af2cbe47677348f03ee288fd9edec35}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{5th}
+      \field{isbn}{978-0073401324}
       \field{title}{Simulation Modeling and Analysis}
       \field{year}{2015}
     \endentry
-  \enddatalist
-  \datalist[entry]{nyt/global//global/global/global}
-    \entry{Banks2010}{book}{}{}
-      \name{author}{4}{}{%
-        {{un=0,uniquepart=base,hash=24c2083632d8a30faec38e9f8c4f0a61}{%
-           family={Banks},
-           familyi={B\bibinitperiod},
-           given={Jerry},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=0c6f38ec2a8e52c1856783215d7fe28a}{%
-           family={Carson},
-           familyi={C\bibinitperiod},
-           given={John\bibnamedelima S.},
-           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=80ded430e28b637f5c767ad0945d40c6}{%
-           family={Nelson},
-           familyi={N\bibinitperiod},
-           given={Barry\bibnamedelima L.},
-           giveni={B\bibinitperiod\bibinitdelim L\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=77daa4b13c9ccf1c493d8d3c91cdf84e}{%
-           family={Nicol},
-           familyi={N\bibinitperiod},
-           given={David\bibnamedelima M.},
-           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{publisher}{1}{%
-        {Prentice Hall}%
-      }
-      \strng{namehash}{e10ae59209845c7127763fb07b9f1d7d}
-      \strng{fullhash}{aa460b3c7e6b1f6978f3074f407e41b6}
-      \strng{fullhashraw}{aa460b3c7e6b1f6978f3074f407e41b6}
-      \strng{bibnamehash}{aa460b3c7e6b1f6978f3074f407e41b6}
-      \strng{authorbibnamehash}{aa460b3c7e6b1f6978f3074f407e41b6}
-      \strng{authornamehash}{e10ae59209845c7127763fb07b9f1d7d}
-      \strng{authorfullhash}{aa460b3c7e6b1f6978f3074f407e41b6}
-      \strng{authorfullhashraw}{aa460b3c7e6b1f6978f3074f407e41b6}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{5th}
-      \field{title}{Discrete-Event System Simulation}
-      \field{year}{2010}
-    \endentry
-    \entry{CIEP2025}{report}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=e22f6ffd788035399ef7ce4a183b413d}{%
-           family={{Centro de Investigación en Ecosistemas de la Patagonia (CIEP) y Quark SpA}},
-           familyi={C\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Ministerio de Energía, Gobierno de Chile}%
-      }
-      \strng{namehash}{e22f6ffd788035399ef7ce4a183b413d}
-      \strng{fullhash}{e22f6ffd788035399ef7ce4a183b413d}
-      \strng{fullhashraw}{e22f6ffd788035399ef7ce4a183b413d}
-      \strng{bibnamehash}{e22f6ffd788035399ef7ce4a183b413d}
-      \strng{authorbibnamehash}{e22f6ffd788035399ef7ce4a183b413d}
-      \strng{authornamehash}{e22f6ffd788035399ef7ce4a183b413d}
-      \strng{authorfullhash}{e22f6ffd788035399ef7ce4a183b413d}
-      \strng{authorfullhashraw}{e22f6ffd788035399ef7ce4a183b413d}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Informe final preparado para la Seremía de Energía de la Región de Aysén. Documento público pendiente de publicación oficial a la fecha de esta tesis.}
-      \field{title}{Investigación Vulnerabilidad de Suministro de GLP y Combustibles Líquidos}
-      \field{type}{techreport}
-      \field{year}{2024}
-    \endentry
-    \entry{Christopher2004}{article}{}{}
+    \entry{Matsumoto1998}{article}{}{}
       \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=5e77c55ba647ff97e4ace612b69749ae}{%
-           family={Christopher},
-           familyi={C\bibinitperiod},
-           given={Martin},
-           giveni={M\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=58256c3f37002fcf4e4ebf1b7f91ead0}{%
-           family={Peck},
-           familyi={P\bibinitperiod},
-           given={Helen},
-           giveni={H\bibinitperiod},
-           givenun=0}}%
+        {{hash=37a788e3dbb975370d88203dfba379ec}{%
+           family={Matsumoto},
+           familyi={M\bibinitperiod},
+           given={Makoto},
+           giveni={M\bibinitperiod}}}%
+        {{hash=88d8b870701ad221060b0c7ef21a2df8}{%
+           family={Nishimura},
+           familyi={N\bibinitperiod},
+           given={Takuji},
+           giveni={T\bibinitperiod}}}%
       }
-      \strng{namehash}{e45045d6f1093a02b55ded166a7a74ef}
-      \strng{fullhash}{e45045d6f1093a02b55ded166a7a74ef}
-      \strng{fullhashraw}{e45045d6f1093a02b55ded166a7a74ef}
-      \strng{bibnamehash}{e45045d6f1093a02b55ded166a7a74ef}
-      \strng{authorbibnamehash}{e45045d6f1093a02b55ded166a7a74ef}
-      \strng{authornamehash}{e45045d6f1093a02b55ded166a7a74ef}
-      \strng{authorfullhash}{e45045d6f1093a02b55ded166a7a74ef}
-      \strng{authorfullhashraw}{e45045d6f1093a02b55ded166a7a74ef}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
+      \strng{namehash}{adc651ab76aa3abcc9d94787b0adae82}
+      \strng{fullhash}{adc651ab76aa3abcc9d94787b0adae82}
+      \strng{fullhashraw}{adc651ab76aa3abcc9d94787b0adae82}
+      \strng{bibnamehash}{adc651ab76aa3abcc9d94787b0adae82}
+      \strng{authorbibnamehash}{adc651ab76aa3abcc9d94787b0adae82}
+      \strng{authornamehash}{adc651ab76aa3abcc9d94787b0adae82}
+      \strng{authorfullhash}{adc651ab76aa3abcc9d94787b0adae82}
+      \strng{authorfullhashraw}{adc651ab76aa3abcc9d94787b0adae82}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{The International Journal of Logistics Management}
-      \field{number}{2}
-      \field{title}{Building the Resilient Supply Chain}
-      \field{volume}{15}
-      \field{year}{2004}
-      \field{pages}{1\bibrangedash 14}
-      \range{pages}{14}
+      \field{journaltitle}{ACM Transactions on Modeling and Computer Simulation}
+      \field{number}{1}
+      \field{title}{Mersenne Twister: A 623-Dimensionally Equidistributed Uniform Pseudo-Random Number Generator}
+      \field{volume}{8}
+      \field{year}{1998}
+      \field{pages}{3\bibrangedash 30}
+      \range{pages}{28}
+      \verb{doi}
+      \verb 10.1145/272991.272995
+      \endverb
     \endentry
-    \entry{Law2015}{book}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=8af2cbe47677348f03ee288fd9edec35}{%
-           family={Law},
-           familyi={L\bibinitperiod},
-           given={Averill\bibnamedelima M.},
-           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
-           givenun=0}}%
+    \entry{Silver2017}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=387eb81d018edde1ccf3315f5c0cc631}{%
+           family={Silver},
+           familyi={S\bibinitperiod},
+           given={Edward\bibnamedelima A.},
+           giveni={E\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=c789297b3dff5bd6acdd997effc12266}{%
+           family={Pyke},
+           familyi={P\bibinitperiod},
+           given={David\bibnamedelima F.},
+           giveni={D\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=b4310f649a39e9413db8811902269972}{%
+           family={Thomas},
+           familyi={T\bibinitperiod},
+           given={Douglas\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {McGraw-Hill Education}%
+        {CRC Press}%
       }
-      \strng{namehash}{8af2cbe47677348f03ee288fd9edec35}
-      \strng{fullhash}{8af2cbe47677348f03ee288fd9edec35}
-      \strng{fullhashraw}{8af2cbe47677348f03ee288fd9edec35}
-      \strng{bibnamehash}{8af2cbe47677348f03ee288fd9edec35}
-      \strng{authorbibnamehash}{8af2cbe47677348f03ee288fd9edec35}
-      \strng{authornamehash}{8af2cbe47677348f03ee288fd9edec35}
-      \strng{authorfullhash}{8af2cbe47677348f03ee288fd9edec35}
-      \strng{authorfullhashraw}{8af2cbe47677348f03ee288fd9edec35}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
+      \strng{namehash}{fad15c96faf669fc072b4f24b9ea9e4f}
+      \strng{fullhash}{fad15c96faf669fc072b4f24b9ea9e4f}
+      \strng{fullhashraw}{fad15c96faf669fc072b4f24b9ea9e4f}
+      \strng{bibnamehash}{fad15c96faf669fc072b4f24b9ea9e4f}
+      \strng{authorbibnamehash}{fad15c96faf669fc072b4f24b9ea9e4f}
+      \strng{authornamehash}{fad15c96faf669fc072b4f24b9ea9e4f}
+      \strng{authorfullhash}{fad15c96faf669fc072b4f24b9ea9e4f}
+      \strng{authorfullhashraw}{fad15c96faf669fc072b4f24b9ea9e4f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{5th}
-      \field{title}{Simulation Modeling and Analysis}
-      \field{year}{2015}
+      \field{edition}{4th}
+      \field{title}{Inventory and Production Management in Supply Chains}
+      \field{year}{2017}
+    \endentry
+    \entry{Sargent2013}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=02e7c322e659ef1d504f7253dcf6d7a0}{%
+           family={Sargent},
+           familyi={S\bibinitperiod},
+           given={Robert\bibnamedelima G.},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{02e7c322e659ef1d504f7253dcf6d7a0}
+      \strng{fullhash}{02e7c322e659ef1d504f7253dcf6d7a0}
+      \strng{fullhashraw}{02e7c322e659ef1d504f7253dcf6d7a0}
+      \strng{bibnamehash}{02e7c322e659ef1d504f7253dcf6d7a0}
+      \strng{authorbibnamehash}{02e7c322e659ef1d504f7253dcf6d7a0}
+      \strng{authornamehash}{02e7c322e659ef1d504f7253dcf6d7a0}
+      \strng{authorfullhash}{02e7c322e659ef1d504f7253dcf6d7a0}
+      \strng{authorfullhashraw}{02e7c322e659ef1d504f7253dcf6d7a0}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Simulation}
+      \field{number}{1}
+      \field{title}{Verification and validation of simulation models}
+      \field{volume}{7}
+      \field{year}{2013}
+      \field{pages}{12\bibrangedash 24}
+      \range{pages}{13}
     \endentry
   \enddatalist
+  \missing{CIEP2025}
+  \missing{Knuth1997}
+  \missing{Oliphant2007}
+  \missing{Ross2014}
+  \missing{SimPyDoc}
 \endrefsection
 \endinput
 

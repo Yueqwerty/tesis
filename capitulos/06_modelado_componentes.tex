@@ -1,0 +1,49 @@
+\chapter{Modelado de Componentes del Sistema}
+\label{chap:modelado-componentes}
+
+La traducción de la realidad operativa de Aysén a un modelo computacional requiere la definición formal de las entidades y sus interacciones. Este capítulo detalla la parametrización de los componentes basándose en los datos técnicos recolectados por la CNE \cite{CNE2024} y justifica las decisiones de modelado estadístico.
+
+\section{Modelo del Hub de Almacenamiento}
+
+El nodo de Coyhaique actúa como el corazón del sistema logístico. En la simulación, este nodo no se representa como un simple número, sino como un sistema dinámico de inventario con restricciones físicas estrictas.
+
+\subsection{Capacidad y Restricciones Físicas}
+La infraestructura de almacenamiento se modela como un recurso compartido de capacidad finita. Basado en el catastro de infraestructura regional, se establece una capacidad nominal combinada ($K$) de 431 toneladas métricas. Esta variable impone una restricción no lineal en el modelo: el nivel de inventario $I(t)$ está acotado en el intervalo $[0, K]$.
+
+Esta restricción tiene implicancias operativas críticas que el simulador debe capturar:
+\begin{enumerate}
+    \item \textbf{Saturación Superior:} Si en un instante $t$, el nivel $I(t)$ alcanza el límite superior $K$, el sistema entra en un estado de saturación. Cualquier flujo de entrada adicional se bloquea, lo que en la realidad física equivaldría a que un camión deba esperar en el patio de carga sin poder descargar.
+    \item \textbf{Agotamiento Inferior:} Por el contrario, si $I(t)$ llega a cero, el sistema entra en falla y el flujo de salida se interrumpe forzosamente, lo que genera el evento de ``Demanda Insatisfecha''.
+\end{enumerate}
+
+\subsection{Dinámica de Flujos}
+El estado del inventario evoluciona según la ecuación de balance de masa en tiempo discreto:
+\begin{equation}
+    I(t) = I(t-1) + \text{Entradas}(t) - \text{Salidas}(t)
+\end{equation}
+Esta ecuación simple es la base de la integridad del modelo, asegurando que no se cree ni se destruya materia, sino que solo se transforme.
+
+\section{Caracterización Estocástica de la Demanda}
+
+La demanda de combustible es la fuerza motriz que vacía el inventario. Para someter al sistema a una prueba de estrés realista, el modelo se parametrizó utilizando el perfil de consumo invernal, el periodo más exigente del año.
+
+\subsection{Parámetros de Consumo}
+Según los registros del informe técnico \cite{CNE2024}, el consumo base promedio en invierno es de 52,5 toneladas diarias. Sin embargo, modelar la demanda como una constante sería un error metodológico grave, ya que ignoraría los picos de consumo provocados por olas de frío.
+
+\subsection{Justificación de la Distribución Normal}
+Para capturar la variabilidad diaria, se aplicó el Teorema del Límite Central. Dado que la demanda total de la ciudad es la suma de miles de decisiones de consumo individuales e independientes (cada hogar encendiendo su estufa), su comportamiento agregado tiende asintóticamente a una distribución Normal. Por ello, el simulador modela la demanda diaria $D_t$ como una variable aleatoria $\mathcal{N}(\mu, \sigma^2)$, con una media de 52,5 y una desviación estándar que representa una variabilidad del 15\%.
+
+\section{Modelo de la Ruta Logística}
+
+La Ruta 7 es el componente que conecta la fuente de suministro con el nodo de consumo. En el modelo, esta ruta no es solo una distancia, sino un proceso dinámico sujeto a fallas estocásticas.
+
+\subsection{Tiempos de Tránsito y Latencia}
+En condiciones ideales, el tiempo de ciclo de un camión (carga, viaje, aduana y descarga) es de 6 días. Este parámetro define la latencia base del sistema de retroalimentación. Cualquier decisión de pedido tomada en $t$ solo tendrá efecto en el inventario en $t+6$.
+
+\subsection{Generación de Disrupciones}
+Basado en la historia de eventos reportada, el simulador utiliza un generador de eventos para inyectar fallas en el sistema.
+\begin{itemize}
+    \item \textbf{Frecuencia:} Se utiliza un proceso de Poisson con tasa $\lambda = 4$ eventos/año para determinar cuándo ocurre un corte.
+    \item \textbf{Duración:} Se utiliza una distribución Triangular (Mín: 3, Moda: 7, Máx: 21 días) para determinar cuánto tiempo permanece cerrada la ruta.
+\end{itemize}
+Esta configuración permite al simulador explorar todo el espectro de riesgos posibles, desde cortes breves hasta interrupciones catastróficas.
